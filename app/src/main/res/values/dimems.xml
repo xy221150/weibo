@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="icon_mini">15dp</dimen>
+    <dimen name="icon_small">25dp</dimen>
+    <dimen name="icon_little">20dp</dimen>
+    <dimen name="icon_medium">30dp</dimen>
+    <dimen name="icon_large">40dp</dimen>
+
+    <dimen name="text_size_mini">10dp</dimen>
+    <dimen name="text_size_little">12dp</dimen>
+    <dimen name="text_size_small">14dp</dimen>
+    <dimen name="text_size_medium">16dp</dimen>
+    <dimen name="text_size_large">18dp</dimen>
+    <dimen name="text_size_big">20dp</dimen>
+
+    <dimen name="image_size_mini">40dp</dimen>
+    <dimen name="image_size_little">50dp</dimen>
+    <dimen name="image_size_small">60dp</dimen>
+    <dimen name="image_size_medium">80dp</dimen>
+    <dimen name="image_size_large">100dp</dimen>
+
+    <dimen name="layout_margin">10dp</dimen>
+    <dimen name="layout_margin_mini">5dp</dimen>
+    <dimen name="layout_margin_tiny">15dp</dimen>
+    <dimen name="layout_margin_small">20dp</dimen>
+    <dimen name="layout_margin_medium">30dp</dimen>
+    <dimen name="layout_margin_large">40dp</dimen>
+    <dimen name="layout_margin_big">50dp</dimen>
+
+
+    <dimen name="value_text_width">100dp</dimen>
+
+    <dimen name="item_decoration_title_height">30dp</dimen>
+    <dimen name="item_decoration_title_start_margin">16dp</dimen>
+    <dimen name="item_decoration_title_fontsize">12sp</dimen>
+</resources>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@color/white"
+    >
+  <LinearLayout
+      android:id="@+id/linear"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:orientation="horizontal"
+      android:padding="10dp"
+      android:gravity="center_vertical"
+      >
+      <org.wxy.weibo.cosmos.view.CircleImageView
+          android:layout_width="50dp"
+          android:layout_height="50dp"
+          android:id="@+id/img"
+          />
+      <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="111"
+          android:id="@+id/name"
+          android:layout_marginLeft="20dp"
+          android:textSize="@dimen/text_size_medium"
+          />
+  </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/gray10"
+        ></View>
+</LinearLayout>

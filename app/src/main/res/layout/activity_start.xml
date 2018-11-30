@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    >
+   <TextView
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:textSize="@dimen/text_size_big"
+       android:text="启动页"
+       android:background="@color/blue1"
+       android:gravity="center"
+       android:textColor="@color/white"
+       />
+</LinearLayout>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#f5f5f5</color>
+    <color name="colorPrimaryDark">#f5f5f5</color>
+    <color name="colorAccent">#FFA344</color>
+
+
+    <color name="black">#FF000000</color>
+    <color name="black50">#7f000000</color>
+    <color name="black60">#99000000</color>
+    <color name="black70">#aa000000</color>
+    <color name="black33">#55000000</color>
+    <color name="black20">#33000000</color>
+    <color name="black5">#08000000</color>
+    <color name="black7">#10000000</color>
+    <color name="black10">#16000000</color>
+    <color name="black75">#c0000000</color>
+    <color name="black80">#cc000000</color>
+
+    <color name="white">#FFFFFFFF</color>
+    <color name="white_10">#eeeeee</color>
+    <color name="white10">#16ffffff</color>
+    <color name="white50">#7fffffff</color>
+    <color name="white60">#99ffffff</color>
+    <color name="white70">#aaffffff</color>
+    <color name="white20">#33ffffff</color>
+    <color name="white25">#3fffffff</color>
+    <color name="white40">#7fffffff</color>
+    <color name="white33">#55ffffff</color>
+    <color name="white80">#ccffffff</color>
+    <color name="white90">#e6ffffff</color>
+
+    <color name="gray00">#FEFFFF</color>
+    <color name="gray01">#f9f9f9</color>
+    <color name="gray05">#f5f5f5</color>
+    <color name="gray10">#eeeeee</color>
+    <color name="gray15">#dddddd</color>
+    <color name="gray20">#cccccc</color>
+    <color name="gray40">#999999</color>
+    <color name="gray50">#8c8c8c</color>
+    <color name="gray60">#666666</color>
+    <color name="gray65">#555555</color>
+
+    <color name="transparent">#00000000</color>
+
+    <color name="orange1">#FDA233</color>
+    <color name="orange1_80">#ccffa344</color>
+    <color name="orange2">#FFBA65</color>
+    <color name="orange3">#FFF5EC</color>
+
+    <color name="circularOrange">#FEB154</color>
+    <color name="circularGray">#999998</color>
+
+
+    <color name="blue1">#8042A8E4</color>
+    <color name="blue">#42A8E4</color>
+
+    <color name="read">#FF3336</color>
+
+    <color name="green1">#29A949</color>
+
+    <color name="tag_edit_hint_right">#dddddd</color>
+
+
+</resources>
