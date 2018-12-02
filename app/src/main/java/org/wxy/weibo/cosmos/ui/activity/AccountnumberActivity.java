@@ -92,7 +92,7 @@ public class AccountnumberActivity extends ActionbarActvity {
         super.initdata();
         initRecycler(list,new LinearLayoutManager(this));
         list.setAdapter(adapter);
-        if (User.user().getToken().equals("")||User.user().getToken()==""&&activities.size()>0)
+        if (User.user().getToken().equals("")&&activities.size()>0||User.user().getToken()==""&&activities.size()>0)
         {
             User.user().setToken(activities.get(0).getToken());
             User.user().setUid(activities.get(0).getUid());
