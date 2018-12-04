@@ -4,6 +4,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.GridLayout;
 import android.support.v7.widget.LinearLayoutManager;
@@ -65,6 +67,17 @@ public class ShowActivity extends ActionbarActvity {
     private LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(300,
             300);
     private int page=1;
+    private MsgThread msgThread;
+    private Handler handler=new Handler(){
+        @Override
+        public void handleMessage(Message msg) {
+            if (msg.what==0)
+            {
+
+                send(id);
+            }
+        }
+    };
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -105,7 +118,8 @@ public class ShowActivity extends ActionbarActvity {
         send.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                send(id);
+                msgThread=new MsgThread(0);
+                msgThread.run();
             }
         });
     }
@@ -266,5 +280,19 @@ public class ShowActivity extends ActionbarActvity {
         Intent intent=new Intent(context,ShowActivity.class);
         intent.putExtra("id",id);
         context.startActivity(intent);
+    }
+    class MsgThread extends Thread{
+        private int method;
+        private Message message;
+        public MsgThread(int method){
+            this.method=method;
+            message=new Message();
+        }
+        @Override
+        public void run() {
+            super.run();
+            message.what=method;
+            handler.sendMessage(message);
+        }
     }
 }

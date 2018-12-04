@@ -3,6 +3,8 @@ package org.wxy.weibo.cosmos.ui.activity;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
+import android.os.Handler;
+import android.os.Message;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -26,6 +28,7 @@ import org.wxy.weibo.cosmos.network.api.IStatuses;
 import org.wxy.weibo.cosmos.network.api.IUser;
 import org.wxy.weibo.cosmos.sharepreferences.User;
 import org.wxy.weibo.cosmos.ui.base.WidgetActivity;
+import org.wxy.weibo.cosmos.ui.fragment.MyFragment;
 import org.wxy.weibo.cosmos.ui.fragment.adapter.MyWeiboRecyclerAdapter;
 import org.wxy.weibo.cosmos.utils.GlideUtil;
 import org.wxy.weibo.cosmos.view.CircleImageView;
@@ -73,6 +76,34 @@ public class UserShowActivity extends WidgetActivity implements VerticalScrollVi
     private List<ImageInfo> list;
     private ImageInfo imageInfo;
     private Userbean userbean;
+    private MsgThread msgThread;
+    private static final int REFRESH=1;//下拉重新加载
+    private static final int LOADMORE=0;//上拉加载更多
+    private static final int AUTO=-1;//进入自动刷新
+    private Handler handler=new Handler(){
+        @Override
+        public void handleMessage(Message msg) {
+            switch (msg.what)
+            {
+                case REFRESH:
+                    page=1;
+                    Statusers();
+                    // 用于关闭下拉刷新
+                    mPtrClassicFrameLayout.refreshComplete();
+                    break;
+                case LOADMORE:
+                    page=page+1;
+                    Statusers();
+                    mPtrClassicFrameLayout.refreshComplete();
+                    break;
+                case AUTO:
+                    mPtrClassicFrameLayout.autoRefresh();
+                    Statusers();
+                    break;
+                default:
+            }
+        }
+    };
     @Override
     protected void initView() {
         super.initView();
@@ -308,27 +339,23 @@ public class UserShowActivity extends WidgetActivity implements VerticalScrollVi
         mPtrClassicFrameLayout.post(new Runnable() {
             @Override
             public void run() {
-                // 进入界面自动刷新
-                mPtrClassicFrameLayout.autoRefresh();
-                Statusers();
+                msgThread=new MsgThread(AUTO);
+                msgThread.run();
             }
         });
         mPtrClassicFrameLayout.setPtrHandler(new PtrDefaultHandler2() {
             // 加载更多开始会执行该方法
             @Override
             public void onLoadMoreBegin(PtrFrameLayout frame) {
-                page=page+1;
-                Statusers();
-                mPtrClassicFrameLayout.refreshComplete();
+                msgThread=new MsgThread(LOADMORE);
+                msgThread.run();
             }
 
             // 刷新开始会执行该方法
             @Override
             public void onRefreshBegin(PtrFrameLayout frame) {
-                page=1;
-                Statusers();
-                // 用于关闭下拉刷新
-                mPtrClassicFrameLayout.refreshComplete();
+                msgThread=new MsgThread(REFRESH);
+                msgThread.run();
             }
         });
     }
@@ -419,5 +446,35 @@ public class UserShowActivity extends WidgetActivity implements VerticalScrollVi
         Intent intent=new Intent(context,UserShowActivity.class);
         intent.putExtra("id",id);
         context.startActivity(intent);
+    }
+    class MsgThread extends Thread{
+        private int method;
+        private Message message;
+        public MsgThread(int method){
+            this.method=method;
+            message=new Message();
+        }
+        @Override
+        public void run() {
+            super.run();
+            if (method==REFRESH)
+            {
+                message.what=method;
+                handler.sendMessage(message);
+                return;
+            }
+            if (method==LOADMORE)
+            {
+                message.what=method;
+                handler.sendMessage(message);
+                return;
+            }
+            if (method==AUTO)
+            {
+                message.what=method;
+                handler.sendMessage(message);
+                return;
+            }
+        }
     }
 }

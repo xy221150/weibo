@@ -12,6 +12,8 @@ import android.graphics.BitmapFactory;
 import android.net.Network;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.os.StrictMode;
 import android.provider.MediaStore;
 import android.support.annotation.NonNull;
@@ -69,6 +71,17 @@ public class ShareActivity extends ActionbarActvity implements View.OnClickListe
             Manifest.permission.WRITE_EXTERNAL_STORAGE,
             Manifest.permission.CAMERA};
     List<Uri> uris = new ArrayList<>();
+    private MsgThread msgThread;
+    private Handler handler=new Handler(){
+        @Override
+        public void handleMessage(Message msg) {
+            if (msg.what==0)
+            {
+
+                share();
+            }
+        }
+    };
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -100,7 +113,8 @@ public class ShareActivity extends ActionbarActvity implements View.OnClickListe
         switch (view.getId())
         {
             case R.id.share:
-                share();
+                msgThread=new MsgThread(0);
+                msgThread.run();
                 break;
             case R.id.img:
                 getPermission();
@@ -189,9 +203,7 @@ public class ShareActivity extends ActionbarActvity implements View.OnClickListe
         }
     }
 
-    /**
-     * 选择图片
-     */
+   //选择图片
     private void selectPic() {
         Matisse.from(ShareActivity.this)
                 .choose(MimeType.ofAll())
@@ -228,5 +240,18 @@ public class ShareActivity extends ActionbarActvity implements View.OnClickListe
             }
         }
     }
-
+    class MsgThread extends Thread{
+        private int method;
+        private Message message;
+        public MsgThread(int method){
+            this.method=method;
+            message=new Message();
+        }
+        @Override
+        public void run() {
+            super.run();
+            message.what=method;
+            handler.sendMessage(message);
+        }
+    }
 }
