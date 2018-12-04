@@ -51,6 +51,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.UnsupportedEncodingException;
 import java.nio.ByteBuffer;
+import java.nio.file.Files;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -63,8 +64,6 @@ public class ShareActivity extends ActionbarActvity implements View.OnClickListe
     private ImageView share;
     private EditText text;
     private ImageView img;
-    private  Bitmap bitmap;
-    private byte[] b;
     List<String> permissionList = new ArrayList<>();
     String[] permissions = new String[]{Manifest.permission.READ_EXTERNAL_STORAGE,
             Manifest.permission.WRITE_EXTERNAL_STORAGE,
@@ -110,38 +109,46 @@ public class ShareActivity extends ActionbarActvity implements View.OnClickListe
     }
     //发送微博
     private void share(){
-//        b=new byte[1024];
-////        b=getBytesByBitmap(bitmap);
-//        Log.d("TAG", "share: "+ conver2HexStr(getRealPathFromUri(uris.get(0)).getBytes()));
-        OkGo.<String>post("https://api.weibo.com/2/statuses/share.json")
-                .params("access_token",User.user().getToken())
-                .params("status",text.getText().toString()+"http://www.mob.com/downloads/")
-                .execute(new StringCallback() {
-                    @Override
-                    public void onSuccess(Response<String> response) {
-                       if (response.code()==200)
-                       {
-                           showToast("发送成功");
-                           finish();
+
+       if (uris.size()==0)//发送仅文字微博
+       {
+           OkGo.<String>post("https://api.weibo.com/2/statuses/share.json")
+                   .params("access_token",User.user().getToken())
+                   .params("status",text.getText().toString()+"http://www.mob.com/downloads/")
+                   .execute(new StringCallback() {
+                       @Override
+                       public void onSuccess(Response<String> response) {
+                           if (response.code()==200)
+                           {
+                               showToast("发送成功");
+                               finish();
+                           }
+                           else
+                               showToast("发送失败");
                        }
-                       else
-                           showToast("发送失败");
-                    }
-                });
-//        IStatuses iStatuses=RetrofitHelper.create(IStatuses.class);
-//        iStatuses.share(User.user().getToken(),"11"+"http://www.mob.com/downloads/",
-//                RetrofitHelper.getbody(conver2HexStr(getRealPathFromUri(uris.get(0)).getBytes())))
-//                .enqueue(new Callback<ShareBean>() {
-//                    @Override
-//                    public void onResponse(Call<ShareBean> call, retrofit2.Response<ShareBean> response) {
-//
-//                    }
-//
-//                    @Override
-//                    public void onFailure(Call<ShareBean> call, Throwable t) {
-//
-//                    }
-//                });
+                   });
+       }
+       else//发送图文微博
+       {
+           File file=new File(getRealPathFromUri(this,uris.get(0)));
+           OkGo.<String>post("https://api.weibo.com/2/statuses/share.json")
+                   .isMultipart(true)
+                   .params("access_token",User.user().getToken())
+                   .params("status",text.getText().toString()+"http://www.mob.com/downloads/")
+                   .params("pic", file)
+                   .execute(new StringCallback() {
+                       @Override
+                       public void onSuccess(Response<String> response) {
+                           if (response.code()==200)
+                           {
+                               showToast("发送成功");
+                               finish();
+                           }
+                           else
+                               showToast("发送失败");
+                       }
+                   });
+       }
     }
 
     private void getPermission() {
@@ -205,48 +212,21 @@ public class ShareActivity extends ActionbarActvity implements View.OnClickListe
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == 1 && resultCode == RESULT_OK) {
             uris = Matisse.obtainResult(data);
-//            adapter = new PicSelectedAdapter(this,uris);
-//            gridView.setAdapter(adapter);
+        }
+    }
+    public static String getRealPathFromUri(Context context, Uri contentUri) {
+        Cursor cursor = null;
+        try {
+            String[] proj = { MediaStore.Images.Media.DATA };
+            cursor = context.getContentResolver().query(contentUri, proj, null, null, null);
+            int column_index = cursor.getColumnIndexOrThrow(MediaStore.Images.Media.DATA);
+            cursor.moveToFirst();
+            return cursor.getString(column_index);
+        } finally {
+            if (cursor != null) {
+                cursor.close();
+            }
         }
     }
 
-//    public byte[] getBytesByBitmap(Bitmap bitmap) {
-//        ByteBuffer buffer = ByteBuffer.allocate(bitmap.getByteCount());
-//        Log.d("TAG", "getBytesByBitmap: "+buffer.array());
-//        return buffer.array();
-//    }
-//    public static String conver2HexStr(byte [] b)
-//    {
-//        StringBuffer result = new StringBuffer();
-//        for(int i = 0;i<b.length;i++)
-//        {
-//            result.append(Long.toString(b[i] & 0xff, 2));
-//        }
-//        return result.toString().substring(0, result.length()-1);
-//    }
-//
-//    public static byte[] conver2HexToByte(String hex2Str)
-//    {
-//        String [] temp = hex2Str.split(",");
-//        byte [] b = new byte[temp.length];
-//        for(int i = 0;i<b.length;i++)
-//        {
-//            b[i] = Long.valueOf(temp[i], 2).byteValue();
-//        }
-//        return b;
-//    }
-//    public String getRealPathFromUri(Uri contentUri) {
-//        Cursor cursor = null;
-//        try {
-//            String[] proj = { MediaStore.Images.Media.DATA };
-//            cursor = this.getContentResolver().query(contentUri, proj, null, null, null);
-//            int column_index = cursor.getColumnIndexOrThrow(MediaStore.Images.Media.DATA);
-//            cursor.moveToFirst();
-//            return cursor.getString(column_index);
-//        } finally {
-//            if (cursor != null) {
-//                cursor.close();
-//            }
-//        }
-//    }
 }
