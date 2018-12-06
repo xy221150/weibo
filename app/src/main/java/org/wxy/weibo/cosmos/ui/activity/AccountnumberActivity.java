@@ -137,8 +137,6 @@ public class AccountnumberActivity extends ActionbarActvity {
                                                    mAccessToken.getToken(),
                                                    mAccessToken.getUid(),
                                                    response.body().getAvatar_large());
-                                           finish();
-                                           starActivity(AccountnumberActivity.class);
                                        }
                                     }
 
@@ -147,6 +145,8 @@ public class AccountnumberActivity extends ActionbarActvity {
 
                                     }
                                 });
+                        finish();
+                        starActivity(AccountnumberActivity.class);
                     }
                 }
             });
