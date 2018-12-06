@@ -1,5 +1,6 @@
 package org.wxy.weibo.cosmos.network.api;
 
+import org.wxy.weibo.cosmos.Bean.ByMeBean;
 import org.wxy.weibo.cosmos.Bean.CommentsShowBean;
 import org.wxy.weibo.cosmos.Bean.CreateBean;
 
@@ -20,4 +21,10 @@ public interface IComments {
     Call<CommentsShowBean> show(@Query("access_token")String access_token,
                                 @Query("id")long id,
                                 @Query("page") int page);
+
+
+    //发出评论
+    @GET("2/comments/by_me.json")
+    Call<ByMeBean> byme(@Query("access_token")String token,
+                        @Query("page")int page);
 }

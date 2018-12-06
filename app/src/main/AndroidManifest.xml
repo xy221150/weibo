@@ -43,6 +43,7 @@
         <activity android:name=".ui.activity.UserAcitivty"></activity>
         <activity android:name=".ui.activity.ShareActivity"></activity>
         <activity android:name=".ui.activity.AccountnumberActivity"></activity>
+        <activity android:name=".ui.activity.ByToMeActivity"></activity>
     </application>
 
 </manifest>
