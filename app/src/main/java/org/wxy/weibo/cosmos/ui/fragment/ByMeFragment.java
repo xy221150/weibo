@@ -144,7 +144,7 @@ public class ByMeFragment extends BaseFragment {
                        }
                        else
                        {
-                           showToast("获取失败");
+                           showToast("下面没了");
                        }
                        if (ptr.isRefreshing())
                        {

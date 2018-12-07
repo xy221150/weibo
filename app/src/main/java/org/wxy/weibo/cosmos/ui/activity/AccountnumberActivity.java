@@ -137,6 +137,8 @@ public class AccountnumberActivity extends ActionbarActvity {
                                                    mAccessToken.getToken(),
                                                    mAccessToken.getUid(),
                                                    response.body().getAvatar_large());
+                                           finish();
+                                           starActivity(AccountnumberActivity.class);
                                        }
                                     }
 
@@ -145,8 +147,6 @@ public class AccountnumberActivity extends ActionbarActvity {
 
                                     }
                                 });
-                        finish();
-                        starActivity(AccountnumberActivity.class);
                     }
                 }
             });
@@ -170,8 +170,6 @@ public class AccountnumberActivity extends ActionbarActvity {
         else
             db.execSQL("insert into info(name,token,uid,url) values(?,?,?,?)",
                     new Object[] {name,token,uid,url});
-
-        Log.d("TAG", "Add: "+cursor.getCount());
 
     }
 

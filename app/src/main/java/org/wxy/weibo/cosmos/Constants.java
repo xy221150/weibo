@@ -7,7 +7,13 @@ import java.util.regex.Pattern;
 
 public interface Constants {
 
-    public static final String APP_KEY      = "4173665367";
+//    public static final String APP_KEY      = "4173665367";
+
+//    public static final String APP_KEY      = "2873264506";
+
+    public static final String APP_KEY      = "656963923";
+
+
     public static final String App_SECRET      = "e42b898df9525a23424c8b0ecf2a7a88";
 
     public static final String REDIRECT_URL = "http://api.weibo.com/oauth2/default.html";

@@ -35,10 +35,6 @@ public class ViewPagerAdapter extends FragmentPagerAdapter {
            TabText.setText(Text.get(i));
            ImageView TabImg=view.findViewById(R.id.itme_tabview_img);
            TabImg.setImageResource(icon[i]);
-           if (i==0)
-           {
-               TabText.setTextColor(view.getResources().getColor(R.color.blue1));
-           }
            return view;
     }
     @Override

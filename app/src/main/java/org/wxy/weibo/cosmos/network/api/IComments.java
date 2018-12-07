@@ -3,6 +3,7 @@ package org.wxy.weibo.cosmos.network.api;
 import org.wxy.weibo.cosmos.Bean.ByMeBean;
 import org.wxy.weibo.cosmos.Bean.CommentsShowBean;
 import org.wxy.weibo.cosmos.Bean.CreateBean;
+import org.wxy.weibo.cosmos.Bean.ToMeBean;
 
 import retrofit2.Call;
 import retrofit2.http.GET;
@@ -26,5 +27,10 @@ public interface IComments {
     //发出评论
     @GET("2/comments/by_me.json")
     Call<ByMeBean> byme(@Query("access_token")String token,
+                        @Query("page")int page);
+
+    //发出评论
+    @GET("2/comments/to_me.json")
+    Call<ToMeBean> tome(@Query("access_token")String token,
                         @Query("page")int page);
 }

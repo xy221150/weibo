@@ -31,4 +31,6 @@ public interface IUser {
     @GET("2/users/show.json")
     Call<Userbean> getuser1(@QueryMap Map<String,String> map);
 
+
+
 }
