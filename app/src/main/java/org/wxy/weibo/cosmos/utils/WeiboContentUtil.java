@@ -51,14 +51,14 @@ public class WeiboContentUtil {
                         new UserShowActivity().getName(MainActivity.mainActivity(),urlSpan.getURL().replace("at:@",""));
                 }
             };
-            if (urlSpan.getURL().startsWith(Constants.SCHEME_TOPIC))
+            if (urlSpan.getURL().startsWith(Constants.SCHEME_TOPIC))//话题
             {
                 int start =builder.getSpanStart(urlSpan);
                 int end=builder.getSpanEnd(urlSpan);
                 builder.removeSpan(urlSpan);
                 builder.setSpan(clickableSpan,start,end, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
             }
-            if (urlSpan.getURL().startsWith(Constants.SCHEME_URL))
+            if (urlSpan.getURL().startsWith(Constants.SCHEME_URL))//网址
             {
                 int start =builder.getSpanStart(urlSpan);
                 int end=builder.getSpanEnd(urlSpan);
@@ -67,7 +67,7 @@ public class WeiboContentUtil {
                 builder.replace(start,end,stringBuilder);
                 builder.setSpan(clickableSpan,start,start+stringBuilder.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
             }
-            if (urlSpan.getURL().startsWith(Constants.SCHEME_AT))
+            if (urlSpan.getURL().startsWith(Constants.SCHEME_AT))//at
             {
                 int start =builder.getSpanStart(urlSpan);
                 int end=builder.getSpanEnd(urlSpan);
@@ -76,7 +76,7 @@ public class WeiboContentUtil {
             }
         }
         Matcher matcher=Constants.PATTERN_EMOTION.matcher(builder);
-        while (matcher.find())
+        while (matcher.find())//表情
         {
             String emjoy=matcher.group();
             int start=matcher.start();
@@ -150,7 +150,7 @@ public class WeiboContentUtil {
         }
 
         @Override
-        public void updateDrawState(TextPaint ds) {
+        public void updateDrawState(TextPaint ds) {//高亮
             super.updateDrawState(ds);
             ds.setColor(Color.parseColor("#42A8E4"));
             ds.setUnderlineText(false);

@@ -33,4 +33,9 @@ public interface IComments {
     @GET("2/comments/to_me.json")
     Call<ToMeBean> tome(@Query("access_token")String token,
                         @Query("page")int page);
+
+    //@我的评论
+    @GET("2/comments/mentions.json")
+    Call<String> mentions(@Query("access_token")String token,
+                          @Query("page")int page);
 }

@@ -19,6 +19,8 @@ import retrofit2.http.Query;
  */
 
 public interface IStatuses {
+
+    //获取当前登录用户及其所关注用户的最新微博
     @GET("2/statuses/home_timeline.json")
     Call<Home_timelinebean> gethome_timeline(@Query("access_token") String access_token,
                                              @Query("count") int count,
@@ -26,6 +28,8 @@ public interface IStatuses {
                                              @Query("feature") int feature);
 
 
+
+    //获取用户发布的微博
     @GET("2/statuses/user_timeline.json")
     Call<Home_timelinebean> getuser_timeline(@Query("access_token") String access_token,
                                              @Query("uid")String uid,
@@ -34,6 +38,7 @@ public interface IStatuses {
                                              @Query("page") int page,
                                              @Query("feature") int feature);
 
+    //发送微博
     @Multipart
     @Headers({"Content-Type:application/x-www-form-urlencoded"})
     @POST("2/statuses/share.json")
@@ -42,8 +47,14 @@ public interface IStatuses {
                          @Part MultipartBody.Part file);
 
 
+    //根据ID获取单条微博信息
     @GET("2/statuses/show.json")
     Call<ShowBean>show(@Query("access_token")String access_token,
                        @Query("id")long id);
+
+    //@我的微博
+    @GET("2/statuses/mentions.json")
+    Call<String> mentions(@Query("access_token")String token,
+                          @Query("page")int page);
 
 }

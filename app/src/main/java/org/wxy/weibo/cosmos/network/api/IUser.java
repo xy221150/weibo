@@ -16,18 +16,14 @@ import retrofit2.http.QueryMap;
  */
 
 public interface IUser {
+    //获取用户信息
     @GET("2/users/show.json")
     Call<Userbean> getuser(@Query("access_token") String access_token,
                            @Query("uid") String uid,
                            @Query("screen_name") String screen_name);
 
-    @POST("oauth2/access_token")
-    Call<Tokenbean> token(@Query("client_id") String client_id,
-                          @Query("client_secret") String client_secret,
-                          @Query("grant_type") String grant_type,
-                          @Query("redirect_uri") String redirect_uri,
-                          @Query("refresh_token") String refresh_token);
 
+    //获取用户信息
     @GET("2/users/show.json")
     Call<Userbean> getuser1(@QueryMap Map<String,String> map);
 

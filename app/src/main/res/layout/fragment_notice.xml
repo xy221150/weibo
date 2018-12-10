@@ -53,7 +53,7 @@
         android:layout_gravity="center"
         android:textSize="17sp"
         android:textColor="@color/blue"
-        android:text=" @我的微博"/>
+        android:text=" @我的"/>
   </LinearLayout>
 
 
