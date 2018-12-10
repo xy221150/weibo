@@ -28,7 +28,7 @@ public class UserAcitivty extends ActionbarActvity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContTitle("关于");
+        setContTitle("个人详情");
     }
 
     @Override

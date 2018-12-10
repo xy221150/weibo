@@ -9,12 +9,12 @@
 <org.wxy.weibo.cosmos.view.VerticalScrollView
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-
+    android:fillViewport="true"
     >
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/gray00"
+        android:background="@color/gray05"
         android:orientation="vertical"
         >
         <RelativeLayout
@@ -154,15 +154,15 @@
         <RelativeLayout
             android:layout_weight="1"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_below="@+id/v1"
             >
             <android.support.v7.widget.RecyclerView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
                 android:id="@+id/list"
-                >
-            </android.support.v7.widget.RecyclerView>
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="0dp"></android.support.v7.widget.RecyclerView>
         </RelativeLayout>
         <LinearLayout
             android:padding="5dp"
