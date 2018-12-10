@@ -250,7 +250,7 @@ public class ShowActivity extends ActionbarActvity {
         });
     }
 
-    private void send(long id){
+    private void send(final long id){
        if (!text.getText().equals("")&&text.getText().toString()!=""||text.getText().toString().length()>140)
        {
            OkGo.<String>post("https://api.weibo.com/2/comments/create.json")
@@ -264,6 +264,7 @@ public class ShowActivity extends ActionbarActvity {
                                   {
                                       showToast("发送成功");
                                       text.setText("");
+                                      commentsshow(id);
                                   }
                                   else
                                   { showToast("发送失败"); }

@@ -11,6 +11,7 @@ import org.wxy.weibo.cosmos.MainActivity;
 import org.wxy.weibo.cosmos.R;
 import org.wxy.weibo.cosmos.ui.activity.UserShowActivity;
 import org.wxy.weibo.cosmos.utils.GlideUtil;
+import org.wxy.weibo.cosmos.utils.TimeUtils;
 import org.wxy.weibo.cosmos.utils.WeiboContentUtil;
 import org.wxy.weibo.cosmos.view.CircleImageView;
 
@@ -31,6 +32,7 @@ public class CommentsAdapter extends RecyclerView.Adapter<CommentsAdapter.Commen
         holder.text.setText(WeiboContentUtil.Weibocontent(bean.getComments().get(position).getText(),holder.text));
         holder.name.setText(bean.getComments().get(position).getUser().getName());
         GlideUtil.load(MainActivity.mainActivity(),holder.img,bean.getComments().get(position).getUser().getAvatar_large());
+        holder.time.setText(TimeUtils.convDate(bean.getComments().get(position).getCreated_at()));
         holder.img.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -54,9 +56,11 @@ public class CommentsAdapter extends RecyclerView.Adapter<CommentsAdapter.Commen
 
         private TextView name;
         private TextView text;
+        private TextView time;
         private CircleImageView img;
         public Commentsholder(View v) {
             super(v);
+            time=v.findViewById(R.id.time);
             name=v.findViewById(R.id.name);
             text=v.findViewById(R.id.text);
             img=v.findViewById(R.id.img);
