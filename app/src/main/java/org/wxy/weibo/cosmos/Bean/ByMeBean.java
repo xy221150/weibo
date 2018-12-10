@@ -764,7 +764,7 @@ public class ByMeBean {
             private int hide_flag;
             private int mlevel;
             private VisibleBean visible;
-            private int biz_feature;
+            private long biz_feature;
             private int hasActionTypeCard;
             private int mblogtype;
             private int userType;
@@ -1011,11 +1011,11 @@ public class ByMeBean {
                 this.visible = visible;
             }
 
-            public int getBiz_feature() {
+            public long getBiz_feature() {
                 return biz_feature;
             }
 
-            public void setBiz_feature(int biz_feature) {
+            public void setBiz_feature(long biz_feature) {
                 this.biz_feature = biz_feature;
             }
 

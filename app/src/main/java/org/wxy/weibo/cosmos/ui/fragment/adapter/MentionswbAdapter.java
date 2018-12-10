@@ -10,44 +10,40 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import org.wxy.weibo.cosmos.Bean.Home_timelinebean;
+import org.wxy.weibo.cosmos.Bean.MentionsBean;
+import org.wxy.weibo.cosmos.Bean.MentionswbBean;
 import org.wxy.weibo.cosmos.Bean.basebean.Statusesbean;
 import org.wxy.weibo.cosmos.MainActivity;
 import org.wxy.weibo.cosmos.R;
-import org.wxy.weibo.cosmos.Bean.Home_timelinebean;
-import org.wxy.weibo.cosmos.ui.activity.PicActivity;
 import org.wxy.weibo.cosmos.ui.activity.UserShowActivity;
 import org.wxy.weibo.cosmos.utils.DoubleUtil;
-import org.wxy.weibo.cosmos.utils.TimeUtils;
 import org.wxy.weibo.cosmos.utils.GlideUtil;
 import org.wxy.weibo.cosmos.utils.SourceUtlis;
+import org.wxy.weibo.cosmos.utils.TimeUtils;
 import org.wxy.weibo.cosmos.utils.WeiboContentUtil;
 import org.wxy.weibo.cosmos.view.CircleImageView;
-
-import java.util.LinkedList;
-
-import cc.shinichi.library.ImagePreview;
 
 
 /**
  * Created by wxy on 2018/7/6.
  */
 
-public class MyWeiboRecyclerAdapter extends RecyclerView.Adapter<MyWeiboRecyclerAdapter.MyWeiboHolder>implements View.OnClickListener{
-    private Home_timelinebean bean;
+public class MentionswbAdapter extends RecyclerView.Adapter<MentionswbAdapter.MyWeiboHolder>implements View.OnClickListener{
+    private MentionswbBean bean;
     private MyWeiboHolder holder;
     private View view;
     private LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(300,
             300);
     private onItemCilck onItemCilck;//Itme整体点击
     private onItemStatusCilck onItemStatusCilck;//Item转发内容点击
-    private onItemPicCilck onItemPicCilck;//微博图片点击
     private onItemRetweetedPicCilck onItemRetweetedPicCilck;//原微博图片点击
-    public MyWeiboRecyclerAdapter(Home_timelinebean bean){
+    public MentionswbAdapter(MentionswbBean bean){
         this.bean=bean;
     }
     @Override
     public MyWeiboHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        view= LayoutInflater.from(MainActivity.mainActivity()).inflate(R.layout.item_weibo,parent,false);
+        view= LayoutInflater.from(MainActivity.mainActivity()).inflate(R.layout.item_mentionswb,parent,false);
         holder=new MyWeiboHolder(view);
         return holder;
     }
@@ -62,43 +58,24 @@ public class MyWeiboRecyclerAdapter extends RecyclerView.Adapter<MyWeiboRecycler
         holder.attitudes_count.setText(DoubleUtil.count(bean.getStatuses().get(i).getAttitudes_count()));
         holder.comments_count.setText(DoubleUtil.count(bean.getStatuses().get(i).getComments_count()));
         holder.reposts_count.setText(DoubleUtil.count(bean.getStatuses().get(i).getReposts_count()));
-        if (bean.getStatuses().get(i).getPic_urls().size() == 0) {
-            holder.weibo_list_pic.setVisibility(View.GONE);
-        } else {
-            for (int j = 0; j<bean.getStatuses().get(i).getPic_urls().size();j++)
-           {
-               final ImageView pic=new ImageView(MainActivity.mainActivity());
-               pic.setLayoutParams(params);
-               pic.setScaleType(ImageView.ScaleType.FIT_XY);//使图片充满控件大小
-               GlideUtil.loadUrl(MainActivity.mainActivity(),pic,bean.getStatuses().get(i).getPic_urls().get(j).getThumbnail_pic());
-               holder.weibo_list_pic.addView(pic);
-               final int finalJ = j;
-               pic.setOnClickListener(new View.OnClickListener() {
-                   @Override
-                   public void onClick(View v) {
-                       onItemPicCilck.onItemPicCilck(i, finalJ);
-                   }
-               });
-           }
-        }
         if (null!=bean.getStatuses().get(i).getRetweeted_status()) {
             holder.weibo_list_retweeted_status_user_name.setText(WeiboContentUtil.Weibocontent(
                     "@"+bean.getStatuses().get(i).getRetweeted_status().getUser().getName()
                             +":"
                             +bean.getStatuses().get(i).getRetweeted_status().getText(),
                     holder.weibo_list_retweeted_status_user_name));
-            if (bean.getStatuses().get(i).getRetweeted_status().getPic_urls().size()==0)
+            if (bean.getStatuses().get(i).getRetweeted_status().getPic_ids().size()==0)
             {
                 holder.weibo_list_retweeted_status_pic.setVisibility(View.GONE);
             }
             else
             {
-                for (int j=0;j<bean.getStatuses().get(i).getRetweeted_status().getPic_urls().size();j++)
+                for (int j=0;j<bean.getStatuses().get(i).getRetweeted_status().getPic_ids().size();j++)
                 {
                     final ImageView pic1=new ImageView(MainActivity.mainActivity());
                     pic1.setLayoutParams(params);
                     pic1.setScaleType(ImageView.ScaleType.FIT_XY);//使图片充满控件大小
-                    GlideUtil.loadUrl(MainActivity.mainActivity(),pic1,bean.getStatuses().get(i).getRetweeted_status().getPic_urls().get(j).getThumbnail_pic());
+                    GlideUtil.loadUrl(MainActivity.mainActivity(),pic1,"http://wx3.sinaimg.cn/bmiddle/"+bean.getStatuses().get(i).getRetweeted_status().getPic_ids().get(j));
                     holder.weibo_list_retweeted_status_pic.addView(pic1);
                     final int finalJ = j;
                     pic1.setOnClickListener(new View.OnClickListener() {
@@ -141,10 +118,10 @@ public class MyWeiboRecyclerAdapter extends RecyclerView.Adapter<MyWeiboRecycler
         return bean.getStatuses().size();
     }
 
-    public void add(Home_timelinebean home_timelinebean){
-         this.bean.getStatuses().addAll(home_timelinebean.getStatuses());
+    public void add(MentionswbBean bean){
+         this.bean.getStatuses().addAll(bean.getStatuses());
     }
-    public Statusesbean getdata(int i){
+    public MentionswbBean.StatusesBean getdata(int i){
         return bean.getStatuses().get(i);
     }
     @Override
@@ -169,13 +146,9 @@ public class MyWeiboRecyclerAdapter extends RecyclerView.Adapter<MyWeiboRecycler
         private TextView weibo_list_source;
         private TextView weibo_list_text;
         private CircleImageView weibo_list_user_profile;
-        private GridLayout weibo_list_pic;
         private TextView weibo_list_retweeted_status_user_name;
         private GridLayout weibo_list_retweeted_status_pic;
         private RelativeLayout weibo_list_retweeted_status;
-        private LinearLayout linearlayout_attitudes_count;
-        private LinearLayout linearlayout_comments_count;
-        private LinearLayout linearlayout_reposts_count;
         private TextView reposts_count;
         private TextView comments_count;
         private TextView attitudes_count;
@@ -187,16 +160,12 @@ public class MyWeiboRecyclerAdapter extends RecyclerView.Adapter<MyWeiboRecycler
             weibo_list_source=itemView.findViewById(R.id.weibo_list_source);
             weibo_list_text=itemView.findViewById(R.id.weibo_list_text);
             weibo_list_user_profile=itemView.findViewById(R.id.weibo_list_user_profile);
-            weibo_list_pic=itemView.findViewById(R.id.weibo_list_pic);
             weibo_list_retweeted_status_user_name=itemView.findViewById(R.id.weibo_list_retweeted_status_user_name);
             weibo_list_retweeted_status_pic=itemView.findViewById(R.id.weibo_list_retweeted_status_pic);
             weibo_list_retweeted_status=itemView.findViewById(R.id.weibo_list_retweeted_status);
             attitudes_count=itemView.findViewById(R.id.attitudes_count);
             comments_count=itemView.findViewById(R.id.comments_count);
             reposts_count=itemView.findViewById(R.id.reposts_count);
-            linearlayout_reposts_count=itemView.findViewById(R.id.linearlayout_reposts_count);
-            linearlayout_comments_count=itemView.findViewById(R.id.linearlayout_comments_count);
-            linearlayout_attitudes_count=itemView.findViewById(R.id.linearlayout_attitudes_count);
             weibo=itemView.findViewById(R.id.weibo);
         }
     }
@@ -211,20 +180,13 @@ public class MyWeiboRecyclerAdapter extends RecyclerView.Adapter<MyWeiboRecycler
     public interface onItemStatusCilck{
         void onItemStatusCilck(int i);
     }
-    public void onItemStatusCilck(MyWeiboRecyclerAdapter.onItemStatusCilck onItemStatusCilck){
+    public void onItemStatusCilck(MentionswbAdapter.onItemStatusCilck onItemStatusCilck){
         this.onItemStatusCilck=onItemStatusCilck;
-    }
-
-    public interface onItemPicCilck{
-        void onItemPicCilck(int i, int j);
-    }
-    public void onItemPicCilck(MyWeiboRecyclerAdapter.onItemPicCilck onItemPicCilck){
-        this.onItemPicCilck=onItemPicCilck;
     }
     public interface onItemRetweetedPicCilck{
         void onItemRetweetedPicCilck(int i, int j);
     }
-    public void onItemRetweetedPicCilck(MyWeiboRecyclerAdapter.onItemRetweetedPicCilck onItemRetweetedPicCilck){
+    public void onItemRetweetedPicCilck(MentionswbAdapter.onItemRetweetedPicCilck onItemRetweetedPicCilck){
         this.onItemRetweetedPicCilck=onItemRetweetedPicCilck;
     }
 }

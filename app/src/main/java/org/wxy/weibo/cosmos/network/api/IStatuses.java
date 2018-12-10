@@ -1,6 +1,7 @@
 package org.wxy.weibo.cosmos.network.api;
 
 import org.wxy.weibo.cosmos.Bean.Home_timelinebean;
+import org.wxy.weibo.cosmos.Bean.MentionswbBean;
 import org.wxy.weibo.cosmos.Bean.ShareBean;
 import org.wxy.weibo.cosmos.Bean.ShowBean;
 
@@ -54,7 +55,7 @@ public interface IStatuses {
 
     //@我的微博
     @GET("2/statuses/mentions.json")
-    Call<String> mentions(@Query("access_token")String token,
-                          @Query("page")int page);
+    Call<MentionswbBean> mentions(@Query("access_token")String token,
+                                  @Query("page")int page);
 
 }

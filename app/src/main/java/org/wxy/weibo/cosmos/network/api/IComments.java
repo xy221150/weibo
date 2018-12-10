@@ -3,6 +3,7 @@ package org.wxy.weibo.cosmos.network.api;
 import org.wxy.weibo.cosmos.Bean.ByMeBean;
 import org.wxy.weibo.cosmos.Bean.CommentsShowBean;
 import org.wxy.weibo.cosmos.Bean.CreateBean;
+import org.wxy.weibo.cosmos.Bean.MentionsBean;
 import org.wxy.weibo.cosmos.Bean.ToMeBean;
 
 import retrofit2.Call;
@@ -36,6 +37,6 @@ public interface IComments {
 
     //@我的评论
     @GET("2/comments/mentions.json")
-    Call<String> mentions(@Query("access_token")String token,
-                          @Query("page")int page);
+    Call<MentionsBean> mentions(@Query("access_token")String token,
+                                @Query("page")int page);
 }
