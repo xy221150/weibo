@@ -10,7 +10,7 @@
       <in.srain.cube.views.ptr.PtrClassicFrameLayout
           android:id="@+id/homepage_ptrclassic"
           android:layout_width="match_parent"
-          android:layout_height="wrap_content">
+          android:layout_height="match_parent">
           <org.wxy.weibo.cosmos.view.TopicScrollView
               android:id="@+id/topsoroll"
               android:layout_width="match_parent"

@@ -105,8 +105,7 @@ public class AccountnumberActivity extends ActionbarActvity {
             public void ClickListener(int i) {
                ChangeAccount(activities.get(i).getName(),
                        activities.get(i).getToken(),
-                       activities.get(i).getUid(),
-                       activities.get(i).getUrl());
+                       activities.get(i).getUid());
             }
         });
     }
@@ -138,8 +137,6 @@ public class AccountnumberActivity extends ActionbarActvity {
                                                    mAccessToken.getToken(),
                                                    mAccessToken.getUid(),
                                                    response.body().getAvatar_large());
-                                           User.user().setName(response.body().getName());
-                                           User.user().setAvatar(response.body().getAvatar_large());
                                            finish();
                                            starActivity(AccountnumberActivity.class);
                                        }
@@ -203,7 +200,7 @@ public class AccountnumberActivity extends ActionbarActvity {
     }
 
     //提示框
-    private void ChangeAccount(final String name, final String token, final String uid,final String avatar) {
+    private void ChangeAccount(final String name, final String token, final String uid) {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("提示")
                 .setMessage("您确定把账号更换到"+name)
@@ -214,8 +211,6 @@ public class AccountnumberActivity extends ActionbarActvity {
                         dialog.dismiss();
                         User.user().setToken(token);
                         User.user().setUid(uid);
-                        User.user().setName(name);
-                        User.user().setAvatar(avatar);
                         Activity.getStack().finishAllActivity();
                         starActivity(MainActivity.class);
                     }

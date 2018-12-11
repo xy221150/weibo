@@ -3,10 +3,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:showIn="navigation_view">
 
-    <group android:checkableBehavior="single">
+    <group android:checkableBehavior="single"
+        >
         <item
             android:id="@+id/nav_index"
-            android:title="最新微博" />
+            android:title="最新微博"
+            />
         <item
             android:id="@+id/nav_notice"
             android:title="我的通知" />
@@ -25,14 +27,8 @@
         <item
             android:id="@+id/nav_setting"
             android:title="更换主题" />
+        <item
+            android:id="@+id/nav_end"
+            android:title="退出应用" />
     </group>
-
-    <item android:title="其他">
-        <menu>
-            <item
-                android:id="@+id/nav_end"
-                android:title="退出应用" />
-        </menu>
-    </item>
-
 </menu>

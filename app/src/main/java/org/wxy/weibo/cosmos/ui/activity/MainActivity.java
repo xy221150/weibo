@@ -11,7 +11,6 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
-import android.text.TextUtils;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -108,11 +107,6 @@ public class MainActivity extends WidgetActivity
                     starActivity(AccountnumberActivity.class);
             }
         });
-        if (User.user().getAvatar()!=""&&User.user().getName()!="")
-        {
-            GlideUtil.load(this,imageView,User.user().getAvatar());
-            name.setText(User.user().getName());
-        }
         User();
     }
 
@@ -254,6 +248,11 @@ public class MainActivity extends WidgetActivity
                         @Override
                         public void onResponse(Call<Userbean> call, Response<Userbean> response) {
                             userbean=response.body();
+                            if (userbean!=null)
+                            {
+                                GlideUtil.load(MainActivity.this,imageView,userbean.getAvatar_large());
+                                name.setText(userbean.getName());
+                            }
                         }
 
                         @Override
