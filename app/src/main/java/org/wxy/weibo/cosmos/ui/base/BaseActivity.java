@@ -13,6 +13,13 @@ import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.RecyclerView;
 import android.widget.Toast;
 
+import org.wxy.weibo.cosmos.ui.activity.UserShowActivity;
+
+import in.srain.cube.views.ptr.PtrClassicFrameLayout;
+import in.srain.cube.views.ptr.PtrFrameLayout;
+import in.srain.cube.views.ptr.header.MaterialHeader;
+import in.srain.cube.views.ptr.util.PtrLocalDisplay;
+
 /**
  * Created by Administrator on 2018/4/11.
  */
@@ -51,6 +58,53 @@ public abstract class BaseActivity extends AppCompatActivity {
             return;
         }
     }
+
+    public void Ptr(PtrClassicFrameLayout mPtrClassicFrameLayout){
+        // 头部阻尼系数
+        mPtrClassicFrameLayout.setResistanceHeader(1.7f);
+        // 底部阻尼系数
+        mPtrClassicFrameLayout.setResistanceFooter(1.7f);
+        // 默认1.2f，移动达到头部高度1.2倍时触发刷新操作
+        mPtrClassicFrameLayout.setRatioOfHeaderHeightToRefresh(1.2f);
+        // 头部回弹时间
+        mPtrClassicFrameLayout.setDurationToCloseHeader(1000);
+        // 底部回弹时间
+        mPtrClassicFrameLayout.setDurationToCloseFooter(1000);
+        // 释放刷新
+        mPtrClassicFrameLayout.setPullToRefresh(false);
+        // 释放时恢复到刷新状态的时间
+        mPtrClassicFrameLayout.setDurationToBackHeader(200);
+        mPtrClassicFrameLayout.setDurationToBackFooter(200);
+        // Matrial风格头部的实现
+        final MaterialHeader header = new MaterialHeader(this);
+        header.setPadding(0, PtrLocalDisplay.dp2px(15),0,0);
+        mPtrClassicFrameLayout.setHeaderView(header);
+        mPtrClassicFrameLayout.addPtrUIHandler(header);
+    }
+
+    public void Ptr(PtrFrameLayout mPtrClassicFrameLayout){
+        // 头部阻尼系数
+        mPtrClassicFrameLayout.setResistanceHeader(1.7f);
+        // 底部阻尼系数
+        mPtrClassicFrameLayout.setResistanceFooter(1.7f);
+        // 默认1.2f，移动达到头部高度1.2倍时触发刷新操作
+        mPtrClassicFrameLayout.setRatioOfHeaderHeightToRefresh(1.2f);
+        // 头部回弹时间
+        mPtrClassicFrameLayout.setDurationToCloseHeader(1000);
+        // 底部回弹时间
+        mPtrClassicFrameLayout.setDurationToCloseFooter(1000);
+        // 释放刷新
+        mPtrClassicFrameLayout.setPullToRefresh(false);
+        // 释放时恢复到刷新状态的时间
+        mPtrClassicFrameLayout.setDurationToBackHeader(200);
+        mPtrClassicFrameLayout.setDurationToBackFooter(200);
+        // Matrial风格头部的实现
+        final MaterialHeader header = new MaterialHeader(this);
+        header.setPadding(0, PtrLocalDisplay.dp2px(15),0,0);
+        mPtrClassicFrameLayout.setHeaderView(header);
+        mPtrClassicFrameLayout.addPtrUIHandler(header);
+    }
+
     public void closeprogress(){
         if (progressDialog!=null&&progressDialog.isShowing())
             progressDialog.dismiss();

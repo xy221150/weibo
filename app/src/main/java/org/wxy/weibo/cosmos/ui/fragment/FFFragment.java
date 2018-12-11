@@ -56,26 +56,7 @@ public class FFFragment extends BaseFragment {
     }
 
     private void setPtrFrameAttribute(){
-        // 头部阻尼系数
-        PtrFrameLayout.setResistanceHeader(1.7f);
-        // 底部阻尼系数
-        PtrFrameLayout.setResistanceFooter(1.7f);
-        // 默认1.2f，移动达到头部高度1.2倍时触发刷新操作
-        PtrFrameLayout.setRatioOfHeaderHeightToRefresh(1.2f);
-        // 头部回弹时间
-        PtrFrameLayout.setDurationToCloseHeader(1000);
-        // 底部回弹时间
-        PtrFrameLayout.setDurationToCloseFooter(1000);
-        // 释放刷新
-        PtrFrameLayout.setPullToRefresh(false);
-        // 释放时恢复到刷新状态的时间
-        PtrFrameLayout.setDurationToBackHeader(200);
-        PtrFrameLayout.setDurationToBackFooter(200);
-        // Matrial风格头部的实现
-        final MaterialHeader header = new MaterialHeader(getActivity());
-        header.setPadding(0, PtrLocalDisplay.dp2px(15),0,0);
-        PtrFrameLayout.setHeaderView(header);
-        PtrFrameLayout.addPtrUIHandler(header);
+        Ptr(PtrFrameLayout);
         PtrFrameLayout.post(new Runnable() {
             @Override
             public void run() {

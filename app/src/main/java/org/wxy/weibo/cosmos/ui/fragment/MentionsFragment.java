@@ -77,26 +77,7 @@ public class MentionsFragment extends BaseFragment {
         setPtrFrameAttribute();
     }
     private void setPtrFrameAttribute() {
-        // 头部阻尼系数
-        ptr.setResistanceHeader(1.7f);
-        // 底部阻尼系数
-        ptr.setResistanceFooter(1.7f);
-        // 默认1.2f，移动达到头部高度1.2倍时触发刷新操作
-        ptr.setRatioOfHeaderHeightToRefresh(1.2f);
-        // 头部回弹时间
-        ptr.setDurationToCloseHeader(1000);
-        // 底部回弹时间
-        ptr.setDurationToCloseFooter(1000);
-        // 释放刷新
-        ptr.setPullToRefresh(false);
-        // 释放时恢复到刷新状态的时间
-        ptr.setDurationToBackHeader(200);
-        ptr.setDurationToBackFooter(200);
-        // Matrial风格头部的实现
-        final MaterialHeader header = new MaterialHeader(getActivity());
-        header.setPadding(0, PtrLocalDisplay.dp2px(15),0,0);
-        ptr.setHeaderView(header);
-        ptr.addPtrUIHandler(header);
+        Ptr(ptr);
         ptr.post(new Runnable() {
             @Override
             public void run() {
