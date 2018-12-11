@@ -8,7 +8,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import org.wxy.weibo.cosmos.Bean.AccountnumberBean;
-import org.wxy.weibo.cosmos.MainActivity;
+import org.wxy.weibo.cosmos.Activity;
 import org.wxy.weibo.cosmos.R;
 import org.wxy.weibo.cosmos.utils.GlideUtil;
 import org.wxy.weibo.cosmos.view.CircleImageView;
@@ -24,14 +24,14 @@ public class AccountnumberAdapter extends RecyclerView.Adapter<AccountnumberAdap
     @NonNull
     @Override
     public AccountnumberHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view=View.inflate(MainActivity.mainActivity(),R.layout.item_accoutnumber,null);
+        View view=View.inflate(Activity.mainActivity(),R.layout.item_accoutnumber,null);
         return new AccountnumberHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull AccountnumberHolder holder, int position) {
         holder.text.setText(bean.get(position).getName());
-        GlideUtil.load(MainActivity.mainActivity(),holder.img,bean.get(position).getUrl());
+        GlideUtil.load(Activity.mainActivity(),holder.img,bean.get(position).getUrl());
         holder.linear.setOnClickListener(this);
         holder.linear.setTag(position);
     }

@@ -4,45 +4,6 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
-   <LinearLayout
-       android:layout_width="match_parent"
-       android:layout_height="wrap_content"
-       android:orientation="vertical"
-       >
-      <TextView
-          android:layout_width="match_parent"
-          android:layout_height="15dp"
-          android:background="@color/blue1"
-          />
-      <RelativeLayout
-          android:layout_width="match_parent"
-          android:layout_height="50dp"
-          android:paddingRight="10dp"
-          android:paddingLeft="10dp"
-          android:background="@color/blue1"
-          >
-         <TextView
-             android:id="@id/title"
-             android:layout_width="wrap_content"
-             android:layout_height="wrap_content"
-             android:text="全部微博"
-             android:drawableRight="@drawable/icon_down_white"
-             android:drawablePadding="3dp"
-             android:textSize="@dimen/text_size_big"
-             android:textColor="@color/white"
-             android:layout_centerVertical="true"
-             android:layout_centerHorizontal="true"
-             />
-         <ImageView
-             android:id="@+id/accountnumber"
-             android:layout_width="30dp"
-             android:layout_height="30dp"
-             android:src="@mipmap/ic_settings"
-             android:layout_centerVertical="true"
-             android:layout_alignParentRight="true"
-             />
-      </RelativeLayout>
-   </LinearLayout>
    <RelativeLayout
        android:layout_width="match_parent"
        android:layout_height="match_parent">
@@ -67,16 +28,39 @@
             </RelativeLayout>
           </org.wxy.weibo.cosmos.view.TopicScrollView>
       </in.srain.cube.views.ptr.PtrClassicFrameLayout>
+
     <android.support.design.widget.FloatingActionButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:fabSize="normal"
-        android:id="@+id/fabAddContact"
-        android:layout_marginTop="420dp"
+        android:id="@+id/fabOpen"
+        android:layout_marginTop="400dp"
         android:layout_alignParentRight="true"
         android:layout_marginRight="10dp"
-        android:src="@mipmap/ic_msg"
+        android:src="@mipmap/ic_add"
         app:backgroundTint="@color/white"
         />
+       <android.support.design.widget.FloatingActionButton
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           app:fabSize="normal"
+           android:id="@+id/fabType"
+           android:layout_marginTop="360dp"
+           android:layout_toLeftOf="@id/fabOpen"
+           android:src="@mipmap/ic_type"
+           android:visibility="gone"
+           app:backgroundTint="@color/white"
+           />
+       <android.support.design.widget.FloatingActionButton
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           app:fabSize="normal"
+           android:id="@+id/fabShare"
+           android:layout_marginTop="440dp"
+           android:layout_toLeftOf="@id/fabOpen"
+           android:src="@mipmap/ic_msg"
+           android:visibility="gone"
+           app:backgroundTint="@color/white"
+           />
    </RelativeLayout>
 </LinearLayout>

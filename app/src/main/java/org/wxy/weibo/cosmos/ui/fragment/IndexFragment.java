@@ -51,7 +51,6 @@ import retrofit2.Response;
  */
 
 public class IndexFragment extends BaseFragment implements View.OnClickListener{
-    private TextView title;
     private RecyclerView mWeiboRecycler;
     private IStatuses statuses;
     private MyWeiboRecyclerAdapter adapter;
@@ -59,7 +58,9 @@ public class IndexFragment extends BaseFragment implements View.OnClickListener{
     private Home_timelinebean bean=new Home_timelinebean();
     private int page=1;//页码
     private int feature=0;//微博类型
-    private FloatingActionButton fabAddContact;//fab
+    private FloatingActionButton fabOpen;//fab
+    private FloatingActionButton fabType;
+    private FloatingActionButton fabShare;
     private AnimatorSet mHideFAB;//隐藏fab
     private AnimatorSet mShowFAB;//显示fab
     private TopicScrollView topsoroll;
@@ -70,7 +71,6 @@ public class IndexFragment extends BaseFragment implements View.OnClickListener{
     private NormalListDialog dialog;
     private List<ImageInfo> list;//图片数组
     private ImageInfo imageInfo;
-    private ImageView accountnumber;
     private MsgThread msgThread;
     private static final int REFRESH=1;//下拉重新加载
     private static final int LOADMORE=0;//上拉加载更多
@@ -113,10 +113,10 @@ public class IndexFragment extends BaseFragment implements View.OnClickListener{
         super.initView(view);
         mWeiboRecycler=view.findViewById(R.id.homepage_weibo_list);
         mPtrClassicFrameLayout=view.findViewById(R.id.homepage_ptrclassic);
-        fabAddContact=view.findViewById(R.id.fabAddContact);
+        fabOpen=view.findViewById(R.id.fabOpen);
+        fabShare=view.findViewById(R.id.fabShare);
+        fabType=view.findViewById(R.id.fabType);
         topsoroll=view.findViewById(R.id.topsoroll);
-        title=view.findViewById(R.id.title);
-        accountnumber=view.findViewById(R.id.accountnumber);
     }
 
 
@@ -126,12 +126,11 @@ public class IndexFragment extends BaseFragment implements View.OnClickListener{
         super.init();
         mHideFAB=(AnimatorSet) AnimatorInflater.loadAnimator(getActivity(),R.animator.scroll_hide_fab);
         mShowFAB=(AnimatorSet)AnimatorInflater.loadAnimator(getActivity(),R.animator.scroll_show_fab);
-        mHideFAB.setTarget(fabAddContact);
-        mShowFAB.setTarget(fabAddContact);
-        fabAddContact.setOnClickListener(this);
-        title.setOnClickListener(this);
-        accountnumber.setOnClickListener(this);
-
+        mHideFAB.setTarget(fabOpen);
+        mShowFAB.setTarget(fabOpen);
+        fabOpen.setOnClickListener(this);
+        fabShare.setOnClickListener(this);
+        fabType.setOnClickListener(this);
     }
     @Override
     protected void initdata() {
@@ -162,6 +161,9 @@ public class IndexFragment extends BaseFragment implements View.OnClickListener{
                         } else if(mLastScrollY < newScrollY && FAB_VISIBLE == true){
                             FAB_VISIBLE = false;
                             hideFAB();
+                            fabType.setVisibility(View.GONE);
+                            fabShare.setVisibility(View.GONE);
+                            fabOpen.setImageResource(R.mipmap.ic_add);
                         }
                     }
                     mLastScrollY = newScrollY;
@@ -174,6 +176,9 @@ public class IndexFragment extends BaseFragment implements View.OnClickListener{
                     } else if(firstVisibleItem < mPreviousFirstVisibleItem && FAB_VISIBLE == false){ //向上滚动
                         FAB_VISIBLE = false;
                         hideFAB();
+                        fabType.setVisibility(View.GONE);
+                        fabShare.setVisibility(View.GONE);
+                        fabOpen.setImageResource(R.mipmap.ic_add);
                     }
                     mLastScrollY = getTopItemScrollY();
                     mPreviousFirstVisibleItem = firstVisibleItem;
@@ -315,14 +320,25 @@ public class IndexFragment extends BaseFragment implements View.OnClickListener{
     public void onClick(View view) {
         switch (view.getId())
         {
-            case R.id.fabAddContact:
-                starActivity(ShareActivity.class);//发送微博
+            case R.id.fabOpen:
+                if (fabShare.getVisibility()==View.GONE&&fabType.getVisibility()==View.GONE)
+                {
+                    fabOpen.setImageResource(R.mipmap.ic_off);
+                    fabShare.setVisibility(View.VISIBLE);
+                    fabType.setVisibility(View.VISIBLE);
+                }
+                else
+                {
+                    fabOpen.setImageResource(R.mipmap.ic_add);
+                    fabShare.setVisibility(View.GONE);
+                    fabType.setVisibility(View.GONE);
+                }
                 break;
-            case R.id.title:
+            case R.id.fabType:
                 Dialog();
                 break;
-            case R.id.accountnumber:
-                starActivity(AccountnumberActivity.class);
+            case R.id.fabShare:
+                starActivity(ShareActivity.class);//发送微博
                 break;
         }
     }
@@ -357,7 +373,6 @@ public class IndexFragment extends BaseFragment implements View.OnClickListener{
              public void onOperItemClick(AdapterView<?> parent, View view, int position, long id) {
                  feature=position;
                  setPtrFrameAttribute();
-                 title.setText(strings[position]);
                  topsoroll.smoothScrollTo(0,0);
                  dialog.dismiss();
              }

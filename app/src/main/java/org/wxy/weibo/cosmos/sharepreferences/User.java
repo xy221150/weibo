@@ -3,7 +3,7 @@ package org.wxy.weibo.cosmos.sharepreferences;
 import android.content.Context;
 import android.content.SharedPreferences;
 
-import org.wxy.weibo.cosmos.MainActivity;
+import org.wxy.weibo.cosmos.Activity;
 
 /**
  * Created by wxy on 2018/7/3.
@@ -12,15 +12,15 @@ import org.wxy.weibo.cosmos.MainActivity;
 public class User {
      private static User user;
      private String name;
-     private String password;
      private String token;
      private String uid;
+    private String avatar;
      public User(){
          UserInfo info=new UserInfo();
-         name=info.getStringValue(MainActivity.mainActivity(),"name");
-         password=info.getStringValue(MainActivity.mainActivity(),"password");
-         token=info.getStringValue(MainActivity.mainActivity(),"token");
-         uid=info.getStringValue(MainActivity.mainActivity(),"uid");
+         name=info.getStringValue(Activity.mainActivity(),"name");
+         token=info.getStringValue(Activity.mainActivity(),"token");
+         uid=info.getStringValue(Activity.mainActivity(),"uid");
+         avatar=info.getStringValue(Activity.mainActivity(),"avatar");
      }
      public static User user(){
          if (user==null)
@@ -36,14 +36,16 @@ public class User {
 
     public void setName(String name) {
         this.name = name;
+        UserInfo.SharedPreferences(Activity.mainActivity(),"name",name);
     }
 
-    public String getPassword() {
-        return password;
+    public String getAvatar() {
+        return avatar;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setAvatar(String avatar) {
+        this.avatar = avatar;
+        UserInfo.SharedPreferences(Activity.mainActivity(),"avatar",avatar);
     }
 
     public String getToken() {
@@ -52,7 +54,7 @@ public class User {
 
     public void setToken(String token) {
         this.token = token;
-        UserInfo.SharedPreferences(MainActivity.mainActivity(),"token",token);
+        UserInfo.SharedPreferences(Activity.mainActivity(),"token",token);
     }
 
     public String getUid() {
@@ -61,7 +63,7 @@ public class User {
 
     public void setUid(String uid) {
         this.uid = uid;
-        UserInfo.SharedPreferences(MainActivity.mainActivity(),"uid",uid);
+        UserInfo.SharedPreferences(Activity.mainActivity(),"uid",uid);
     }
 
     public static class UserInfo {

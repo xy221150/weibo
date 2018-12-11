@@ -19,7 +19,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import org.wxy.weibo.cosmos.Constants;
-import org.wxy.weibo.cosmos.MainActivity;
+import org.wxy.weibo.cosmos.Activity;
 import org.wxy.weibo.cosmos.R;
 import org.wxy.weibo.cosmos.ui.activity.UserShowActivity;
 import org.wxy.weibo.cosmos.ui.activity.WebActivity;
@@ -46,9 +46,9 @@ public class WeiboContentUtil {
                 @Override
                 public void onClick(View view) {
                     if (urlSpan.getURL().indexOf(Constants.SCHEME_URL)!=-1)
-                    new WebActivity().getUrl(MainActivity.mainActivity(),urlSpan.getURL().replace("url:",""));
+                    new WebActivity().getUrl(Activity.mainActivity(),urlSpan.getURL().replace("url:",""));
                     if (urlSpan.getURL().indexOf(Constants.SCHEME_AT)!=-1)
-                        new UserShowActivity().getName(MainActivity.mainActivity(),urlSpan.getURL().replace("at:@",""));
+                        new UserShowActivity().getName(Activity.mainActivity(),urlSpan.getURL().replace("at:@",""));
                 }
             };
             if (urlSpan.getURL().startsWith(Constants.SCHEME_TOPIC))//话题
@@ -63,7 +63,7 @@ public class WeiboContentUtil {
                 int start =builder.getSpanStart(urlSpan);
                 int end=builder.getSpanEnd(urlSpan);
                 builder.removeSpan(urlSpan);
-                SpannableStringBuilder stringBuilder = getUrlTextSpannableString(MainActivity.mainActivity(),urlSpan.getURL(),textsize);
+                SpannableStringBuilder stringBuilder = getUrlTextSpannableString(Activity.mainActivity(),urlSpan.getURL(),textsize);
                 builder.replace(start,end,stringBuilder);
                 builder.setSpan(clickableSpan,start,start+stringBuilder.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
             }
@@ -84,7 +84,7 @@ public class WeiboContentUtil {
             int resid=EmjoyUtil.getImageByName(emjoy);
             if (resid!=-1)
             {
-                Drawable drawable=MainActivity.mainActivity().getResources().getDrawable(resid);
+                Drawable drawable=Activity.mainActivity().getResources().getDrawable(resid);
                 drawable.setBounds(0,0,(int)(textsize*1.3),(int)(textsize*1.3));
                 VerticalImageSpan span=new VerticalImageSpan(drawable);
                 builder.setSpan(span,start,end,Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
@@ -97,7 +97,7 @@ public class WeiboContentUtil {
         SpannableStringBuilder builder=new SpannableStringBuilder(source);
         String prefix=" ";
         builder.replace(0,prefix.length(),prefix);
-        Drawable drawable = context.getResources().getDrawable(R.drawable.ic_sending);
+        Drawable drawable = context.getResources().getDrawable(R.mipmap.ic_send_blue);
         drawable.setBounds(0,0,size,size);
         builder.setSpan(new VerticalImageSpan(drawable),prefix.length(),source.length(),Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
         builder.append("网页链接");

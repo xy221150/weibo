@@ -5,7 +5,7 @@ import android.support.annotation.Nullable;
 import android.view.View;
 import android.widget.TextView;
 
-import org.wxy.weibo.cosmos.MainActivity;
+import org.wxy.weibo.cosmos.Activity;
 import org.wxy.weibo.cosmos.R;
 import org.wxy.weibo.cosmos.sharepreferences.User;
 import org.wxy.weibo.cosmos.ui.base.ActionbarActvity;
@@ -37,7 +37,7 @@ public class SettingActivity extends ActionbarActvity {
             @Override
             public void onClick(View v) {
                 User.user().setToken("");
-                MainActivity.getStack().finishAllActivity();
+                Activity.getStack().finishAllActivity();
             }
         });
     }

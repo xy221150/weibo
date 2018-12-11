@@ -1,0 +1,230 @@
+package org.wxy.weibo.cosmos.ui.activity;
+
+import android.content.Context;
+import android.content.DialogInterface;
+import android.support.design.widget.NavigationView;
+import android.support.v4.app.FragmentTransaction;
+import android.support.v4.view.GravityCompat;
+import android.support.v4.view.MenuItemCompat;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v7.app.AlertDialog;
+import android.support.v7.widget.SearchView;
+import android.support.v7.widget.Toolbar;
+import android.text.TextUtils;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.TextView;
+
+import com.github.javiersantos.bottomdialogs.BottomDialog;
+
+import org.wxy.weibo.cosmos.Activity;
+import org.wxy.weibo.cosmos.R;
+import org.wxy.weibo.cosmos.sharepreferences.User;
+import org.wxy.weibo.cosmos.ui.base.BaseFragment;
+import org.wxy.weibo.cosmos.ui.base.WidgetActivity;
+import org.wxy.weibo.cosmos.ui.fragment.IndexFragment;
+import org.wxy.weibo.cosmos.ui.fragment.MyFragment;
+import org.wxy.weibo.cosmos.ui.fragment.NoticeFragment;
+import org.wxy.weibo.cosmos.utils.GlideUtil;
+import org.wxy.weibo.cosmos.view.CircleImageView;
+
+
+public class MainActivity extends WidgetActivity
+        implements NavigationView.OnNavigationItemSelectedListener {
+    private Toolbar toolbar;
+    private DrawerLayout drawer;
+    private ActionBarDrawerToggle toggle;
+    private NavigationView navigationView;
+    private BottomDialog.Builder builder;
+    private CircleImageView imageView;
+    private TextView text;
+    private TextView name;
+    private IndexFragment indexfragment;
+    private MyFragment myFragment;
+    private NoticeFragment noticeFragment;
+    private BaseFragment basefragment;
+    private FrameLayout frameLayout;
+    @Override
+    protected int getLayoutID() {
+        return R.layout.activity_main;
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        if (User.user().getToken()==null||User.user().getToken().equals(""))
+            Login();
+    }
+
+    @Override
+    protected void initView() {
+        super.initView();
+        toolbar = findViewById(R.id.toolbar);
+        toolbar.setTitle("最新微博");
+        setSupportActionBar(toolbar);
+        drawer = findViewById(R.id.drawer_layout);
+        navigationView = findViewById(R.id.nav_view);
+        drawer = findViewById(R.id.drawer_layout);
+        View view=navigationView.getHeaderView(0);
+        imageView=view.findViewById(R.id.imageView);
+        text=view.findViewById(R.id.text);
+        name=view.findViewById(R.id.name);
+        frameLayout=findViewById(R.id.fl_main);
+    }
+
+    @Override
+    protected void init() {
+        super.init();
+        toggle = new ActionBarDrawerToggle(
+                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+        drawer.addDrawerListener(toggle);
+        toggle.syncState();
+        navigationView.setNavigationItemSelectedListener(this);
+        builder = new BottomDialog.Builder(this);
+        indexfragment=new IndexFragment();//实例化fragment
+        getSupportFragmentManager().beginTransaction()
+                .add(R.id.fl_main, indexfragment)
+                .commit();
+        basefragment=indexfragment;
+    }
+
+    @Override
+    protected void initdata() {
+        super.initdata();
+        imageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                    starActivity(AccountnumberActivity.class);
+            }
+        });
+        if (User.user().getAvatar()!=""&&User.user().getName()!="")
+        {
+            GlideUtil.load(this,imageView,User.user().getAvatar());
+            name.setText(User.user().getName());
+        }
+    }
+
+    @Override
+    public void onBackPressed() {
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        if (drawer.isDrawerOpen(GravityCompat.START)) {//左侧栏是开启状态，则关闭
+            drawer.closeDrawer(GravityCompat.START);
+        } else {
+           showExit();
+        }
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {//搜索栏
+        getMenuInflater().inflate(R.menu.main, menu);
+        MenuItem searchItem = menu.findItem(R.id.action_search);
+        final SearchView searchView = (SearchView) MenuItemCompat.getActionView(searchItem);
+        searchView.setIconified(true);
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String s) {//回车搜索
+                return false;
+            }
+            @Override
+            public boolean onQueryTextChange(String s) {
+                return false;
+            }
+        });
+        return super.onCreateOptionsMenu(menu);
+    }
+
+
+    @SuppressWarnings("StatementWithEmptyBody")
+    @Override
+    public boolean onNavigationItemSelected(MenuItem item) {//左侧栏item点击事件
+        int id = item.getItemId();
+
+        if (id == R.id.nav_index) {
+           toolbar.setTitle("最新微博");
+           switchFragment(indexfragment);
+            basefragment=indexfragment;
+        } else if (id == R.id.nav_notice) {
+            noticeFragment=new NoticeFragment();
+            toolbar.setTitle("通知");
+           switchFragment(noticeFragment);
+            basefragment=noticeFragment;
+        } else if (id == R.id.nav_my) {
+            myFragment=new MyFragment();
+            toolbar.setTitle("我的微博");
+            switchFragment(myFragment);
+            basefragment=myFragment;
+        } else if (id == R.id.nav_setting) {
+
+        } else if (id == R.id.nav_user) {
+//             new UserAcitivty().IntentUser(this,User.user().getUid());
+        } else if (id == R.id.nav_end) {
+            showExit();
+        }
+        DrawerLayout drawer = findViewById(R.id.drawer_layout);
+        drawer.closeDrawer(GravityCompat.START);
+        return true;
+    }
+    private void switchFragment(BaseFragment to) {//切换界面
+        if (basefragment != null) {
+
+            FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+            if (to.isAdded()) {
+                transaction.hide(basefragment).show(to).commit();
+            } else {
+                transaction.hide(basefragment).add(R.id.fl_main, to).commit();
+            }
+
+        }
+
+    }
+    private void showExit() {//退出提示
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("提示")
+                .setMessage("您确定要退出吗？")
+                .setCancelable(true)
+                .setPositiveButton("确定", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                        Activity.getStack().finishAllActivity();
+                    }
+                })
+                .setNegativeButton("取消", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                    }
+                })
+                .create()
+                .setCanceledOnTouchOutside(false);
+        builder.show();
+    }
+    public void Login()//登录提示
+    {
+        final BottomDialog.Builder dialog=new BottomDialog.Builder(this);
+        dialog.setTitle("欢迎")
+                .setContent("授权后显示内容")
+                .setPositiveText("授权")
+                .setNegativeText("取消")
+                .setNegativeTextColor(R.color.white)
+                .setNegativeTextColorResource(R.color.colorPrimary)
+                .setPositiveBackgroundColorResource(R.color.colorPrimary)
+                .setPositiveTextColorResource(android.R.color.white)
+                .onPositive(new BottomDialog.ButtonCallback() {
+                    @Override
+                    public void onClick(BottomDialog bottomDialog) {
+                        starActivity(AccountnumberActivity.class);
+                    }
+                })
+                .onNegative(new BottomDialog.ButtonCallback() {
+                    @Override
+                    public void onClick( BottomDialog bottomDialog) {
+                        bottomDialog.dismiss();
+                    }
+                })
+                .show();
+    }
+}

@@ -1,9 +1,8 @@
 package org.wxy.weibo.cosmos.utils;
 
-import android.content.Context;
 import android.widget.Toast;
 
-import org.wxy.weibo.cosmos.MainActivity;
+import org.wxy.weibo.cosmos.Activity;
 
 /**
  * Created by wxy on 2018/7/5.
@@ -14,7 +13,7 @@ public class ToastUtils {
     private static ToastUtils mToastUtils;
 
     private ToastUtils() {
-        mToast = Toast.makeText(MainActivity.mainActivity(), null, Toast.LENGTH_SHORT);
+        mToast = Toast.makeText(Activity.mainActivity(), null, Toast.LENGTH_SHORT);
     }
 
     public static synchronized ToastUtils getInstanc() {

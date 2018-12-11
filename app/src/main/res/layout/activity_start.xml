@@ -9,7 +9,7 @@
        android:layout_height="match_parent"
        android:textSize="@dimen/text_size_big"
        android:text="启动页"
-       android:background="@color/blue1"
+       android:background="?attr/colorPrimary"
        android:gravity="center"
        android:textColor="@color/white"
        />

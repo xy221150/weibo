@@ -34,11 +34,7 @@ public class StartActivity extends WidgetActivity {
 
         @Override
         public void onFinish() {
-            if (User.user().getToken().equals("")||User.user().getToken()=="")
-                starActivity(AccountnumberActivity.class);
-            else
-                starActivity(HomeActivity.class);
-
+            starActivity(MainActivity.class);
             finish();
         }
     }

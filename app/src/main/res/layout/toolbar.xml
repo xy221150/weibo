@@ -7,13 +7,13 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="15dp"
-        android:background="@color/blue1"
+        android:background="?attr/colorPrimary"
         ></RelativeLayout>
   <android.support.v7.widget.Toolbar
       android:id="@+id/Tool_bar"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
-      android:background="@color/blue1"
+      android:background="?attr/colorPrimary"
       >
       <TextView
           android:id="@+id/Tool_Title"

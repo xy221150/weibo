@@ -3,7 +3,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white70"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     >
 <org.wxy.weibo.cosmos.view.VerticalScrollView
@@ -134,7 +133,7 @@
             ></View>
        <TextView
            android:paddingLeft="10dp"
-           android:background="@color/blue1"
+           android:background="?attr/colorPrimary"
            android:layout_width="match_parent"
            android:layout_height="40dp"
            android:layout_below="@id/v"
@@ -169,7 +168,7 @@
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:layout_alignParentBottom="true"
-            android:background="@color/blue1"
+            android:background="?attr/colorPrimary"
             android:orientation="horizontal"
             >
             <EditText
@@ -187,7 +186,7 @@
                 android:layout_toRightOf="@id/text"
                 android:layout_width="30dp"
                 android:layout_height="match_parent"
-                android:src="@drawable/ic_sending"
+                android:src="@mipmap/ic_send"
                 />
         </LinearLayout>
     </LinearLayout>

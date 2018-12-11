@@ -2,179 +2,60 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white70"
-    >
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white70">
     <in.srain.cube.views.ptr.PtrClassicFrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/my_ptrclassic"
         >
-    <org.wxy.weibo.cosmos.view.VerticalScrollView
-        android:id="@+id/my_verticalscrollview"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-        <LinearLayout
-            android:id="@+id/line"
+        <org.wxy.weibo.cosmos.view.TopicScrollView
+           android:id="@+id/topsoroll"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:clipChildren="false"
-            android:orientation="vertical">
+            android:layout_height="wrap_content">
             <RelativeLayout
-                android:id="@+id/my_head"
                 android:layout_width="match_parent"
-                android:background="@color/blue1"
-                android:paddingBottom="5dp"
-                android:layout_height="match_parent">
-
-                <ImageView
-                    android:id="@+id/my_background"
+                android:layout_height="wrap_content">
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/my_weibo_list"
                     android:layout_width="match_parent"
-                    android:layout_height="150dp"
-                    android:scaleType="fitXY"
-                    android:src="@drawable/test" />
-
-                <org.wxy.weibo.cosmos.view.CircleImageView
-                    android:id="@+id/my_profile_image"
-                    android:layout_width="75dp"
-                    android:layout_height="75dp"
-                    android:layout_alignParentTop="true"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginTop="110dp" />
-
-                <LinearLayout
-                    android:id="@+id/friends"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignRight="@+id/my_profile_image"
-                    android:layout_alignTop="@+id/my_profile_image"
-                    android:layout_below="@+id/my_profile_image"
-                    android:layout_marginRight="100dp"
-                    android:layout_marginTop="50dp"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:id="@+id/my_friends_count"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textColor="@color/white"
-                        android:text="0" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="个关注"
-                        android:textColor="@color/white"
-                        />
-
-                </LinearLayout>
-                <LinearLayout
-                    android:id="@+id/followers"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignTop="@+id/my_profile_image"
-                    android:layout_below="@+id/my_profile_image"
-                    android:layout_marginTop="50dp"
-                    android:orientation="horizontal"
-                    android:layout_marginLeft="26dp"
-                    android:layout_toRightOf="@+id/my_profile_image">
-
-                    <TextView
-                        android:id="@+id/my_followers_count"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textColor="@color/white"
-                        android:text="0" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textColor="@color/white"
-                        android:text="个粉丝" />
-                </LinearLayout>
-              <TextView
-                  android:layout_marginTop="10dp"
-                  android:textColor="@color/white"
-                  android:layout_width="wrap_content"
-                  android:layout_height="wrap_content"
-                  android:textSize="@dimen/text_size_big"
-                  android:layout_below="@+id/my_profile_image"
-                  android:layout_centerHorizontal="true"
-                  android:id="@+id/my_name"
-                  android:text=""
-                  />
+                    android:layout_height="fill_parent"
+                    android:scrollbars="none"
+                    ></android.support.v7.widget.RecyclerView>
             </RelativeLayout>
-             <View
-                 android:layout_width="match_parent"
-                 android:layout_height="1dp"
-                 android:background="@color/gray10"
-                 ></View>
-             <RelativeLayout
-                 android:layout_width="match_parent"
-                 android:layout_height="wrap_content">
-                 <android.support.v7.widget.RecyclerView
-                     android:id="@+id/my_weibo_list"
-                     android:layout_width="match_parent"
-                     android:layout_height="fill_parent"
-                     ></android.support.v7.widget.RecyclerView>
-             </RelativeLayout>
-        </LinearLayout>
-    </org.wxy.weibo.cosmos.view.VerticalScrollView>
+        </org.wxy.weibo.cosmos.view.TopicScrollView>
     </in.srain.cube.views.ptr.PtrClassicFrameLayout>
-
-    <LinearLayout
-        android:id="@+id/my_toolbar"
-        android:layout_width="match_parent"
+    <android.support.design.widget.FloatingActionButton
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:gravity="center"
-        android:orientation="vertical"
+        app:fabSize="normal"
+        android:id="@+id/fabOpen"
+        android:layout_marginTop="400dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="10dp"
+        android:src="@mipmap/ic_add"
+        app:backgroundTint="@color/white"
+        />
+    <android.support.design.widget.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:fabSize="normal"
+        android:id="@+id/fabType"
+        android:layout_marginTop="360dp"
+        android:layout_toLeftOf="@id/fabOpen"
+        android:src="@mipmap/ic_type"
         android:visibility="gone"
-        >
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="15dp" />
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:orientation="horizontal">
-
-            <org.wxy.weibo.cosmos.view.CircleImageView
-                android:id="@+id/my_toolbar_image"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_centerVertical="true"
-                android:layout_marginLeft="10dp"
-                android:src="@mipmap/ic_launcher" />
-
-            <TextView
-                android:id="@+id/my_toolbar_name"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:layout_marginTop="10dp"
-                android:layout_marginLeft="10dp"
-                android:layout_toRightOf="@+id/my_toolbar_image"
-                android:text=""
-                android:textColor="@color/white"
-                android:textSize="15dp" />
-
-            <TextView
-                android:id="@+id/type"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                android:layout_centerVertical="true"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="20dp"
-                android:layout_marginTop="12dp"
-                android:drawablePadding="3dp"
-                android:drawableRight="@drawable/icon_down_white"
-                android:text="全部微博"
-                android:textColor="@color/white"
-                android:textSize="15dp" />
-        </RelativeLayout>
-    </LinearLayout>
+        app:backgroundTint="@color/white"
+        />
+    <android.support.design.widget.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:fabSize="normal"
+        android:id="@+id/fabShare"
+        android:layout_marginTop="440dp"
+        android:layout_toLeftOf="@id/fabOpen"
+        android:src="@mipmap/ic_msg"
+        android:visibility="gone"
+        app:backgroundTint="@color/white"
+        />
 </RelativeLayout>

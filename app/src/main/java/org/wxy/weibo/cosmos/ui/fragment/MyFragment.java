@@ -1,37 +1,31 @@
 package org.wxy.weibo.cosmos.ui.fragment;
 
-import android.content.Intent;
+import android.animation.AnimatorInflater;
+import android.animation.AnimatorSet;
+import android.annotation.SuppressLint;
 import android.graphics.Color;
 import android.os.Handler;
 import android.os.Message;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
-import android.view.ViewTreeObserver;
 import android.widget.AdapterView;
-import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
-import android.widget.TextView;
 
 import com.flyco.dialog.listener.OnOperItemClickL;
 import com.flyco.dialog.widget.NormalListDialog;
 
 import org.wxy.weibo.cosmos.R;
 import org.wxy.weibo.cosmos.Bean.Home_timelinebean;
-import org.wxy.weibo.cosmos.Bean.Userbean;
 import org.wxy.weibo.cosmos.network.RetrofitHelper;
 import org.wxy.weibo.cosmos.network.api.IStatuses;
-import org.wxy.weibo.cosmos.network.api.IUser;
 import org.wxy.weibo.cosmos.sharepreferences.User;
-import org.wxy.weibo.cosmos.ui.activity.FriendsActivity;
+import org.wxy.weibo.cosmos.ui.activity.ShareActivity;
 import org.wxy.weibo.cosmos.ui.activity.ShowActivity;
-import org.wxy.weibo.cosmos.ui.activity.UserAcitivty;
 import org.wxy.weibo.cosmos.ui.base.BaseFragment;
 import org.wxy.weibo.cosmos.ui.fragment.adapter.MyWeiboRecyclerAdapter;
-import org.wxy.weibo.cosmos.utils.GlideUtil;
-import org.wxy.weibo.cosmos.view.CircleImageView;
-import org.wxy.weibo.cosmos.view.VerticalScrollView;
+import org.wxy.weibo.cosmos.view.TopicScrollView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -51,32 +45,27 @@ import retrofit2.Response;
  * Created by wxy on 2018/7/4.
  */
 
-public class MyFragment extends BaseFragment implements VerticalScrollView.ScrollViewListener,View.OnClickListener{
-    private TextView type;
-    private VerticalScrollView mVerticalScrollView;
-    private LinearLayout mToolbar;
-    private LinearLayout friends;
-    private LinearLayout followers;
-    private CircleImageView mToolbar_Profile_image;
-    private TextView mToolbar_Name;
-    private RelativeLayout mHead;
-    private TextView mName;
-    private TextView mFollowers_count;
-    private TextView mFriends_count;
-    private CircleImageView mProfile_image;
-    private IUser user;
+public class MyFragment extends BaseFragment implements View.OnClickListener{
     private IStatuses statuses;
     private RecyclerView myWeibolist;
     private int feature=0;
     private int page=1;
-    private int height;
+    private Home_timelinebean bean;
     private MyWeiboRecyclerAdapter adapter;
     private PtrClassicFrameLayout mPtrClassicFrameLayout;
-    private Home_timelinebean bean=new Home_timelinebean();
     private NormalListDialog dialog;
     private List<ImageInfo> list;
     private ImageInfo imageInfo;
-    private Userbean userbean;
+    private FloatingActionButton fabOpen;//fab
+    private FloatingActionButton fabType;
+    private FloatingActionButton fabShare;
+    private AnimatorSet mHideFAB;//隐藏fab
+    private AnimatorSet mShowFAB;//显示fab
+    private TopicScrollView topsoroll;
+    private boolean FAB_VISIBLE = true;
+    private int mPreviousFirstVisibleItem;
+    private int mLastScrollY;
+    private int mScrollThreshold = 2;
     private MsgThread msgThread;
     private static final int REFRESH=1;//下拉重新加载
     private static final int LOADMORE=0;//上拉加载更多
@@ -113,21 +102,13 @@ public class MyFragment extends BaseFragment implements VerticalScrollView.Scrol
     @Override
     protected void initView(View view) {
         super.initView(view);
-        mToolbar=view.findViewById(R.id.my_toolbar);
-        mToolbar_Profile_image=view.findViewById(R.id.my_toolbar_image);
-        mToolbar_Name=view.findViewById(R.id.my_toolbar_name);
-        mVerticalScrollView=view.findViewById(R.id.my_verticalscrollview);
-        mProfile_image=view.findViewById(R.id.my_profile_image);
-        mHead=view.findViewById(R.id.my_head);
-        mName=view.findViewById(R.id.my_name);
-        mFollowers_count=view.findViewById(R.id.my_followers_count);
-        mFriends_count=view.findViewById(R.id.my_friends_count);
+
         myWeibolist=view.findViewById(R.id.my_weibo_list);
-        type=view.findViewById(R.id.type);
         mPtrClassicFrameLayout=view.findViewById(R.id.my_ptrclassic);
-        friends=view.findViewById(R.id.friends);
-        followers=view.findViewById(R.id.followers);
-        user= RetrofitHelper.create(IUser.class);
+        fabOpen=view.findViewById(R.id.fabOpen);
+        fabShare=view.findViewById(R.id.fabShare);
+        fabType=view.findViewById(R.id.fabType);
+        topsoroll=view.findViewById(R.id.topsoroll);
         statuses=RetrofitHelper.create(IStatuses.class);
         ((DefaultItemAnimator)myWeibolist.getItemAnimator()).setSupportsChangeAnimations(false);
         myWeibolist.getItemAnimator().setChangeDuration(0);
@@ -136,20 +117,21 @@ public class MyFragment extends BaseFragment implements VerticalScrollView.Scrol
     @Override
     protected void init() {
         super.init();
-        adapter=new MyWeiboRecyclerAdapter(bean);
-        myWeibolist.setAdapter(adapter);
+        mHideFAB=(AnimatorSet) AnimatorInflater.loadAnimator(getActivity(),R.animator.scroll_hide_fab);
+        mShowFAB=(AnimatorSet)AnimatorInflater.loadAnimator(getActivity(),R.animator.scroll_show_fab);
+        mHideFAB.setTarget(fabOpen);
+        mShowFAB.setTarget(fabOpen);
+        fabOpen.setOnClickListener(this);
+        fabShare.setOnClickListener(this);
+        fabType.setOnClickListener(this);
     }
 
     @Override
     protected void initdata() {
         super.initdata();
-        User();
-        initListeners();
+        myWeibolist.setAdapter(adapter);
+        Fab();
         setPtrFrameAttribute();
-        type.setOnClickListener(this);
-        friends.setOnClickListener(this);
-        followers.setOnClickListener(this);
-        mProfile_image.setOnClickListener(this);
     }
     private void Statusers(){
         statuses.getuser_timeline(User.user().getToken(),User.user().getUid(),null,15,page,feature).
@@ -229,33 +211,65 @@ public class MyFragment extends BaseFragment implements VerticalScrollView.Scrol
                 });
     }
 
-    private void User(){
-        user.getuser(User.user().getToken(),User.user().getUid(),null)
-                .enqueue(new Callback<Userbean>() {
-                    @Override
-                    public void onResponse(Call<Userbean> call, Response<Userbean> response) {
-                        userbean=response.body();
-                       if (userbean==null)
-                       {
-                           showToast("获取数据失败");
-                       }
-                       else
-                       {
-                           User.user().setName(userbean.getScreen_name());
-                           GlideUtil.load(getActivity(),mProfile_image,userbean.getAvatar_large());
-                           GlideUtil.load(getActivity(),mToolbar_Profile_image,userbean.getAvatar_large());
-                           mName.setText(userbean.getScreen_name());
-                           mToolbar_Name.setText(userbean.getScreen_name());
-                           mFollowers_count.setText(userbean.getFollowers_count());
-                           mFriends_count.setText(userbean.getFriends_count());
-                       }
+    @SuppressLint("NewApi")
+    private void Fab(){
+        topsoroll.setOnScrollChangeListener(new View.OnScrollChangeListener() {
+            @Override
+            public void onScrollChange(View v, int scrollX, int scrollY, int oldScrollX, int oldScrollY) {
+                if(oldScrollY == 0) {//显示fab悬浮按钮
+                    showFAB();
+                    return;
+                }
+                //滚动过程中：ListView中最上面一个Item还是同一个Item
+                if(isSameRow(scrollX)) {
+                    int newScrollY = v.getScrollY();
+                    boolean isExceedThreshold = Math.abs(mLastScrollY - newScrollY) > mScrollThreshold;
+                    if (isExceedThreshold) {
+                        if (mLastScrollY > newScrollY && FAB_VISIBLE == false) {
+                            FAB_VISIBLE = true;
+                            showFAB();
+                        } else if(mLastScrollY < newScrollY && FAB_VISIBLE == true){
+                            FAB_VISIBLE = false;
+                            hideFAB();
+                            fabType.setVisibility(View.GONE);
+                            fabShare.setVisibility(View.GONE);
+                            fabOpen.setImageResource(R.mipmap.ic_add);
+                        }
                     }
-                    @Override
-                    public void onFailure(Call<Userbean> call, Throwable t) {}});
+                    mLastScrollY = newScrollY;
+                } else {
+                    if (scrollX > mPreviousFirstVisibleItem && FAB_VISIBLE == true) {  //向下滚动
+
+                        FAB_VISIBLE = true;
+                        showFAB();
+
+                    } else if (scrollX < mPreviousFirstVisibleItem && FAB_VISIBLE == false) { //向上滚动
+                        FAB_VISIBLE = false;
+                        hideFAB();
+                        fabType.setVisibility(View.GONE);
+                        fabShare.setVisibility(View.GONE);
+                        fabOpen.setImageResource(R.mipmap.ic_add);
+                    }
+                    mLastScrollY = getTopItemScrollY();
+                    mPreviousFirstVisibleItem = scrollX;
+                }
+            }
+        });
     }
-
-
-
+    private void hideFAB() {//隐藏fab
+        mHideFAB.start();
+    }
+    private void showFAB(){//显示fab
+        mShowFAB.start();
+    }
+    private boolean isSameRow(int firstVisisbleItem){
+        return mPreviousFirstVisibleItem == firstVisisbleItem;
+    }
+    private int getTopItemScrollY() {
+        if (myWeibolist == null || myWeibolist.getChildAt(0) == null) return 0;
+        View topChild = myWeibolist.getChildAt(0);
+        return topChild.getTop();
+    }
     public void setPtrFrameAttribute() {
         // 头部阻尼系数
         mPtrClassicFrameLayout.setResistanceHeader(1.7f);
@@ -301,34 +315,6 @@ public class MyFragment extends BaseFragment implements VerticalScrollView.Scrol
         });
     }
 
-    private void initListeners() {
-
-        ViewTreeObserver vto = mHead.getViewTreeObserver();
-        vto.addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
-            @Override
-            public void onGlobalLayout() {
-                mToolbar.getViewTreeObserver().removeGlobalOnLayoutListener(
-                        this);
-                height = mHead.getHeight();
-                mVerticalScrollView.setScrollViewListener(MyFragment.this);
-            }
-        });
-    }
-
-    @Override
-    public void onScrollChanged(VerticalScrollView scrollView, int x, int y, int oldx, int oldy) {
-        if (y <= 0) {//设置标题的背景颜色
-            mToolbar.setBackgroundColor(Color.argb((int) 0, 66,168,228));
-            mToolbar.setVisibility(View.GONE);
-        } else if (y > 0 && y <= height) { //滑动距离小于banner图的高度时，设置背景和字体颜色颜色透明度渐变
-            float scale = (float) y / height;
-            float alpha = (255 * scale);
-            mToolbar.setVisibility(View.VISIBLE);
-            mToolbar.setBackgroundColor(Color.argb((int) alpha, 66,168,228));
-        } else {    //滑动到banner下面设置普通颜色
-            mToolbar.setBackgroundColor(Color.parseColor("#42A8E4"));
-        }
-    }
 
     //选择微博类型
     private void Dialog(){
@@ -344,9 +330,8 @@ public class MyFragment extends BaseFragment implements VerticalScrollView.Scrol
             public void onOperItemClick(AdapterView<?> parent, View view, int position, long id) {
                 feature=position;
                 setPtrFrameAttribute();
-                type.setText(strings[position]);
-                mVerticalScrollView.smoothScrollTo(0,0);
                 dialog.dismiss();
+                topsoroll.smoothScrollTo(0,0);
             }
         });
     }
@@ -355,26 +340,25 @@ public class MyFragment extends BaseFragment implements VerticalScrollView.Scrol
     public void onClick(View view) {
         switch (view.getId())
         {
-            case R.id.type:
+            case R.id.fabOpen:
+                if (fabShare.getVisibility()==View.GONE&&fabType.getVisibility()==View.GONE)
+                {
+                    fabOpen.setImageResource(R.mipmap.ic_off);
+                    fabShare.setVisibility(View.VISIBLE);
+                    fabType.setVisibility(View.VISIBLE);
+                }
+                else
+                {
+                    fabOpen.setImageResource(R.mipmap.ic_add);
+                    fabShare.setVisibility(View.GONE);
+                    fabType.setVisibility(View.GONE);
+                }
+                break;
+            case R.id.fabType:
                 Dialog();
                 break;
-            case R.id.friends:
-                Intent intent=new Intent(getActivity(),FriendsActivity.class);
-                intent.putExtra("friendships","friend");
-                intent.putExtra("id",User.user().getUid());
-                startActivity(intent);
-                break;
-            case R.id.followers:
-                Intent intent1=new Intent(getActivity(),FriendsActivity.class);
-                intent1.putExtra("friendships","followers");
-                intent1.putExtra("id",User.user().getUid());
-                startActivity(intent1);
-                break;
-            case R.id.my_profile_image:
-                if (userbean!=null)
-                    new UserAcitivty().IntentUser(getActivity(),userbean);
-                else
-                    showToast("失败");
+            case R.id.fabShare:
+                starActivity(ShareActivity.class);//发送微博
                 break;
         }
     }

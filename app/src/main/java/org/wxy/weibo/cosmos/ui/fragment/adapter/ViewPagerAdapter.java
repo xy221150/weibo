@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import org.wxy.weibo.cosmos.MainActivity;
+import org.wxy.weibo.cosmos.Activity;
 import org.wxy.weibo.cosmos.R;
 
 import java.util.List;
@@ -30,7 +30,7 @@ public class ViewPagerAdapter extends FragmentPagerAdapter {
         this.Text=TabText;
     }
     public View getTabView(int i){
-           View view=View.inflate(MainActivity.mainActivity(),R.layout.item_tabview,null);
+           View view=View.inflate(Activity.mainActivity(),R.layout.item_tabview,null);
            TextView TabText=view.findViewById(R.id.itme_tabview_text);
            TabText.setText(Text.get(i));
            ImageView TabImg=view.findViewById(R.id.itme_tabview_img);

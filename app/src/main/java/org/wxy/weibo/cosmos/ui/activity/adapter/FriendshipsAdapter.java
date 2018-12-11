@@ -6,7 +6,7 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import org.wxy.weibo.cosmos.MainActivity;
+import org.wxy.weibo.cosmos.Activity;
 import org.wxy.weibo.cosmos.R;
 import org.wxy.weibo.cosmos.Bean.Friendshipsbean;
 import org.wxy.weibo.cosmos.utils.GlideUtil;
@@ -20,14 +20,14 @@ public class FriendshipsAdapter extends RecyclerView.Adapter<FriendshipsAdapter.
     }
     @Override
     public FriendshipsHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view=View.inflate(MainActivity.mainActivity(),R.layout.item_friends,null);
+        View view=View.inflate(Activity.mainActivity(),R.layout.item_friends,null);
         return new FriendshipsHolder(view);
     }
 
     @Override
     public void onBindViewHolder(FriendshipsHolder holder, final int position) {
         if (bean.getUsers().get(position).getAvatar_large()!=null)
-            GlideUtil.load(MainActivity.mainActivity(),holder.avatar,bean.getUsers().get(position).getAvatar_large());
+            GlideUtil.load(Activity.mainActivity(),holder.avatar,bean.getUsers().get(position).getAvatar_large());
 
         holder.name.setText(bean.getUsers().get(position).getScreen_name());
         if (bean.getUsers().get(position).getDescription()!="")

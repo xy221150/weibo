@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 
-import org.wxy.weibo.cosmos.MainActivity;
 import org.wxy.weibo.cosmos.R;
 import org.wxy.weibo.cosmos.ui.base.ActionbarActvity;
 import org.wxy.weibo.cosmos.view.ProgressWebView;

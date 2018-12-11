@@ -8,7 +8,7 @@
        android:id="@+id/tab"
        android:layout_width="match_parent"
        android:layout_height="50dp"
-       android:background="@color/blue1"
+       android:background="?attr/colorPrimary"
        app:tl_textSelectColor="@color/white"
        app:tl_textUnselectColor="@color/white"
        app:tl_tab_space_equal="true"

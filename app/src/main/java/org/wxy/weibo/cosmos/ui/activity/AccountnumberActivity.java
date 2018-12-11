@@ -19,7 +19,7 @@ import com.sina.weibo.sdk.auth.sso.SsoHandler;
 
 import org.wxy.weibo.cosmos.Bean.AccountnumberBean;
 import org.wxy.weibo.cosmos.Bean.Userbean;
-import org.wxy.weibo.cosmos.MainActivity;
+import org.wxy.weibo.cosmos.Activity;
 import org.wxy.weibo.cosmos.R;
 import org.wxy.weibo.cosmos.SQLite.SqlLite;
 import org.wxy.weibo.cosmos.network.RetrofitHelper;
@@ -105,7 +105,8 @@ public class AccountnumberActivity extends ActionbarActvity {
             public void ClickListener(int i) {
                ChangeAccount(activities.get(i).getName(),
                        activities.get(i).getToken(),
-                       activities.get(i).getUid());
+                       activities.get(i).getUid(),
+                       activities.get(i).getUrl());
             }
         });
     }
@@ -137,6 +138,8 @@ public class AccountnumberActivity extends ActionbarActvity {
                                                    mAccessToken.getToken(),
                                                    mAccessToken.getUid(),
                                                    response.body().getAvatar_large());
+                                           User.user().setName(response.body().getName());
+                                           User.user().setAvatar(response.body().getAvatar_large());
                                            finish();
                                            starActivity(AccountnumberActivity.class);
                                        }
@@ -200,7 +203,7 @@ public class AccountnumberActivity extends ActionbarActvity {
     }
 
     //提示框
-    private void ChangeAccount(final String name, final String token, final String uid) {
+    private void ChangeAccount(final String name, final String token, final String uid,final String avatar) {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("提示")
                 .setMessage("您确定把账号更换到"+name)
@@ -212,8 +215,9 @@ public class AccountnumberActivity extends ActionbarActvity {
                         User.user().setToken(token);
                         User.user().setUid(uid);
                         User.user().setName(name);
-                        MainActivity.getStack().finishAllActivity();
-                        starActivity(HomeActivity.class);
+                        User.user().setAvatar(avatar);
+                        Activity.getStack().finishAllActivity();
+                        starActivity(MainActivity.class);
                     }
                 })
                 .setNegativeButton("取消", new DialogInterface.OnClickListener() {

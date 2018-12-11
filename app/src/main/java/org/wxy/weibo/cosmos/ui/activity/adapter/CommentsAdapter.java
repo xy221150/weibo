@@ -7,7 +7,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import org.wxy.weibo.cosmos.Bean.CommentsShowBean;
-import org.wxy.weibo.cosmos.MainActivity;
+import org.wxy.weibo.cosmos.Activity;
 import org.wxy.weibo.cosmos.R;
 import org.wxy.weibo.cosmos.ui.activity.UserShowActivity;
 import org.wxy.weibo.cosmos.utils.GlideUtil;
@@ -23,7 +23,7 @@ public class CommentsAdapter extends RecyclerView.Adapter<CommentsAdapter.Commen
     @NonNull
     @Override
     public Commentsholder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View v=View.inflate(MainActivity.mainActivity(),R.layout.item_comments,null);
+        View v=View.inflate(Activity.mainActivity(),R.layout.item_comments,null);
         return new Commentsholder(v);
     }
 
@@ -31,18 +31,18 @@ public class CommentsAdapter extends RecyclerView.Adapter<CommentsAdapter.Commen
     public void onBindViewHolder(@NonNull Commentsholder holder, final int position) {
         holder.text.setText(WeiboContentUtil.Weibocontent(bean.getComments().get(position).getText(),holder.text));
         holder.name.setText(bean.getComments().get(position).getUser().getName());
-        GlideUtil.load(MainActivity.mainActivity(),holder.img,bean.getComments().get(position).getUser().getAvatar_large());
+        GlideUtil.load(Activity.mainActivity(),holder.img,bean.getComments().get(position).getUser().getAvatar_large());
         holder.time.setText(TimeUtils.convDate(bean.getComments().get(position).getCreated_at()));
         holder.img.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               new UserShowActivity().getId(MainActivity.mainActivity(),bean.getComments().get(position).getUser().getId()+"");
+               new UserShowActivity().getId(Activity.mainActivity(),bean.getComments().get(position).getUser().getId()+"");
             }
         });
         holder.name.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                new UserShowActivity().getId(MainActivity.mainActivity(),bean.getComments().get(position).getUser().getId()+"");
+                new UserShowActivity().getId(Activity.mainActivity(),bean.getComments().get(position).getUser().getId()+"");
             }
         });
      }

@@ -17,7 +17,7 @@
            >
            <RelativeLayout
                android:layout_width="match_parent"
-               android:background="@color/blue1"
+               android:background="?attr/colorPrimary"
                android:paddingLeft="20dp"
                android:paddingBottom="10dp"
                android:layout_height="150dp">

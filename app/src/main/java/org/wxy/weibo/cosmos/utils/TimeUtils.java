@@ -4,9 +4,8 @@ package org.wxy.weibo.cosmos.utils;
 import android.content.Context;
 import android.content.res.Resources;
 import android.text.format.DateFormat;
-import android.text.format.DateUtils;
 
-import org.wxy.weibo.cosmos.MainActivity;
+import org.wxy.weibo.cosmos.Activity;
 import org.wxy.weibo.cosmos.R;
 import java.util.Calendar;
 import java.util.Date;
@@ -20,7 +19,7 @@ public class TimeUtils {
 
     public static String convDate(String time) {
         try {
-            Context context = MainActivity.mainActivity();
+            Context context = Activity.mainActivity();
             Resources res = context.getResources();
 
             StringBuffer buffer = new StringBuffer();
@@ -80,7 +79,7 @@ public class TimeUtils {
 
     public static String convDate1(String time) {
         try {
-            Context context = MainActivity.mainActivity();
+            Context context = Activity.mainActivity();
             Resources res = context.getResources();
 
             StringBuffer buffer = new StringBuffer();

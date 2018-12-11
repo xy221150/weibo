@@ -11,10 +11,9 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import org.wxy.weibo.cosmos.Bean.basebean.Statusesbean;
-import org.wxy.weibo.cosmos.MainActivity;
+import org.wxy.weibo.cosmos.Activity;
 import org.wxy.weibo.cosmos.R;
 import org.wxy.weibo.cosmos.Bean.Home_timelinebean;
-import org.wxy.weibo.cosmos.ui.activity.PicActivity;
 import org.wxy.weibo.cosmos.ui.activity.UserShowActivity;
 import org.wxy.weibo.cosmos.utils.DoubleUtil;
 import org.wxy.weibo.cosmos.utils.TimeUtils;
@@ -22,10 +21,6 @@ import org.wxy.weibo.cosmos.utils.GlideUtil;
 import org.wxy.weibo.cosmos.utils.SourceUtlis;
 import org.wxy.weibo.cosmos.utils.WeiboContentUtil;
 import org.wxy.weibo.cosmos.view.CircleImageView;
-
-import java.util.LinkedList;
-
-import cc.shinichi.library.ImagePreview;
 
 
 /**
@@ -47,7 +42,7 @@ public class MyWeiboRecyclerAdapter extends RecyclerView.Adapter<MyWeiboRecycler
     }
     @Override
     public MyWeiboHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        view= LayoutInflater.from(MainActivity.mainActivity()).inflate(R.layout.item_weibo,parent,false);
+        view= LayoutInflater.from(Activity.mainActivity()).inflate(R.layout.item_weibo,parent,false);
         holder=new MyWeiboHolder(view);
         return holder;
     }
@@ -57,7 +52,7 @@ public class MyWeiboRecyclerAdapter extends RecyclerView.Adapter<MyWeiboRecycler
         holder.weibo_list_screen_name.setText(bean.getStatuses().get(i).getUser().getScreen_name());
         holder.weibo_list_created_at.setText(TimeUtils.convDate(bean.getStatuses().get(i).getCreated_at()));
         holder.weibo_list_source.setText("来自:" + new SourceUtlis().SourceUtlis(bean.getStatuses().get(i).getSource()));
-        GlideUtil.load(MainActivity.mainActivity(), holder.weibo_list_user_profile, bean.getStatuses().get(i).getUser().getAvatar_large());
+        GlideUtil.load(Activity.mainActivity(), holder.weibo_list_user_profile, bean.getStatuses().get(i).getUser().getAvatar_large());
         holder.weibo_list_text.setText(WeiboContentUtil.Weibocontent(bean.getStatuses().get(i).getText(), holder.weibo_list_text));
         holder.attitudes_count.setText(DoubleUtil.count(bean.getStatuses().get(i).getAttitudes_count()));
         holder.comments_count.setText(DoubleUtil.count(bean.getStatuses().get(i).getComments_count()));
@@ -67,10 +62,10 @@ public class MyWeiboRecyclerAdapter extends RecyclerView.Adapter<MyWeiboRecycler
         } else {
             for (int j = 0; j<bean.getStatuses().get(i).getPic_urls().size();j++)
            {
-               final ImageView pic=new ImageView(MainActivity.mainActivity());
+               final ImageView pic=new ImageView(Activity.mainActivity());
                pic.setLayoutParams(params);
                pic.setScaleType(ImageView.ScaleType.FIT_XY);//使图片充满控件大小
-               GlideUtil.loadUrl(MainActivity.mainActivity(),pic,bean.getStatuses().get(i).getPic_urls().get(j).getThumbnail_pic());
+               GlideUtil.loadUrl(Activity.mainActivity(),pic,bean.getStatuses().get(i).getPic_urls().get(j).getThumbnail_pic());
                holder.weibo_list_pic.addView(pic);
                final int finalJ = j;
                pic.setOnClickListener(new View.OnClickListener() {
@@ -95,10 +90,10 @@ public class MyWeiboRecyclerAdapter extends RecyclerView.Adapter<MyWeiboRecycler
             {
                 for (int j=0;j<bean.getStatuses().get(i).getRetweeted_status().getPic_urls().size();j++)
                 {
-                    final ImageView pic1=new ImageView(MainActivity.mainActivity());
+                    final ImageView pic1=new ImageView(Activity.mainActivity());
                     pic1.setLayoutParams(params);
                     pic1.setScaleType(ImageView.ScaleType.FIT_XY);//使图片充满控件大小
-                    GlideUtil.loadUrl(MainActivity.mainActivity(),pic1,bean.getStatuses().get(i).getRetweeted_status().getPic_urls().get(j).getThumbnail_pic());
+                    GlideUtil.loadUrl(Activity.mainActivity(),pic1,bean.getStatuses().get(i).getRetweeted_status().getPic_urls().get(j).getThumbnail_pic());
                     holder.weibo_list_retweeted_status_pic.addView(pic1);
                     final int finalJ = j;
                     pic1.setOnClickListener(new View.OnClickListener() {
@@ -117,7 +112,7 @@ public class MyWeiboRecyclerAdapter extends RecyclerView.Adapter<MyWeiboRecycler
         holder.weibo_list_Post.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                new UserShowActivity().getId(MainActivity.mainActivity(),bean.getStatuses().get(i).getUser().getId()+"");
+                new UserShowActivity().getId(Activity.mainActivity(),bean.getStatuses().get(i).getUser().getId()+"");
             }
         });
         holder.weibo_list_retweeted_status.setOnClickListener(this);
