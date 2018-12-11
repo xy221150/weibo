@@ -28,7 +28,6 @@ import org.wxy.weibo.cosmos.network.api.IStatuses;
 import org.wxy.weibo.cosmos.network.api.IUser;
 import org.wxy.weibo.cosmos.sharepreferences.User;
 import org.wxy.weibo.cosmos.ui.base.WidgetActivity;
-import org.wxy.weibo.cosmos.ui.fragment.MyFragment;
 import org.wxy.weibo.cosmos.ui.fragment.adapter.MyWeiboRecyclerAdapter;
 import org.wxy.weibo.cosmos.utils.GlideUtil;
 import org.wxy.weibo.cosmos.view.CircleImageView;
@@ -416,13 +415,13 @@ public class UserShowActivity extends WidgetActivity implements VerticalScrollVi
                 Dialog();
                 break;
             case R.id.friends:
-                Intent intent=new Intent(this,FriendsActivity.class);
+                Intent intent=new Intent(this,FFActivity.class);
                 intent.putExtra("friendships","friend");
                 intent.putExtra("id",id);
                 startActivity(intent);
                 break;
             case R.id.followers:
-                Intent intent1=new Intent(this,FriendsActivity.class);
+                Intent intent1=new Intent(this,FFActivity.class);
                 intent1.putExtra("friendships","followers");
                 intent1.putExtra("id",id);
                 startActivity(intent1);

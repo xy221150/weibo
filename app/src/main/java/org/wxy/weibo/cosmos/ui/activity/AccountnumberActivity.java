@@ -220,12 +220,7 @@ public class AccountnumberActivity extends ActionbarActvity {
                         starActivity(MainActivity.class);
                     }
                 })
-                .setNegativeButton("取消", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        dialog.dismiss();
-                    }
-                })
+                .setNegativeButton("取消", null)
                 .create()
                 .setCanceledOnTouchOutside(false);
         builder.show();

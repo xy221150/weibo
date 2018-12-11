@@ -4,27 +4,28 @@
     android:layout_width="match_parent"
     android:layout_height="@dimen/nav_header_height"
     android:background="?attr/colorPrimary"
-    android:gravity="bottom"
+    android:gravity="center_vertical"
     android:orientation="vertical"
+    android:padding="10dp"
     android:theme="@style/ThemeOverlay.AppCompat.Dark">
 
     <org.wxy.weibo.cosmos.view.CircleImageView
+        android:layout_marginTop="20dp"
         android:id="@+id/imageView"
-        android:layout_width="75dp"
-        android:layout_height="75dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:src="@drawable/test"
-        android:layout_gravity="center"
         android:contentDescription="@string/nav_header_desc"
         android:paddingTop="@dimen/nav_header_vertical_spacing"
         />
-
     <TextView
         android:id="@+id/name"
         android:layout_width="match_parent"
         android:layout_height="30dp"
         android:text="暂未登录,点击登录"
-        android:gravity="center"
-        android:textSize="@dimen/text_size_medium"
+        android:gravity="center_vertical"
+        android:layout_marginTop="10dp"
+        android:textSize="@dimen/text_size_small"
         android:textColor="@color/white"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 </LinearLayout>

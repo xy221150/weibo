@@ -37,7 +37,7 @@
         <activity android:name=".ui.activity.MainActivity"
             android:theme="@style/AppThemeNoActionBar"
             ></activity>
-        <activity android:name=".ui.activity.FriendsActivity"
+        <activity android:name=".ui.activity.FFActivity"
             android:theme="@style/AppThemeNoActionBar"></activity>
         <activity android:name=".ui.activity.WebActivity"
             android:theme="@style/AppThemeNoActionBar"></activity>

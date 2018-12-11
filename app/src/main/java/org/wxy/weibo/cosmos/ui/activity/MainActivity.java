@@ -21,15 +21,23 @@ import android.widget.TextView;
 import com.github.javiersantos.bottomdialogs.BottomDialog;
 
 import org.wxy.weibo.cosmos.Activity;
+import org.wxy.weibo.cosmos.Bean.Userbean;
 import org.wxy.weibo.cosmos.R;
+import org.wxy.weibo.cosmos.network.RetrofitHelper;
+import org.wxy.weibo.cosmos.network.api.IUser;
 import org.wxy.weibo.cosmos.sharepreferences.User;
 import org.wxy.weibo.cosmos.ui.base.BaseFragment;
 import org.wxy.weibo.cosmos.ui.base.WidgetActivity;
+import org.wxy.weibo.cosmos.ui.fragment.FFFragment;
 import org.wxy.weibo.cosmos.ui.fragment.IndexFragment;
 import org.wxy.weibo.cosmos.ui.fragment.MyFragment;
 import org.wxy.weibo.cosmos.ui.fragment.NoticeFragment;
 import org.wxy.weibo.cosmos.utils.GlideUtil;
 import org.wxy.weibo.cosmos.view.CircleImageView;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 
 public class MainActivity extends WidgetActivity
@@ -40,13 +48,14 @@ public class MainActivity extends WidgetActivity
     private NavigationView navigationView;
     private BottomDialog.Builder builder;
     private CircleImageView imageView;
-    private TextView text;
     private TextView name;
     private IndexFragment indexfragment;
     private MyFragment myFragment;
     private NoticeFragment noticeFragment;
+    private FFFragment ffFragment;
     private BaseFragment basefragment;
     private FrameLayout frameLayout;
+    private Userbean userbean;
     @Override
     protected int getLayoutID() {
         return R.layout.activity_main;
@@ -70,7 +79,6 @@ public class MainActivity extends WidgetActivity
         drawer = findViewById(R.id.drawer_layout);
         View view=navigationView.getHeaderView(0);
         imageView=view.findViewById(R.id.imageView);
-        text=view.findViewById(R.id.text);
         name=view.findViewById(R.id.name);
         frameLayout=findViewById(R.id.fl_main);
     }
@@ -105,6 +113,7 @@ public class MainActivity extends WidgetActivity
             GlideUtil.load(this,imageView,User.user().getAvatar());
             name.setText(User.user().getName());
         }
+        User();
     }
 
     @Override
@@ -156,10 +165,21 @@ public class MainActivity extends WidgetActivity
             toolbar.setTitle("我的微博");
             switchFragment(myFragment);
             basefragment=myFragment;
+        } else if (id == R.id.nav_friend) {
+            ffFragment=new FFFragment(User.user().getUid(),"friend");
+            toolbar.setTitle("我的关注");
+            switchFragment(ffFragment);
+            basefragment=ffFragment;
+        }else if (id == R.id.nav_followers) {
+            ffFragment=new FFFragment(User.user().getUid(),"followers");
+            toolbar.setTitle("我的粉丝");
+            switchFragment(ffFragment);
+            basefragment=ffFragment;
         } else if (id == R.id.nav_setting) {
 
         } else if (id == R.id.nav_user) {
-//             new UserAcitivty().IntentUser(this,User.user().getUid());
+             if (userbean!=null)
+                 new UserAcitivty().IntentUser(this,userbean);
         } else if (id == R.id.nav_end) {
             showExit();
         }
@@ -167,6 +187,7 @@ public class MainActivity extends WidgetActivity
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
+
     private void switchFragment(BaseFragment to) {//切换界面
         if (basefragment != null) {
 
@@ -178,8 +199,8 @@ public class MainActivity extends WidgetActivity
             }
 
         }
-
     }
+
     private void showExit() {//退出提示
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("提示")
@@ -192,16 +213,12 @@ public class MainActivity extends WidgetActivity
                         Activity.getStack().finishAllActivity();
                     }
                 })
-                .setNegativeButton("取消", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        dialog.dismiss();
-                    }
-                })
+                .setNegativeButton("取消",null)
                 .create()
                 .setCanceledOnTouchOutside(false);
         builder.show();
     }
+
     public void Login()//登录提示
     {
         final BottomDialog.Builder dialog=new BottomDialog.Builder(this);
@@ -226,5 +243,24 @@ public class MainActivity extends WidgetActivity
                     }
                 })
                 .show();
+    }
+
+    private void User(){
+        if (User.user().getToken()!=null&&!User.user().getToken().equals(""))
+        {
+            IUser iUser=RetrofitHelper.create(IUser.class);
+            iUser.getuser(User.user().getToken(),User.user().getUid(),null)
+                    .enqueue(new Callback<Userbean>() {
+                        @Override
+                        public void onResponse(Call<Userbean> call, Response<Userbean> response) {
+                            userbean=response.body();
+                        }
+
+                        @Override
+                        public void onFailure(Call<Userbean> call, Throwable t) {
+
+                        }
+                    });
+        }
     }
 }

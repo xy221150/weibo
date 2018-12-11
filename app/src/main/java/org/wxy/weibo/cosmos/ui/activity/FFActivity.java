@@ -22,7 +22,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class FriendsActivity extends ActionbarActvity {
+public class FFActivity extends ActionbarActvity {
     private PtrFrameLayout PtrFrameLayout;
     private RecyclerView recycler;
     private FriendshipsAdapter adapter;
@@ -38,7 +38,7 @@ public class FriendsActivity extends ActionbarActvity {
 
     @Override
     protected int getContLayoutID() {
-        return R.layout.activity_friends;
+        return R.layout.activity_ff;
     }
 
     @Override
@@ -127,12 +127,12 @@ public class FriendsActivity extends ActionbarActvity {
                           if (bean.getUsers()!=null)
                           {
                              adapter=new FriendshipsAdapter(bean);
-                             initRecycler(recycler,new LinearLayoutManager(FriendsActivity.this));
+                             initRecycler(recycler,new LinearLayoutManager(FFActivity.this));
                               recycler.setAdapter(adapter);
                               adapter.setOnItemClickListener(new FriendshipsAdapter.OnItemClickListener() {
                                   @Override
                                   public void onItemClick(int position) {
-                                      new UserShowActivity().getName(FriendsActivity.this,bean.getUsers().get(position).getName());
+                                      new UserShowActivity().getName(FFActivity.this,bean.getUsers().get(position).getName());
                                   }
                               });
                           }
@@ -155,12 +155,12 @@ public class FriendsActivity extends ActionbarActvity {
                         if (bean!=null||bean.getUsers()!=null)
                         {
                             adapter=new FriendshipsAdapter(bean);
-                            initRecycler(recycler,new LinearLayoutManager(FriendsActivity.this));
+                            initRecycler(recycler,new LinearLayoutManager(FFActivity.this));
                             recycler.setAdapter(adapter);
                             adapter.setOnItemClickListener(new FriendshipsAdapter.OnItemClickListener() {
                                 @Override
                                 public void onItemClick(int position) {
-                                   new UserShowActivity().getName(FriendsActivity.this,bean.getUsers().get(position).getName());
+                                   new UserShowActivity().getName(FFActivity.this,bean.getUsers().get(position).getName());
                                 }
                             });
                         }
