@@ -18,17 +18,11 @@ public class Activity extends StackApplication{
         super.onCreate();
         WbSdk.install(this,new AuthInfo(this,Constants.APP_KEY,Constants.REDIRECT_URL,Constants.SCOPE));
         mainActivity=this;
-        if (enableSliding()) {
-            SlidingLayout rootView = new SlidingLayout(this);
-            rootView.bindActivity(new android.app.Activity());
-        }
+
     }
 
     public static Activity mainActivity(){
         return mainActivity;
    }
 
-    protected boolean enableSliding() {
-        return true;
-    }
 }
