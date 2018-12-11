@@ -1,18 +1,10 @@
 package org.wxy.weibo.cosmos.view;
 
-import android.annotation.TargetApi;
+
 import android.content.Context;
 import android.util.AttributeSet;
-import android.util.Log;
-import android.view.GestureDetector;
-import android.view.MotionEvent;
-import android.view.View;
-import android.webkit.WebView;
 import android.widget.ScrollView;
-import android.widget.Scroller;
 
-import java.lang.reflect.Field;
-import java.lang.reflect.Method;
 
 /**
  * Created by wxy on 2018/7/6.

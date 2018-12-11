@@ -5,7 +5,6 @@ import com.sina.weibo.sdk.auth.AuthInfo;
 import com.sina.weibo.sdk.auth.Oauth2AccessToken;
 import com.sina.weibo.sdk.auth.sso.SsoHandler;
 
-import org.wxy.weibo.cosmos.view.SlidingLayout;
 
 
 public class Activity extends StackApplication{
