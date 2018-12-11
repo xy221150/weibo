@@ -26,7 +26,7 @@
             android:title="个人信息" />
         <item
             android:id="@+id/nav_setting"
-            android:title="更换主题" />
+            android:title="应用设置" />
         <item
             android:id="@+id/nav_end"
             android:title="退出应用" />
