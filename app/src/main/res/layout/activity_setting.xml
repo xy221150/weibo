@@ -68,7 +68,7 @@
             android:id="@+id/version_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="0.1V"
+            android:text="V0.1"
             android:textSize="17sp"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"

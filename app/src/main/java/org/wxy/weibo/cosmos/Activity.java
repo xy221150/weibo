@@ -5,6 +5,8 @@ import com.sina.weibo.sdk.auth.AuthInfo;
 import com.sina.weibo.sdk.auth.Oauth2AccessToken;
 import com.sina.weibo.sdk.auth.sso.SsoHandler;
 
+import org.wxy.weibo.cosmos.view.SlidingLayout;
+
 
 public class Activity extends StackApplication{
     private Oauth2AccessToken mAccessToken;
@@ -16,9 +18,17 @@ public class Activity extends StackApplication{
         super.onCreate();
         WbSdk.install(this,new AuthInfo(this,Constants.APP_KEY,Constants.REDIRECT_URL,Constants.SCOPE));
         mainActivity=this;
+        if (enableSliding()) {
+            SlidingLayout rootView = new SlidingLayout(this);
+            rootView.bindActivity(new android.app.Activity());
+        }
     }
 
     public static Activity mainActivity(){
         return mainActivity;
    }
+
+    protected boolean enableSliding() {
+        return true;
+    }
 }

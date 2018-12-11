@@ -146,8 +146,8 @@ public class MainActivity extends WidgetActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_index) {
-           toolbar.setTitle("最新微博");
-           switchFragment(indexfragment);
+            toolbar.setTitle("最新微博");
+            switchFragment(indexfragment);
             basefragment=indexfragment;
         } else if (id == R.id.nav_notice) {
             noticeFragment=new NoticeFragment();
@@ -170,7 +170,7 @@ public class MainActivity extends WidgetActivity
             switchFragment(ffFragment);
             basefragment=ffFragment;
         } else if (id == R.id.nav_setting) {
-
+              starActivity(SettingActivity.class);
         } else if (id == R.id.nav_user) {
              if (userbean!=null)
                  new UserAcitivty().IntentUser(this,userbean);
