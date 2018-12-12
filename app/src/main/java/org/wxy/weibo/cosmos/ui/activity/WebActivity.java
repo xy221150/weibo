@@ -52,4 +52,14 @@ public class WebActivity extends ActionbarActvity {
         intent.putExtra("url",url);
         context.startActivity(intent);
     }
+
+    @Override
+    public void onDestroy() {
+        if (web!=null)
+        {
+            web.destroy();
+            web=null;
+        }
+        super.onDestroy();
+    }
 }
