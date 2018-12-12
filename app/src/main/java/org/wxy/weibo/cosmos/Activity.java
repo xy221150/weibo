@@ -2,14 +2,10 @@ package org.wxy.weibo.cosmos;
 
 import com.sina.weibo.sdk.WbSdk;
 import com.sina.weibo.sdk.auth.AuthInfo;
-import com.sina.weibo.sdk.auth.Oauth2AccessToken;
-import com.sina.weibo.sdk.auth.sso.SsoHandler;
 
 
 
 public class Activity extends StackApplication{
-    private Oauth2AccessToken mAccessToken;
-    private SsoHandler mSsoHandler;
     private static Activity mainActivity;
 
     @Override

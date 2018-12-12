@@ -38,26 +38,36 @@
             android:theme="@style/AppThemeNoActionBar"
             ></activity>
         <activity android:name=".ui.activity.FFActivity"
+            android:label=""
             android:theme="@style/AppThemeNoActionBar"></activity>
         <activity android:name=".ui.activity.WebActivity"
+            android:label=""
             android:theme="@style/AppThemeNoActionBar"></activity>
         <activity android:name=".ui.activity.UserShowActivity"
+            android:label=""
             android:theme="@style/AppThemeNoActionBar"></activity>
         <activity android:name=".ui.activity.ShowActivity"
+            android:label=""
             android:windowSoftInputMode="adjustPan"
             android:theme="@style/AppThemeNoActionBar"
             ></activity>
         <activity android:name=".ui.activity.SettingActivity"
+            android:label=""
             android:theme="@style/AppThemeNoActionBar"></activity>
         <activity android:name=".ui.activity.UserAcitivty"
+            android:label=""
             android:theme="@style/AppThemeNoActionBar"></activity>
         <activity android:name=".ui.activity.ShareActivity"
+            android:label=""
             android:theme="@style/AppThemeNoActionBar"></activity>
         <activity android:name=".ui.activity.AccountnumberActivity"
+            android:label=""
             android:theme="@style/AppThemeNoActionBar"></activity>
         <activity android:name=".ui.activity.ByToMeActivity"
+            android:label=""
             android:theme="@style/AppThemeNoActionBar"></activity>
         <activity android:name=".ui.activity.MentionsAcvtivity"
+            android:label=""
             android:theme="@style/AppThemeNoActionBar"></activity>
     </application>
 
