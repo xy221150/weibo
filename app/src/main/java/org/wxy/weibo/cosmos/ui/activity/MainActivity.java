@@ -129,6 +129,7 @@ public class MainActivity extends WidgetActivity
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String s) {//回车搜索
+                showToast("暂不支持");
                 return false;
             }
             @Override
