@@ -4,6 +4,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.webkit.WebChromeClient;
+import android.webkit.WebView;
 
 import org.wxy.weibo.cosmos.R;
 import org.wxy.weibo.cosmos.ui.base.ActionbarActvity;
@@ -15,7 +17,7 @@ public class WebActivity extends ActionbarActvity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContTitle("网页详情");
+
     }
 
     @Override
@@ -35,6 +37,14 @@ public class WebActivity extends ActionbarActvity {
         Intent intent=getIntent();
         String url=intent.getStringExtra("url");
         web.loadUrl(url);
+        web.setWebChromeClient(new WebChromeClient(){
+            @Override
+            public void onReceivedTitle(WebView view, String title) {
+                super.onReceivedTitle(view, title);
+                if (title!=null)
+                    setContTitle(title);
+            }
+        });
     }
 
     public void getUrl(Context context,String url){
