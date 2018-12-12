@@ -3,6 +3,7 @@ package org.wxy.weibo.cosmos.network.api;
 import org.wxy.weibo.cosmos.Bean.ByMeBean;
 import org.wxy.weibo.cosmos.Bean.CommentsShowBean;
 import org.wxy.weibo.cosmos.Bean.CreateBean;
+import org.wxy.weibo.cosmos.Bean.DestroyBean;
 import org.wxy.weibo.cosmos.Bean.MentionsBean;
 import org.wxy.weibo.cosmos.Bean.ToMeBean;
 
@@ -39,4 +40,9 @@ public interface IComments {
     @GET("2/comments/mentions.json")
     Call<MentionsBean> mentions(@Query("access_token")String token,
                                 @Query("page")int page);
+
+    //删除一条发出的评论
+    @POST("2/comments/destroy.json")
+    Call<DestroyBean> destroy(@Query("access_token")String token,
+                              @Query("cid")long id);
 }

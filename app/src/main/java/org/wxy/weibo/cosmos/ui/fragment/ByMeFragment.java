@@ -1,14 +1,21 @@
 package org.wxy.weibo.cosmos.ui.fragment;
 
+import android.content.DialogInterface;
 import android.os.Handler;
 import android.os.Message;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SimpleItemAnimator;
 import android.view.View;
 
 
+import com.lzy.okgo.OkGo;
+import com.lzy.okgo.callback.StringCallback;
+
+import org.wxy.weibo.cosmos.Activity;
 import org.wxy.weibo.cosmos.Bean.ByMeBean;
+import org.wxy.weibo.cosmos.Bean.DestroyBean;
 import org.wxy.weibo.cosmos.R;
 import org.wxy.weibo.cosmos.network.RetrofitHelper;
 import org.wxy.weibo.cosmos.network.api.IComments;
@@ -22,6 +29,7 @@ import in.srain.cube.views.ptr.PtrFrameLayout;
 import in.srain.cube.views.ptr.header.MaterialHeader;
 import in.srain.cube.views.ptr.util.PtrLocalDisplay;
 import retrofit2.Call;
+import retrofit2.Callback;
 import retrofit2.Response;
 
 public class ByMeFragment extends BaseFragment {
@@ -72,6 +80,7 @@ public class ByMeFragment extends BaseFragment {
     @Override
     protected void init() {
         super.init();
+        iComments=RetrofitHelper.create(IComments.class);
         setPtrFrameAttribute();
     }
     private void setPtrFrameAttribute() {
@@ -103,11 +112,10 @@ public class ByMeFragment extends BaseFragment {
 
     }
     private void ByMe(final int page){
-       iComments=RetrofitHelper.create(IComments.class);
        iComments.byme(User.user().getToken(),page)
                .enqueue(new retrofit2.Callback<ByMeBean>() {
                    @Override
-                   public void onResponse(Call<ByMeBean> call, Response<ByMeBean> response) {
+                   public void onResponse(Call<ByMeBean> call, final Response<ByMeBean> response) {
                        if (response.code()==200&&response.body().getComments()!=null&&response.body().getComments().size()>0)
                        {
                            if (page==1)
@@ -125,7 +133,7 @@ public class ByMeFragment extends BaseFragment {
                            adapter.OnLongClick(new ByMeAdapter.OnLongClick() {
                                @Override
                                public void LongClick(int i) {
-                                   showToast(i+"");
+                                  deletedialog(response.body().getComments().get(i).getId());
                                }
                            });
                        }
@@ -142,6 +150,39 @@ public class ByMeFragment extends BaseFragment {
                    @Override
                    public void onFailure(Call<ByMeBean> call, Throwable t) {
                         showToast(t.getMessage());
+                   }
+               });
+    }
+    private void deletedialog(final long id) {//删除提示
+        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+        builder.setTitle("提示")
+                .setMessage("您确定要删除这条评论？")
+                .setCancelable(true)
+                .setPositiveButton("确定", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        delete(id);
+                    }
+                })
+                .setNegativeButton("取消",null)
+                .create()
+                .setCanceledOnTouchOutside(false);
+        builder.show();
+    }
+    private void delete(long id){
+       iComments.destroy(User.user().getToken(),id)
+               .enqueue(new Callback<DestroyBean>() {
+                   @Override
+                   public void onResponse(Call<DestroyBean> call, Response<DestroyBean> response) {
+                            if (response.code()==200)
+                                showToast("删除成功，请刷新更新列表");
+                            else
+                                showToast("删除失败");
+                   }
+
+                   @Override
+                   public void onFailure(Call<DestroyBean> call, Throwable t) {
+
                    }
                });
     }
