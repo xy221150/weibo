@@ -1,5 +1,7 @@
 package org.wxy.weibo.cosmos.ui.fragment;
 
+import android.os.Handler;
+import android.os.Message;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
@@ -24,6 +26,8 @@ import java.util.List;
 import cc.shinichi.library.ImagePreview;
 import cc.shinichi.library.bean.ImageInfo;
 import in.srain.cube.views.ptr.PtrClassicFrameLayout;
+import in.srain.cube.views.ptr.PtrDefaultHandler2;
+import in.srain.cube.views.ptr.PtrFrameLayout;
 import retrofit2.Call;
 import retrofit2.Callback;
 
@@ -35,6 +39,33 @@ public class MentionswbFragment extends BaseFragment {
     private int page=1;
     private List<ImageInfo> imgs;
     private ImageInfo imageInfo;
+    private MsgThread msgThread;
+    private static final int REFRESH=1;//下拉重新加载
+    private static final int LOADMORE=0;//上拉加载更多
+    private static final int AUTO=-1;//进入自动刷新
+    private Handler handler=new Handler(){
+        @Override
+        public void handleMessage(Message msg) {
+            switch (msg.what)
+            {
+                case REFRESH:
+                    page=1;
+                    Mentions(page);
+                    // 用于关闭下拉刷新
+                    ptr.refreshComplete();
+                    break;
+                case LOADMORE:
+                    page=page+1;
+                    Mentions(page);
+                    break;
+                case AUTO:
+                    ptr.autoRefresh();
+                    Mentions(page);
+                    break;
+                default:
+            }
+        }
+    };
     @Override
     protected int getLayoutID() {
         return R.layout.fragment_mentionswb;
@@ -50,8 +81,41 @@ public class MentionswbFragment extends BaseFragment {
     @Override
     protected void init() {
         super.init();
+        setPtrFrameAttribute();
+    }
+
+    private void setPtrFrameAttribute() {
+        Ptr(ptr);
+        ptr.post(new Runnable() {
+            @Override
+            public void run() {
+                // 进入界面自动刷新
+                msgThread=new MsgThread(AUTO);
+                msgThread.run();
+            }
+        });
+        ptr.setPtrHandler(new PtrDefaultHandler2() {
+            // 加载更多开始会执行该方法
+            @Override
+            public void onLoadMoreBegin(PtrFrameLayout frame) {
+                msgThread=new MsgThread(LOADMORE);
+                msgThread.run();
+            }
+
+            // 刷新开始会执行该方法
+            @Override
+            public void onRefreshBegin(PtrFrameLayout frame) {
+                msgThread=new MsgThread(REFRESH);
+                msgThread.run();
+            }
+        });
+
+
+    }
+
+    private void Mentions(final int page){
         iStatuses=RetrofitHelper.create(IStatuses.class);
-        iStatuses.mentions(User.user().getToken(),1)
+        iStatuses.mentions(User.user().getToken(),page)
                 .enqueue(new Callback<MentionswbBean>() {
                     @Override
                     public void onResponse(Call<MentionswbBean> call, retrofit2.Response<MentionswbBean> response) {
@@ -112,5 +176,35 @@ public class MentionswbFragment extends BaseFragment {
 
                     }
                 });
+    }
+    class MsgThread extends Thread{
+        private int method;
+        private Message message;
+        public MsgThread(int method){
+            this.method=method;
+            message=new Message();
+        }
+        @Override
+        public void run() {
+            super.run();
+            if (method==REFRESH)
+            {
+                message.what=method;
+                handler.sendMessage(message);
+                return;
+            }
+            if (method==LOADMORE)
+            {
+                message.what=method;
+                handler.sendMessage(message);
+                return;
+            }
+            if (method==AUTO)
+            {
+                message.what=method;
+                handler.sendMessage(message);
+                return;
+            }
+        }
     }
 }

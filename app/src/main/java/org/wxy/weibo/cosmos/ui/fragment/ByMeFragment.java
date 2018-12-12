@@ -122,6 +122,12 @@ public class ByMeFragment extends BaseFragment {
                            }
                            list.setAdapter(adapter);
                            initRecycler(list,new LinearLayoutManager(getActivity()));
+                           adapter.OnLongClick(new ByMeAdapter.OnLongClick() {
+                               @Override
+                               public void LongClick(int i) {
+                                   showToast(i+"");
+                               }
+                           });
                        }
                        else
                        {

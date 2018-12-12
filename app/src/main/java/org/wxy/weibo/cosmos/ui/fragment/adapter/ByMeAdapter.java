@@ -12,8 +12,9 @@ import org.wxy.weibo.cosmos.utils.GlideUtil;
 import org.wxy.weibo.cosmos.utils.TimeUtils;
 import org.wxy.weibo.cosmos.utils.WeiboContentUtil;
 
-public class ByMeAdapter extends RecyclerView.Adapter<ByToMeHolder> {
+public class ByMeAdapter extends RecyclerView.Adapter<ByToMeHolder> implements View.OnLongClickListener {
     private ByMeBean bean;
+    private OnLongClick onLongClick;
     public ByMeAdapter(ByMeBean bean){
         this.bean=bean;
     }
@@ -21,6 +22,8 @@ public class ByMeAdapter extends RecyclerView.Adapter<ByToMeHolder> {
     @Override
     public ByToMeHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view=View.inflate(Activity.mainActivity(), R.layout.item_bytome,null);
+        view.setOnLongClickListener(this);
+
         return new ByToMeHolder(view);
     }
 
@@ -29,7 +32,8 @@ public class ByMeAdapter extends RecyclerView.Adapter<ByToMeHolder> {
          holder.name.setText(bean.getComments().get(position).getUser().getName());
          holder.time.setText(TimeUtils.convDate(bean.getComments().get(position).getCreated_at()));
          holder.content.setText(WeiboContentUtil.Weibocontent(bean.getComments().get(position).getText(),holder.content));
-        GlideUtil.load(Activity.mainActivity(),holder.img,bean.getComments().get(position).getUser().getAvatar_large());
+         GlideUtil.load(Activity.mainActivity(),holder.img,bean.getComments().get(position).getUser().getAvatar_large());
+         holder.itemView.setTag(position);
     }
     public void add(ByMeBean bean){
         this.bean.getComments().addAll(bean.getComments());
@@ -39,4 +43,19 @@ public class ByMeAdapter extends RecyclerView.Adapter<ByToMeHolder> {
         return bean.getComments().size();
     }
 
+    @Override
+    public boolean onLongClick(View v) {
+        if (v!=null)
+        {
+            onLongClick.LongClick((Integer) v.getTag());
+        }
+        return false;
+    }
+    public interface OnLongClick{
+        void LongClick(int i);
+    }
+    public void OnLongClick(OnLongClick onLongClick)
+    {
+       this.onLongClick=onLongClick;
+    }
 }
