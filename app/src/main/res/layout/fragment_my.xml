@@ -34,7 +34,7 @@
         android:layout_alignParentRight="true"
         android:layout_marginRight="10dp"
         android:src="@mipmap/ic_add"
-        app:backgroundTint="@color/white"
+        app:backgroundTint="?attr/colorPrimary"
         />
     <android.support.design.widget.FloatingActionButton
         android:layout_width="wrap_content"
@@ -45,7 +45,7 @@
         android:layout_toLeftOf="@id/fabOpen"
         android:src="@mipmap/ic_type"
         android:visibility="gone"
-        app:backgroundTint="@color/white"
+        app:backgroundTint="?attr/colorPrimary"
         />
     <android.support.design.widget.FloatingActionButton
         android:layout_width="wrap_content"
@@ -54,8 +54,8 @@
         android:id="@+id/fabShare"
         android:layout_marginTop="440dp"
         android:layout_toLeftOf="@id/fabOpen"
-        android:src="@mipmap/ic_msg"
+        android:src="@mipmap/ic_msg_white"
         android:visibility="gone"
-        app:backgroundTint="@color/white"
+        app:backgroundTint="?attr/colorPrimary"
         />
 </RelativeLayout>
