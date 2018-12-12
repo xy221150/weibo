@@ -126,6 +126,7 @@ public class MainActivity extends WidgetActivity
         MenuItem searchItem = menu.findItem(R.id.action_search);
         final SearchView searchView = (SearchView) MenuItemCompat.getActionView(searchItem);
         searchView.setIconified(true);
+        searchView.setQueryHint("暂不支持");
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String s) {//回车搜索
