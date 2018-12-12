@@ -52,9 +52,6 @@ public class MentionswbAdapter extends RecyclerView.Adapter<MentionswbAdapter.My
         holder.weibo_list_source.setText("来自:" + new SourceUtlis().SourceUtlis(bean.getStatuses().get(i).getSource()));
         GlideUtil.load(Activity.mainActivity(), holder.weibo_list_user_profile, bean.getStatuses().get(i).getUser().getAvatar_large());
         holder.weibo_list_text.setText(WeiboContentUtil.Weibocontent(bean.getStatuses().get(i).getText(), holder.weibo_list_text));
-        holder.attitudes_count.setText(DoubleUtil.count(bean.getStatuses().get(i).getAttitudes_count()));
-        holder.comments_count.setText(DoubleUtil.count(bean.getStatuses().get(i).getComments_count()));
-        holder.reposts_count.setText(DoubleUtil.count(bean.getStatuses().get(i).getReposts_count()));
         if (null!=bean.getStatuses().get(i).getRetweeted_status()) {
             holder.weibo_list_retweeted_status_user_name.setText(WeiboContentUtil.Weibocontent(
                     "@"+bean.getStatuses().get(i).getRetweeted_status().getUser().getName()
@@ -146,9 +143,7 @@ public class MentionswbAdapter extends RecyclerView.Adapter<MentionswbAdapter.My
         private TextView weibo_list_retweeted_status_user_name;
         private GridLayout weibo_list_retweeted_status_pic;
         private RelativeLayout weibo_list_retweeted_status;
-        private TextView reposts_count;
-        private TextView comments_count;
-        private TextView attitudes_count;
+
         public MyWeiboHolder(View itemView) {
             super(itemView);
             weibo_list_Post=itemView.findViewById(R.id.weibo_list_Post);
@@ -160,9 +155,6 @@ public class MentionswbAdapter extends RecyclerView.Adapter<MentionswbAdapter.My
             weibo_list_retweeted_status_user_name=itemView.findViewById(R.id.weibo_list_retweeted_status_user_name);
             weibo_list_retweeted_status_pic=itemView.findViewById(R.id.weibo_list_retweeted_status_pic);
             weibo_list_retweeted_status=itemView.findViewById(R.id.weibo_list_retweeted_status);
-            attitudes_count=itemView.findViewById(R.id.attitudes_count);
-            comments_count=itemView.findViewById(R.id.comments_count);
-            reposts_count=itemView.findViewById(R.id.reposts_count);
             weibo=itemView.findViewById(R.id.weibo);
         }
     }

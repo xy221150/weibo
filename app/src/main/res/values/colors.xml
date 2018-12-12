@@ -29,6 +29,7 @@
     <color name="white33">#55ffffff</color>
     <color name="white80">#ccffffff</color>
     <color name="white90">#e6ffffff</color>
+    <color name="white_20">#f0f0f0</color>
 
     <color name="gray00">#FEFFFF</color>
     <color name="gray01">#f9f9f9</color>
@@ -40,7 +41,7 @@
     <color name="gray50">#8c8c8c</color>
     <color name="gray60">#666666</color>
     <color name="gray65">#555555</color>
-
+    <color name="gray150">#80dddddd</color>
     <color name="transparent">#00000000</color>
 
     <color name="orange1">#FDA233</color>
