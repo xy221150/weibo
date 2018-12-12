@@ -29,7 +29,7 @@
             android:id="@+id/name"
             android:layout_width="match_parent"
             android:layout_height="30dp"
-            android:text="暂未登录,点击登录"
+            android:text="暂无授权,点击上方授权"
             android:gravity="center_vertical"
 
             android:textSize="@dimen/text_size_small"
