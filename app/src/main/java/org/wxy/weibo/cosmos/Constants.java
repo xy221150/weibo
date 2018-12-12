@@ -34,16 +34,17 @@ public class Constants {
     public static final String REGEX_URL = "http://[a-zA-Z0-9+&@#/%?=~_\\\\-|!:,\\\\.;]*[a-zA-Z0-9+&@#/%=~_|]";
     // @人
     public static final String REGEX_AT = "@[\\w\\p{InCJKUnifiedIdeographs}-]{1,26}";
-
+    //
+    public static final String REGEX_FULL ="...全文： ";
 
     public static final Pattern PATTERN_TOPIC = Pattern.compile(REGEX_TOPIC);
     public static final Pattern PATTERN_EMOTION = Pattern.compile(REGEX_EMOTION);
     public static final Pattern PATTERN_URL = Pattern.compile(REGEX_URL);
     public static final Pattern PATTERN_AT = Pattern.compile(REGEX_AT);
-
+    public static final Pattern PATTERN_FULL = Pattern.compile(REGEX_FULL);
 
     public static final String SCHEME_TOPIC = "topic:";
     public static final String SCHEME_URL = "url:";
     public static final String SCHEME_AT = "at:";
-
+    public static final String SCHEME_FULL = "full:";
 }

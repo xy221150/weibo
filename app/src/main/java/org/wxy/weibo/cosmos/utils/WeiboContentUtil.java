@@ -38,6 +38,7 @@ public class WeiboContentUtil {
         Linkify.addLinks(builder, Constants.PATTERN_TOPIC,Constants.SCHEME_TOPIC);
         Linkify.addLinks(builder, Constants.PATTERN_URL,Constants.SCHEME_URL);
         Linkify.addLinks(builder, Constants.PATTERN_AT,Constants.SCHEME_AT);
+        Linkify.addLinks(builder, Constants.PATTERN_FULL,Constants.SCHEME_FULL);
         WeiboClickableSpan clickableSpan;
         URLSpan[] urlSpans =builder.getSpans(0,builder.length(),URLSpan.class);
 
@@ -74,22 +75,16 @@ public class WeiboContentUtil {
                 builder.removeSpan(urlSpan);
                 builder.setSpan(clickableSpan,start,end, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
             }
-        }
-        Matcher matcher=Constants.PATTERN_EMOTION.matcher(builder);
-        while (matcher.find())//表情
-        {
-            String emjoy=matcher.group();
-            int start=matcher.start();
-            int end=matcher.end();
-            int resid=EmjoyUtil.getImageByName(emjoy);
-            if (resid!=-1)
+            if (urlSpan.getURL().startsWith(Constants.SCHEME_FULL))//全文
             {
-                Drawable drawable=Activity.mainActivity().getResources().getDrawable(resid);
-                drawable.setBounds(0,0,(int)(textsize*1.3),(int)(textsize*1.3));
-                VerticalImageSpan span=new VerticalImageSpan(drawable);
-                builder.setSpan(span,start,end,Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+                int start =builder.getSpanStart(urlSpan);
+                int end=builder.getSpanEnd(urlSpan);
+                SpannableStringBuilder stringBuilder = getFullTextSpannableString(Activity.mainActivity(),urlSpan.getURL(),textsize);
+                builder.replace(start,end,stringBuilder);
+                builder.setSpan(clickableSpan,start,start+stringBuilder.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
             }
         }
+
         return builder;
     }
 
@@ -101,6 +96,16 @@ public class WeiboContentUtil {
         drawable.setBounds(0,0,size,size);
         builder.setSpan(new VerticalImageSpan(drawable),prefix.length(),source.length(),Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
         builder.append("网页链接");
+        return builder;
+    }
+    public static SpannableStringBuilder getFullTextSpannableString(Context context,String source,int size){
+        SpannableStringBuilder builder=new SpannableStringBuilder(source);
+        String prefix=" ";
+        builder.replace(0,prefix.length(),prefix);
+        Drawable drawable = context.getResources().getDrawable(R.mipmap.ic_send_blue);
+        drawable.setBounds(0,0,size,size);
+        builder.setSpan(new VerticalImageSpan(drawable),prefix.length(),source.length(),Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+        builder.append("查看全文");
         return builder;
     }
     public static class VerticalImageSpan extends ImageSpan {
