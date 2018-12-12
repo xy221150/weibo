@@ -12,6 +12,7 @@ import org.wxy.weibo.cosmos.R;
 import org.wxy.weibo.cosmos.network.RetrofitHelper;
 import org.wxy.weibo.cosmos.network.api.IComments;
 import org.wxy.weibo.cosmos.sharepreferences.User;
+import org.wxy.weibo.cosmos.ui.activity.ReplyActivity;
 import org.wxy.weibo.cosmos.ui.base.BaseFragment;
 import org.wxy.weibo.cosmos.ui.fragment.adapter.ToMeAdapter;
 
@@ -105,7 +106,7 @@ public class ToMeFragment extends BaseFragment {
        iComments.tome(User.user().getToken(),page)
                .enqueue(new Callback<ToMeBean>() {
                    @Override
-                   public void onResponse(Call<ToMeBean> call, retrofit2.Response<ToMeBean> response) {
+                   public void onResponse(Call<ToMeBean> call, final retrofit2.Response<ToMeBean> response) {
                        if (response.code()==200&&response.body().getComments()!=null&&response.body().getComments().size()>0)
                        {
                            if (page==1)
@@ -120,6 +121,15 @@ public class ToMeFragment extends BaseFragment {
                            }
                            list.setAdapter(adapter);
                            initRecycler(list,new LinearLayoutManager(getActivity()));
+                           adapter.OnClick(new ToMeAdapter.OnClick() {
+                               @Override
+                               public void onClick(int i) {
+                                   new ReplyActivity().ReplyActivity(getActivity(),
+                                           response.body().getComments().get(i).getUser().getName(),
+                                           response.body().getComments().get(i).getId(),
+                                           response.body().getComments().get(i).getStatus().getId());
+                               }
+                           });
                        }
                        else
                        {

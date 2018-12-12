@@ -5,6 +5,7 @@ import org.wxy.weibo.cosmos.Bean.CommentsShowBean;
 import org.wxy.weibo.cosmos.Bean.CreateBean;
 import org.wxy.weibo.cosmos.Bean.DestroyBean;
 import org.wxy.weibo.cosmos.Bean.MentionsBean;
+import org.wxy.weibo.cosmos.Bean.ReplyBean;
 import org.wxy.weibo.cosmos.Bean.ToMeBean;
 
 import retrofit2.Call;
@@ -31,7 +32,7 @@ public interface IComments {
     Call<ByMeBean> byme(@Query("access_token")String token,
                         @Query("page")int page);
 
-    //发出评论
+    //收到评论
     @GET("2/comments/to_me.json")
     Call<ToMeBean> tome(@Query("access_token")String token,
                         @Query("page")int page);
@@ -45,4 +46,11 @@ public interface IComments {
     @POST("2/comments/destroy.json")
     Call<DestroyBean> destroy(@Query("access_token")String token,
                               @Query("cid")long id);
+
+    //回复一条评论
+    @POST("2/comments/reply.json")
+    Call<ReplyBean> reply(@Query("access_token")String token,
+                          @Query("cid")long cid,
+                          @Query("id")long id,
+                          @Query("comment") String text);
 }
