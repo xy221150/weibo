@@ -20,8 +20,8 @@ public class StartActivity extends WidgetActivity {
     protected void init() {
         super.init();
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        time=new Times(1000,1000);
         Toast.makeText(this, "鲤鱼王使用了水溅跃", Toast.LENGTH_SHORT).show();
+        time=new Times(1000,2500);
         time.start();
     }
 
