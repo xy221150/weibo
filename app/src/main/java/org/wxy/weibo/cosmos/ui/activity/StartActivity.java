@@ -1,7 +1,9 @@
 package org.wxy.weibo.cosmos.ui.activity;
 
 import android.os.CountDownTimer;
+import android.view.View;
 import android.view.WindowManager;
+import android.widget.Toast;
 
 import org.wxy.weibo.cosmos.R;
 import org.wxy.weibo.cosmos.sharepreferences.User;
@@ -19,6 +21,7 @@ public class StartActivity extends WidgetActivity {
         super.init();
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
         time=new Times(1000,1000);
+        Toast.makeText(this, "鲤鱼王使用了水溅跃", Toast.LENGTH_SHORT).show();
         time.start();
     }
 
