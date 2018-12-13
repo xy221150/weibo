@@ -4,6 +4,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.View;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import org.wxy.weibo.cosmos.Activity;
@@ -11,9 +12,12 @@ import org.wxy.weibo.cosmos.R;
 import org.wxy.weibo.cosmos.SQLite.SQLite;
 import org.wxy.weibo.cosmos.sharepreferences.User;
 import org.wxy.weibo.cosmos.ui.base.ActionbarActvity;
+import org.wxy.weibo.cosmos.utils.DataCleanManager;
 
 public class SettingActivity extends ActionbarActvity {
     private TextView end;
+    private TextView cache_text;
+    private RelativeLayout cache_relat;
     private SQLiteDatabase db;
     private SQLite SQLite;
     @Override
@@ -31,6 +35,8 @@ public class SettingActivity extends ActionbarActvity {
     protected void initView() {
         super.initView();
         end=findViewById(R.id.end);
+        cache_text=findViewById(R.id.cache_text);
+        cache_relat=findViewById(R.id.cache_relat);
     }
 
     @Override
@@ -38,11 +44,28 @@ public class SettingActivity extends ActionbarActvity {
         super.init();
         SQLite =new SQLite(this);
         db= SQLite.getWritableDatabase();
+        try {
+            cache_text.setText(DataCleanManager.getTotalCacheSize(SettingActivity.this));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
     protected void initdata() {
         super.initdata();
+        cache_relat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                DataCleanManager.clearAllCache(SettingActivity.this);
+                try {
+                    cache_text.setText(DataCleanManager.getTotalCacheSize(SettingActivity.this));
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+                showToast("清除成功");
+            }
+        });
         end.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
