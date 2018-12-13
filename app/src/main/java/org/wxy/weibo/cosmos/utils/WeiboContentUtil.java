@@ -105,7 +105,7 @@ public class WeiboContentUtil {
         Drawable drawable = context.getResources().getDrawable(R.mipmap.ic_send_blue);
         drawable.setBounds(0,0,size,size);
         builder.setSpan(new VerticalImageSpan(drawable),prefix.length(),source.length(),Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
-        builder.append("查看全文");
+        builder.append("全文");
         return builder;
     }
     public static class VerticalImageSpan extends ImageSpan {
