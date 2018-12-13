@@ -2,6 +2,7 @@ package org.wxy.weibo.cosmos.ui.activity.adapter;
 
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
@@ -24,7 +25,7 @@ public class AccountnumberAdapter extends RecyclerView.Adapter<AccountnumberAdap
     @NonNull
     @Override
     public AccountnumberHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view=View.inflate(Activity.mainActivity(),R.layout.item_accoutnumber,null);
+        View view=LayoutInflater.from(Activity.mainActivity()).inflate(R.layout.item_accoutnumber,parent,false);
         return new AccountnumberHolder(view);
     }
 

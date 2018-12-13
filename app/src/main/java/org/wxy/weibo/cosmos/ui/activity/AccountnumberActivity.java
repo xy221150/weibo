@@ -21,7 +21,7 @@ import org.wxy.weibo.cosmos.Bean.AccountnumberBean;
 import org.wxy.weibo.cosmos.Bean.Userbean;
 import org.wxy.weibo.cosmos.Activity;
 import org.wxy.weibo.cosmos.R;
-import org.wxy.weibo.cosmos.SQLite.SqlLite;
+import org.wxy.weibo.cosmos.SQLite.SQLite;
 import org.wxy.weibo.cosmos.network.RetrofitHelper;
 import org.wxy.weibo.cosmos.network.api.IUser;
 import org.wxy.weibo.cosmos.sharepreferences.User;
@@ -41,7 +41,7 @@ public class AccountnumberActivity extends ActionbarActvity {
     private Oauth2AccessToken mAccessToken;
     private SsoHandler mSsoHandler;
     private SQLiteDatabase db;
-    private SqlLite sqlLite;
+    private SQLite SQLite;
     private TextView add;
     private RecyclerView list;
     private List<AccountnumberBean> activities;
@@ -73,9 +73,9 @@ public class AccountnumberActivity extends ActionbarActvity {
     @Override
     protected void init() {
         super.init();
-        sqlLite=new SqlLite(this);
+        SQLite =new SQLite(this);
         mSsoHandler=new SsoHandler(this);
-        db=sqlLite.getWritableDatabase();
+        db= SQLite.getWritableDatabase();
         add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

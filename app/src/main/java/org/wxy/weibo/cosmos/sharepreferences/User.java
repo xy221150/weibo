@@ -65,7 +65,17 @@ public class User {
         this.uid = uid;
         UserInfo.SharedPreferences(Activity.mainActivity(),"uid",uid);
     }
-
+    public void delete(){
+       if (user!=null)
+       {
+           setName("");
+           setToken("");
+           setUid("");
+           setAvatar("");
+       }
+       else
+           return;
+    }
     public static class UserInfo {
         private static final String SharedPreferences_Name = "weibo";
 

@@ -6,10 +6,10 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.support.annotation.Nullable;
 import android.util.Log;
 
-public class SqlLite extends SQLiteOpenHelper {
+public class SQLite extends SQLiteOpenHelper {
     private static final String DBNAME="cosmos.db";
     private static final int VERSION=1;
-    public SqlLite(@Nullable Context context) {
+    public SQLite(@Nullable Context context) {
         super(context, DBNAME, null, VERSION);
     }
 
