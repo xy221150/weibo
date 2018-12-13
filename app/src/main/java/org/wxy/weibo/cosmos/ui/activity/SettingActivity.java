@@ -51,7 +51,7 @@ public class SettingActivity extends ActionbarActvity {
         });
     }
     private void delete(){
-       if (User.user().getToken()!=null&&!User.user().getToken().equals(""))
+       if (User.user().getToken()!=null||!User.user().getToken().equals(""))
        {
            db.delete("info","token=?",new String[]{User.user().getToken()});
            db.close();
