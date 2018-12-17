@@ -25,7 +25,7 @@ import org.wxy.weibo.cosmos.SQLite.SQLite;
 import org.wxy.weibo.cosmos.network.RetrofitHelper;
 import org.wxy.weibo.cosmos.network.api.IUser;
 import org.wxy.weibo.cosmos.sharepreferences.User;
-import org.wxy.weibo.cosmos.ui.activity.adapter.AccountnumberAdapter;
+import org.wxy.weibo.cosmos.ui.adapter.AccountnumberAdapter;
 import org.wxy.weibo.cosmos.ui.base.ActionbarActvity;
 
 import java.util.ArrayList;

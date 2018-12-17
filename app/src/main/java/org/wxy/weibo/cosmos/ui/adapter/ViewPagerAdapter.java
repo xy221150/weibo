@@ -1,4 +1,4 @@
-package org.wxy.weibo.cosmos.ui.fragment.adapter;
+package org.wxy.weibo.cosmos.ui.adapter;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;

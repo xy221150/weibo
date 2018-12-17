@@ -1,4 +1,4 @@
-package org.wxy.weibo.cosmos.ui.fragment.adapter;
+package org.wxy.weibo.cosmos.ui.adapter;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -11,13 +11,15 @@ import java.util.List;
  * Created by wxy on 2018/7/4.
  */
 
-public class WeiboViewPagerAdapter extends FragmentPagerAdapter {
+public class ViewPager1Adapter extends FragmentPagerAdapter {
     private FragmentManager fragmentManager;
     private List<Fragment> fragments;
-    public WeiboViewPagerAdapter(FragmentManager fm, List<Fragment> fragments) {
+    private Fragment fragment;
+    public ViewPager1Adapter(FragmentManager fm, List<Fragment> fragments) {
         super(fm);
         this.fragments=fragments;
     }
+
     @Override
     public Fragment getItem(int i) {
         return fragments.get(i);

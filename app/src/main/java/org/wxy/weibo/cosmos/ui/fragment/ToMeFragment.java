@@ -14,13 +14,11 @@ import org.wxy.weibo.cosmos.network.api.IComments;
 import org.wxy.weibo.cosmos.sharepreferences.User;
 import org.wxy.weibo.cosmos.ui.activity.ReplyActivity;
 import org.wxy.weibo.cosmos.ui.base.BaseFragment;
-import org.wxy.weibo.cosmos.ui.fragment.adapter.ToMeAdapter;
+import org.wxy.weibo.cosmos.ui.adapter.ToMeAdapter;
 
 import in.srain.cube.views.ptr.PtrClassicFrameLayout;
 import in.srain.cube.views.ptr.PtrDefaultHandler2;
 import in.srain.cube.views.ptr.PtrFrameLayout;
-import in.srain.cube.views.ptr.header.MaterialHeader;
-import in.srain.cube.views.ptr.util.PtrLocalDisplay;
 import retrofit2.Call;
 import retrofit2.Callback;
 

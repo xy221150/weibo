@@ -10,15 +10,12 @@ import org.wxy.weibo.cosmos.R;
 import org.wxy.weibo.cosmos.network.RetrofitHelper;
 import org.wxy.weibo.cosmos.network.api.IFriendships;
 import org.wxy.weibo.cosmos.sharepreferences.User;
-import org.wxy.weibo.cosmos.ui.activity.FFActivity;
 import org.wxy.weibo.cosmos.ui.activity.UserShowActivity;
-import org.wxy.weibo.cosmos.ui.activity.adapter.FriendshipsAdapter;
+import org.wxy.weibo.cosmos.ui.adapter.FriendshipsAdapter;
 import org.wxy.weibo.cosmos.ui.base.BaseFragment;
 
 import in.srain.cube.views.ptr.PtrDefaultHandler2;
 import in.srain.cube.views.ptr.PtrFrameLayout;
-import in.srain.cube.views.ptr.header.MaterialHeader;
-import in.srain.cube.views.ptr.util.PtrLocalDisplay;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;

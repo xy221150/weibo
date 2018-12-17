@@ -6,14 +6,9 @@ import android.os.Message;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.SimpleItemAnimator;
 import android.view.View;
 
 
-import com.lzy.okgo.OkGo;
-import com.lzy.okgo.callback.StringCallback;
-
-import org.wxy.weibo.cosmos.Activity;
 import org.wxy.weibo.cosmos.Bean.ByMeBean;
 import org.wxy.weibo.cosmos.Bean.DestroyBean;
 import org.wxy.weibo.cosmos.R;
@@ -21,13 +16,11 @@ import org.wxy.weibo.cosmos.network.RetrofitHelper;
 import org.wxy.weibo.cosmos.network.api.IComments;
 import org.wxy.weibo.cosmos.sharepreferences.User;
 import org.wxy.weibo.cosmos.ui.base.BaseFragment;
-import org.wxy.weibo.cosmos.ui.fragment.adapter.ByMeAdapter;
+import org.wxy.weibo.cosmos.ui.adapter.ByMeAdapter;
 
 import in.srain.cube.views.ptr.PtrClassicFrameLayout;
 import in.srain.cube.views.ptr.PtrDefaultHandler2;
 import in.srain.cube.views.ptr.PtrFrameLayout;
-import in.srain.cube.views.ptr.header.MaterialHeader;
-import in.srain.cube.views.ptr.util.PtrLocalDisplay;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;

@@ -9,11 +9,9 @@ import com.flyco.tablayout.SlidingTabLayout;
 
 import org.wxy.weibo.cosmos.R;
 import org.wxy.weibo.cosmos.ui.base.ActionbarActvity;
-import org.wxy.weibo.cosmos.ui.fragment.ByMeFragment;
 import org.wxy.weibo.cosmos.ui.fragment.MentionsFragment;
 import org.wxy.weibo.cosmos.ui.fragment.MentionswbFragment;
-import org.wxy.weibo.cosmos.ui.fragment.ToMeFragment;
-import org.wxy.weibo.cosmos.ui.fragment.adapter.ViewPager1Adapter;
+import org.wxy.weibo.cosmos.ui.adapter.ViewPager1Adapter;
 
 import java.util.ArrayList;
 import java.util.List;

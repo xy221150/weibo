@@ -1,4 +1,4 @@
-package org.wxy.weibo.cosmos.ui.fragment.adapter;
+package org.wxy.weibo.cosmos.ui.adapter;
 
 import android.support.v7.widget.GridLayout;
 import android.support.v7.widget.RecyclerView;
@@ -14,7 +14,6 @@ import org.wxy.weibo.cosmos.Bean.MentionswbBean;
 import org.wxy.weibo.cosmos.Activity;
 import org.wxy.weibo.cosmos.R;
 import org.wxy.weibo.cosmos.ui.activity.UserShowActivity;
-import org.wxy.weibo.cosmos.utils.DoubleUtil;
 import org.wxy.weibo.cosmos.utils.GlideUtil;
 import org.wxy.weibo.cosmos.utils.SourceUtlis;
 import org.wxy.weibo.cosmos.utils.TimeUtils;

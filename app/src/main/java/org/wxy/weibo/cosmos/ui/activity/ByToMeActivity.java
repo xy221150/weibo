@@ -2,7 +2,6 @@ package org.wxy.weibo.cosmos.ui.activity;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 
@@ -12,7 +11,7 @@ import org.wxy.weibo.cosmos.R;
 import org.wxy.weibo.cosmos.ui.base.ActionbarActvity;
 import org.wxy.weibo.cosmos.ui.fragment.ByMeFragment;
 import org.wxy.weibo.cosmos.ui.fragment.ToMeFragment;
-import org.wxy.weibo.cosmos.ui.fragment.adapter.ViewPager1Adapter;
+import org.wxy.weibo.cosmos.ui.adapter.ViewPager1Adapter;
 
 import java.util.ArrayList;
 import java.util.List;

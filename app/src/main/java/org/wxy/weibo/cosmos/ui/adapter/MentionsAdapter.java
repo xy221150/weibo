@@ -1,4 +1,4 @@
-package org.wxy.weibo.cosmos.ui.fragment.adapter;
+package org.wxy.weibo.cosmos.ui.adapter;
 
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;

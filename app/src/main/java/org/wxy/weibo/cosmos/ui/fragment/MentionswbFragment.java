@@ -6,10 +6,6 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
-import com.lzy.okgo.OkGo;
-import com.lzy.okgo.callback.StringCallback;
-import com.lzy.okgo.model.Response;
-
 import org.wxy.weibo.cosmos.Bean.MentionswbBean;
 import org.wxy.weibo.cosmos.R;
 import org.wxy.weibo.cosmos.network.RetrofitHelper;
@@ -17,8 +13,7 @@ import org.wxy.weibo.cosmos.network.api.IStatuses;
 import org.wxy.weibo.cosmos.sharepreferences.User;
 import org.wxy.weibo.cosmos.ui.activity.ShowActivity;
 import org.wxy.weibo.cosmos.ui.base.BaseFragment;
-import org.wxy.weibo.cosmos.ui.fragment.adapter.MentionsAdapter;
-import org.wxy.weibo.cosmos.ui.fragment.adapter.MentionswbAdapter;
+import org.wxy.weibo.cosmos.ui.adapter.MentionswbAdapter;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -13,8 +13,6 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SimpleItemAnimator;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ImageView;
-import android.widget.TextView;
 
 
 import com.flyco.dialog.listener.OnOperItemClickL;
@@ -25,11 +23,10 @@ import org.wxy.weibo.cosmos.Bean.Home_timelinebean;
 import org.wxy.weibo.cosmos.network.RetrofitHelper;
 import org.wxy.weibo.cosmos.network.api.IStatuses;
 import org.wxy.weibo.cosmos.sharepreferences.User;
-import org.wxy.weibo.cosmos.ui.activity.AccountnumberActivity;
 import org.wxy.weibo.cosmos.ui.activity.ShareActivity;
 import org.wxy.weibo.cosmos.ui.activity.ShowActivity;
 import org.wxy.weibo.cosmos.ui.base.BaseFragment;
-import org.wxy.weibo.cosmos.ui.fragment.adapter.MyWeiboRecyclerAdapter;
+import org.wxy.weibo.cosmos.ui.adapter.MyWeiboRecyclerAdapter;
 import org.wxy.weibo.cosmos.view.TopicScrollView;
 
 import java.util.ArrayList;
@@ -40,8 +37,6 @@ import cc.shinichi.library.bean.ImageInfo;
 import in.srain.cube.views.ptr.PtrClassicFrameLayout;
 import in.srain.cube.views.ptr.PtrDefaultHandler2;
 import in.srain.cube.views.ptr.PtrFrameLayout;
-import in.srain.cube.views.ptr.header.MaterialHeader;
-import in.srain.cube.views.ptr.util.PtrLocalDisplay;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;

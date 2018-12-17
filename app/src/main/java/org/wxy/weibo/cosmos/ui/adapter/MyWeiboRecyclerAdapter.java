@@ -1,4 +1,4 @@
-package org.wxy.weibo.cosmos.ui.fragment.adapter;
+package org.wxy.weibo.cosmos.ui.adapter;
 
 import android.support.v7.widget.GridLayout;
 import android.support.v7.widget.RecyclerView;
