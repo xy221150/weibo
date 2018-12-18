@@ -115,8 +115,12 @@ public class MainActivity extends WidgetActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         if (drawer.isDrawerOpen(GravityCompat.START)) {//左侧栏是开启状态，则关闭
             drawer.closeDrawer(GravityCompat.START);
-        } else {
-           showExit();
+        } else if(basefragment!=indexfragment){//不是主页fragment则返回主页fragment
+            toolbar.setTitle("最新微博");
+            switchFragment(indexfragment);
+            basefragment=indexfragment;
+        }else {
+            showExit();
         }
     }
 
