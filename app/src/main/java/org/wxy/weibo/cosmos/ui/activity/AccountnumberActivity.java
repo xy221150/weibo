@@ -208,6 +208,22 @@ public class AccountnumberActivity extends ActionbarActvity {
                 .create()
                 .setCanceledOnTouchOutside(false);
         builder.show();
+    }
 
+    @Override
+    public void onBackPressed() {
+        if (User.user().getToken()==null||User.user().getToken().equals(""))
+        {
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            builder.setTitle("提示")
+                    .setMessage("请点击账号授权,如没账号请点击下方添加账号")
+                    .setCancelable(true)
+                    .setPositiveButton("确定",null)
+                    .create()
+                    .setCanceledOnTouchOutside(false);
+            builder.show();
+        }
+        else
+            super.onBackPressed();
     }
 }
