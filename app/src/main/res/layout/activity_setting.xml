@@ -29,7 +29,7 @@
             android:id="@+id/cache_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="17sp"
+            android:textSize="@dimen/text_size_little"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
             />
