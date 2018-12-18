@@ -111,10 +111,7 @@ public class AccountnumberActivity extends ActionbarActvity {
                 public void run() {
                     mAccessToken = token;
                     if (mAccessToken.isSessionValid()) {
-                        // 保存 Token 到 SharedPreferences
                         AccessTokenKeeper.writeAccessToken(AccountnumberActivity.this, mAccessToken);
-                        User.user().setToken(mAccessToken.getToken());
-                        User.user().setUid(mAccessToken.getUid());
                         IUser iUser=RetrofitHelper.create(IUser.class);
                         Map<String,String> map=new HashMap<>();
                         map.put("access_token",mAccessToken.getToken());
