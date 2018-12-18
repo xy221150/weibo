@@ -92,6 +92,7 @@ public class AccountnumberActivity extends ActionbarActvity {
         super.initdata();
         initRecycler(list,new LinearLayoutManager(this));
         list.setAdapter(adapter);
+
         adapter.OnClickListener(new AccountnumberAdapter.OnClickListener() {
             @Override
             public void ClickListener(int i) {
