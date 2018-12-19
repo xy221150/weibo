@@ -5,6 +5,9 @@
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <application
         android:name=".Activity"
         android:allowBackup="true"
@@ -39,8 +42,17 @@
             android:label=""
             android:theme="@style/AppThemeNoActionBar"></activity>
         <activity android:name=".ui.activity.WebActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:exported="false"
+            android:launchMode="singleTask"
+            android:alwaysRetainTaskState="true"
             android:label=""
-            android:theme="@style/AppThemeNoActionBar"></activity>
+            android:theme="@style/AppThemeNoActionBar">
+            <intent-filter>
+                <action android:name="com.tencent.smtt.tbs.video.PLAY" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
         <activity android:name=".ui.activity.UserShowActivity"
             android:label=""
             android:theme="@style/AppThemeNoActionBar"></activity>

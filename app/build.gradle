@@ -16,6 +16,11 @@ android {
             storePassword '123456'
         }
     }
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+    }
     defaultConfig {
         applicationId "org.wxy.weibo.cosmos"
         minSdkVersion 14
@@ -34,6 +39,7 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
 }
 configurations.all {
     resolutionStrategy.force 'com.android.support:support-annotations:23.1.1'

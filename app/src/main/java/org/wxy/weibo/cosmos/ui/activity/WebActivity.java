@@ -4,15 +4,17 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.webkit.WebChromeClient;
-import android.webkit.WebView;
+import android.view.View;
+
+import com.tencent.smtt.sdk.WebChromeClient;
+import com.tencent.smtt.sdk.WebView;
 
 import org.wxy.weibo.cosmos.R;
 import org.wxy.weibo.cosmos.ui.base.ActionbarActvity;
-import org.wxy.weibo.cosmos.view.ProgressWebView;
+import org.wxy.weibo.cosmos.view.X5WebView;
 
 public class WebActivity extends ActionbarActvity {
-    private ProgressWebView web;
+    private X5WebView web;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -36,6 +38,7 @@ public class WebActivity extends ActionbarActvity {
         super.init();
         Intent intent=getIntent();
         String url=intent.getStringExtra("url");
+        web.setLayerType(View.LAYER_TYPE_HARDWARE,null);//开启硬件加速
         web.loadUrl(url);
         web.setWebChromeClient(new WebChromeClient(){
             @Override
