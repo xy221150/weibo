@@ -56,11 +56,9 @@ dependencies {
     //retrofit2
     implementation 'com.squareup.retrofit2:retrofit:2.5.0'
     implementation 'com.squareup.retrofit2:converter-gson:2.5.0'
-
     //recyclerview
     //noinspection GradleCompatible
     implementation 'com.android.support:recyclerview-v7:27.1.1'
-
     //tablayout
     //noinspection GradleCompatible
     implementation "com.android.support:design:27.1.1"
@@ -76,26 +74,20 @@ dependencies {
     implementation 'com.android.support:gridlayout-v7:27.1.1'
     //dialog弹框
     implementation 'com.flyco.dialog:FlycoDialog_Lib:1.3.2@aar'
-
     //okhttp
     implementation 'com.squareup.okhttp3:okhttp:3.12.0'
-
     //滑动图库
     implementation 'com.github.SherlockGougou:BigImageViewPager:v4_2.2.2'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.8.0'
     implementation 'com.github.bumptech.glide:okhttp3-integration:4.8.0'
-
     //okgo
     implementation 'com.lzy.net:okgo:3.0.4'
-
     //图片选择器
     implementation 'com.zhihu.android:matisse:0.5.2-beta4'
-
     //flycotablayout
     implementation 'com.nineoldandroids:library:2.4.0'
     implementation 'com.flyco.roundview:FlycoRoundView_Lib:1.1.2@aar'
     implementation 'com.flyco.tablayout:FlycoTabLayout_Lib:1.5.0@aar'
-
     //底部弹框
     implementation 'com.github.javiersantos:BottomDialogs:1.2.1'
 }
