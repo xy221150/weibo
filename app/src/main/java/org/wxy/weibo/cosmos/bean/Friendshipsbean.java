@@ -1,4 +1,4 @@
-package org.wxy.weibo.cosmos.Bean;
+package org.wxy.weibo.cosmos.bean;
 
 import java.util.List;
 

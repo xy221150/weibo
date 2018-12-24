@@ -5,7 +5,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.view.ViewGroup;
 
-import org.wxy.weibo.cosmos.Bean.MentionsBean;
+import org.wxy.weibo.cosmos.bean.MentionsBean;
 import org.wxy.weibo.cosmos.Activity;
 import org.wxy.weibo.cosmos.R;
 import org.wxy.weibo.cosmos.utils.GlideUtil;

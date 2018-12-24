@@ -1,6 +1,6 @@
 package org.wxy.weibo.cosmos.network.api;
 
-import org.wxy.weibo.cosmos.Bean.Friendshipsbean;
+import org.wxy.weibo.cosmos.bean.Friendshipsbean;
 
 import retrofit2.Call;
 import retrofit2.http.GET;

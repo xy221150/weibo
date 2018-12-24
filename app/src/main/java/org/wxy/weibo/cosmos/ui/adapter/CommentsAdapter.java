@@ -6,7 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import org.wxy.weibo.cosmos.Bean.CommentsShowBean;
+import org.wxy.weibo.cosmos.bean.CommentsShowBean;
 import org.wxy.weibo.cosmos.Activity;
 import org.wxy.weibo.cosmos.R;
 import org.wxy.weibo.cosmos.ui.activity.UserShowActivity;

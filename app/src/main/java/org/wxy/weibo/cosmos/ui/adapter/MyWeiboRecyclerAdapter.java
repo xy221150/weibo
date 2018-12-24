@@ -10,10 +10,10 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import org.wxy.weibo.cosmos.Bean.basebean.Statusesbean;
+import org.wxy.weibo.cosmos.bean.basebean.Statusesbean;
 import org.wxy.weibo.cosmos.Activity;
 import org.wxy.weibo.cosmos.R;
-import org.wxy.weibo.cosmos.Bean.Home_timelinebean;
+import org.wxy.weibo.cosmos.bean.Home_timelinebean;
 import org.wxy.weibo.cosmos.ui.activity.UserShowActivity;
 import org.wxy.weibo.cosmos.utils.DoubleUtil;
 import org.wxy.weibo.cosmos.utils.TimeUtils;

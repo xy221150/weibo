@@ -17,7 +17,7 @@ import com.flyco.dialog.listener.OnOperItemClickL;
 import com.flyco.dialog.widget.NormalListDialog;
 
 import org.wxy.weibo.cosmos.R;
-import org.wxy.weibo.cosmos.Bean.Home_timelinebean;
+import org.wxy.weibo.cosmos.bean.Home_timelinebean;
 import org.wxy.weibo.cosmos.network.RetrofitHelper;
 import org.wxy.weibo.cosmos.network.api.IStatuses;
 import org.wxy.weibo.cosmos.sharepreferences.User;

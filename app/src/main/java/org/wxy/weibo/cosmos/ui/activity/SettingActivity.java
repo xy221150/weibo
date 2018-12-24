@@ -9,7 +9,7 @@ import android.widget.TextView;
 
 import org.wxy.weibo.cosmos.Activity;
 import org.wxy.weibo.cosmos.R;
-import org.wxy.weibo.cosmos.SQLite.SQLite;
+import org.wxy.weibo.cosmos.sqlite.SQLite;
 import org.wxy.weibo.cosmos.sharepreferences.User;
 import org.wxy.weibo.cosmos.ui.base.ActionbarActvity;
 import org.wxy.weibo.cosmos.utils.DataCleanManager;

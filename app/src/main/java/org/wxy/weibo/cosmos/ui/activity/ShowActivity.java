@@ -19,8 +19,8 @@ import android.widget.TextView;
 import com.lzy.okgo.OkGo;
 import com.lzy.okgo.callback.StringCallback;
 
-import org.wxy.weibo.cosmos.Bean.CommentsShowBean;
-import org.wxy.weibo.cosmos.Bean.ShowBean;
+import org.wxy.weibo.cosmos.bean.CommentsShowBean;
+import org.wxy.weibo.cosmos.bean.ShowBean;
 import org.wxy.weibo.cosmos.R;
 import org.wxy.weibo.cosmos.network.RetrofitHelper;
 import org.wxy.weibo.cosmos.network.api.IComments;

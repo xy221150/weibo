@@ -1,12 +1,12 @@
 package org.wxy.weibo.cosmos.network.api;
 
-import org.wxy.weibo.cosmos.Bean.ByMeBean;
-import org.wxy.weibo.cosmos.Bean.CommentsShowBean;
-import org.wxy.weibo.cosmos.Bean.CreateBean;
-import org.wxy.weibo.cosmos.Bean.DestroyBean;
-import org.wxy.weibo.cosmos.Bean.MentionsBean;
-import org.wxy.weibo.cosmos.Bean.ReplyBean;
-import org.wxy.weibo.cosmos.Bean.ToMeBean;
+import org.wxy.weibo.cosmos.bean.ByMeBean;
+import org.wxy.weibo.cosmos.bean.CommentsShowBean;
+import org.wxy.weibo.cosmos.bean.CreateBean;
+import org.wxy.weibo.cosmos.bean.DestroyBean;
+import org.wxy.weibo.cosmos.bean.MentionsBean;
+import org.wxy.weibo.cosmos.bean.ReplyBean;
+import org.wxy.weibo.cosmos.bean.ToMeBean;
 
 import retrofit2.Call;
 import retrofit2.http.GET;

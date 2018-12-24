@@ -1,14 +1,13 @@
 package org.wxy.weibo.cosmos.network.api;
 
-import org.wxy.weibo.cosmos.Bean.Home_timelinebean;
-import org.wxy.weibo.cosmos.Bean.MentionswbBean;
-import org.wxy.weibo.cosmos.Bean.ShareBean;
-import org.wxy.weibo.cosmos.Bean.ShowBean;
+import org.wxy.weibo.cosmos.bean.Home_timelinebean;
+import org.wxy.weibo.cosmos.bean.MentionswbBean;
+import org.wxy.weibo.cosmos.bean.ShareBean;
+import org.wxy.weibo.cosmos.bean.ShowBean;
 
 import okhttp3.MultipartBody;
 import retrofit2.Call;
 import retrofit2.http.GET;
-import retrofit2.http.HEAD;
 import retrofit2.http.Headers;
 import retrofit2.http.Multipart;
 import retrofit2.http.POST;

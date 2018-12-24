@@ -1,26 +1,28 @@
-package org.wxy.weibo.cosmos.Bean;
+package org.wxy.weibo.cosmos.bean;
 
 import com.google.gson.annotations.SerializedName;
 
-import org.wxy.weibo.cosmos.Bean.basebean.PicUrlsBean;
-import org.wxy.weibo.cosmos.Bean.basebean.Statusesbean;
-
 import java.util.List;
 
-public class ShowBean {
+/**
+ * Created by wxy on 2018/10/13.
+ */
+
+public class ShareBean {
 
 
     /**
-     * created_at : Wed Nov 14 18:29:54 +0800 2018
-     * id : 4306325187647785
-     * idstr : 4306325187647785
-     * mid : 4306325187647785
+     * created_at : Tue Nov 27 16:03:02 +0800 2018
+     * id : 4310999265693739
+     * idstr : 4310999265693739
+     * mid : 4310999265693739
      * can_edit : false
      * show_additional_indication : 0
-     * text : 转发
+     * text : 33333333http://t.cn/RXfIElf ​
+     * textLength : 27
      * source_allowclick : 0
-     * source_type : 2
-     * source : <a href="http://weibo.com/" rel="nofollow">iPhone客户端</a>
+     * source_type : 1
+     * source : <a href="http://open.weibo.com" rel="nofollow">未通过审核应用</a>
      * favorited : false
      * truncated : false
      * in_reply_to_status_id :
@@ -30,9 +32,7 @@ public class ShowBean {
      * geo : null
      * is_paid : false
      * mblog_vip_type : 0
-     * user : {"id":5640206909,"idstr":"5640206909","class":1,"screen_name":"daybreak__拂晓","name":"daybreak__拂晓","province":"33","city":"3","location":"浙江 温州","description":"","url":"","profile_image_url":"http://tvax3.sinaimg.cn/crop.0.0.667.667.50/0069HJtbly8fw98nrvyu1j30ij0ijab2.jpg","cover_image_phone":"http://ww1.sinaimg.cn/crop.0.0.640.640.640/549d0121tw1egm1kjly3jj20hs0hsq4f.jpg","profile_url":"u/5640206909","domain":"","weihao":"","gender":"f","followers_count":9,"friends_count":40,"pagefriends_count":0,"statuses_count":15,"video_status_count":0,"favourites_count":1,"created_at":"Thu Jun 25 17:31:13 +0800 2015","following":true,"allow_all_act_msg":false,"geo_enabled":true,"verified":false,"verified_type":-1,"remark":"","insecurity":{"sexual_content":false},"ptype":0,"allow_all_comment":true,"avatar_large":"http://tvax3.sinaimg.cn/crop.0.0.667.667.180/0069HJtbly8fw98nrvyu1j30ij0ijab2.jpg","avatar_hd":"http://tvax3.sinaimg.cn/crop.0.0.667.667.1024/0069HJtbly8fw98nrvyu1j30ij0ijab2.jpg","verified_reason":"","verified_trade":"","verified_reason_url":"","verified_source":"","verified_source_url":"","follow_me":false,"like":false,"like_me":false,"online_status":0,"bi_followers_count":1,"lang":"zh-cn","star":0,"mbtype":0,"mbrank":0,"block_word":0,"block_app":0,"credit_score":80,"user_ability":0,"urank":4,"story_read_state":-1,"vclub_member":0}
-     * retweeted_status : {"created_at":"Wed Nov 14 17:30:28 +0800 2018","id":4306310226313091,"idstr":"4306310226313091","mid":"4306310226313091","edit_count":1,"can_edit":false,"edit_at":"Wed Nov 14 22:41:03 +0800 2018","show_additional_indication":0,"text":"第二波：转发此微博抽出67套纪念版手机壳。（总决赛三把共67个人头）为防止型号对不上附赠iphone xs max 256g手机一个。 三天后开奖 @微博抽奖平台 \u200b","textLength":137,"source_allowclick":0,"source_type":1,"source":"<a href=\"http://app.weibo.com/t/feed/9ksdit\" rel=\"nofollow\">iPhone客户端<\/a>","favorited":false,"truncated":false,"in_reply_to_status_id":"","in_reply_to_user_id":"","in_reply_to_screen_name":"","pic_urls":[{"thumbnail_pic":"http://wx2.sinaimg.cn/thumbnail/6ce2a3d1gy1fx7pt2uryfj22bz1r04qs.jpg"}],"thumbnail_pic":"http://wx2.sinaimg.cn/thumbnail/6ce2a3d1gy1fx7pt2uryfj22bz1r04qs.jpg","bmiddle_pic":"http://wx2.sinaimg.cn/bmiddle/6ce2a3d1gy1fx7pt2uryfj22bz1r04qs.jpg","original_pic":"http://wx2.sinaimg.cn/large/6ce2a3d1gy1fx7pt2uryfj22bz1r04qs.jpg","geo":null,"is_paid":false,"mblog_vip_type":0,"user":{"id":1826792401,"idstr":"1826792401","class":1,"screen_name":"王思聪","name":"王思聪","province":"11","city":"1000","location":"北京","description":"为人低调的网红小王","url":"","profile_image_url":"http://tva2.sinaimg.cn/crop.0.0.750.750.50/6ce2a3d1jw8f359ugioszj20ku0kudgh.jpg","cover_image_phone":"http://ww1.sinaimg.cn/crop.0.0.640.640.640/6ce2240djw1e9ob3xerqoj20hs0hsjur.jpg","profile_url":"sephirex","domain":"sephirex","weihao":"","gender":"m","followers_count":44346735,"friends_count":334,"pagefriends_count":0,"statuses_count":1488,"video_status_count":0,"favourites_count":165,"created_at":"Thu Oct 07 01:25:50 +0800 2010","following":false,"allow_all_act_msg":false,"geo_enabled":true,"verified":true,"verified_type":0,"remark":"","insecurity":{"sexual_content":false},"ptype":1,"allow_all_comment":false,"avatar_large":"http://tva2.sinaimg.cn/crop.0.0.750.750.180/6ce2a3d1jw8f359ugioszj20ku0kudgh.jpg","avatar_hd":"http://tva2.sinaimg.cn/crop.0.0.750.750.1024/6ce2a3d1jw8f359ugioszj20ku0kudgh.jpg","verified_reason":"北京普思资本董事长、万达集团董事","verified_trade":"1317","verified_reason_url":"","verified_source":"","verified_source_url":"","verified_state":0,"verified_level":3,"verified_type_ext":1,"has_service_tel":false,"verified_reason_modified":"","verified_contact_name":"","verified_contact_email":"","verified_contact_mobile":"","follow_me":false,"like":false,"like_me":false,"online_status":0,"bi_followers_count":306,"lang":"zh-cn","star":0,"mbtype":12,"mbrank":7,"block_word":0,"block_app":1,"ability_tags":"投资","credit_score":78,"user_ability":2572,"urank":42,"story_read_state":-1,"vclub_member":0},"annotations":[{"client_mblogid":"iPhone-A5CF1B8C-CA46-4707-B130-8A30AC2B75FF"},{"mapi_request":true}],"picStatus":"0:1","reposts_count":16294414,"comments_count":5883985,"attitudes_count":5560392,"pending_approval_count":0,"isLongText":false,"reward_exhibition_type":0,"hide_flag":0,"mlevel":0,"visible":{"type":0,"list_id":0},"biz_feature":4294967300,"hasActionTypeCard":0,"darwin_tags":[],"hot_weibo_tags":[],"text_tag_tips":[],"mblogtype":0,"userType":0,"extend_info":{"shopwindow_card":{"level":"6","short_url":"http://t.cn/E2c2pW4"}},"more_info_type":0,"positive_recom_flag":0,"content_auth":0,"gif_ids":"","is_show_bulletin":2,"comment_manage_info":{"comment_permission_type":-1,"approval_comment_type":0}}
-     * annotations : [{"mapi_request":true}]
+     * user : {"id":3435318784,"idstr":"3435318784","class":1,"screen_name":"张欣怡2191","name":"张欣怡2191","province":"100","city":"1000","location":"其他","description":"","url":"","profile_image_url":"http://tvax3.sinaimg.cn/crop.0.0.667.667.50/ccc2ce00ly8fwjbbeqbm0j20ij0ijwfm.jpg","profile_url":"u/3435318784","domain":"","weihao":"","gender":"m","followers_count":1,"friends_count":1442,"pagefriends_count":0,"statuses_count":2,"video_status_count":0,"favourites_count":0,"created_at":"Tue Aug 20 01:50:08 +0800 2013","following":false,"allow_all_act_msg":false,"geo_enabled":true,"verified":false,"verified_type":-1,"remark":"","insecurity":{"sexual_content":false},"ptype":0,"allow_all_comment":true,"avatar_large":"http://tvax3.sinaimg.cn/crop.0.0.667.667.180/ccc2ce00ly8fwjbbeqbm0j20ij0ijwfm.jpg","avatar_hd":"http://tvax3.sinaimg.cn/crop.0.0.667.667.1024/ccc2ce00ly8fwjbbeqbm0j20ij0ijwfm.jpg","verified_reason":"","verified_trade":"","verified_reason_url":"","verified_source":"","verified_source_url":"","follow_me":false,"like":false,"like_me":false,"online_status":0,"bi_followers_count":0,"lang":"zh-cn","star":0,"mbtype":0,"mbrank":0,"block_word":0,"block_app":0,"credit_score":80,"user_ability":0,"urank":4,"story_read_state":-1,"vclub_member":0}
      * reposts_count : 0
      * comments_count : 0
      * attitudes_count : 0
@@ -48,22 +48,23 @@ public class ShowBean {
      * hot_weibo_tags : []
      * text_tag_tips : []
      * mblogtype : 0
-     * userType : 0
+     * userType : 590081
      * more_info_type : 0
      * positive_recom_flag : 0
      * content_auth : 0
-     * gif_ids :
+     * gif_ids : null
      * is_show_bulletin : 2
-     * comment_manage_info : {"comment_permission_type":-1,"approval_comment_type":0}
+     * comment_manage_info : {"comment_manage_button":1,"comment_permission_type":0,"approval_comment_type":0}
      */
 
     private String created_at;
-    private String id;
+    private long id;
     private String idstr;
     private String mid;
     private boolean can_edit;
     private int show_additional_indication;
     private String text;
+    private int textLength;
     private int source_allowclick;
     private int source_type;
     private String source;
@@ -76,7 +77,6 @@ public class ShowBean {
     private boolean is_paid;
     private int mblog_vip_type;
     private UserBean user;
-    private Statusesbean retweeted_status;
     private int reposts_count;
     private int comments_count;
     private int attitudes_count;
@@ -85,30 +85,21 @@ public class ShowBean {
     private int reward_exhibition_type;
     private int hide_flag;
     private int mlevel;
-    private VisibleBeanX visible;
-    private long biz_feature;
+    private VisibleBean visible;
+    private int biz_feature;
     private int hasActionTypeCard;
     private int mblogtype;
     private int userType;
     private int more_info_type;
     private int positive_recom_flag;
     private int content_auth;
-    private String gif_ids;
+    private Object gif_ids;
     private int is_show_bulletin;
-    private CommentManageInfoBeanX comment_manage_info;
-    private List<PicUrlsBean> pic_urls;
-    private List<AnnotationsBeanX> annotations;
+    private CommentManageInfoBean comment_manage_info;
+    private List<?> pic_urls;
     private List<?> darwin_tags;
     private List<?> hot_weibo_tags;
     private List<?> text_tag_tips;
-
-    public Statusesbean getRetweeted_status() {
-        return retweeted_status;
-    }
-
-    public void setRetweeted_status(Statusesbean retweeted_status) {
-        this.retweeted_status = retweeted_status;
-    }
 
     public String getCreated_at() {
         return created_at;
@@ -118,11 +109,11 @@ public class ShowBean {
         this.created_at = created_at;
     }
 
-    public String getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(long id) {
         this.id = id;
     }
 
@@ -164,6 +155,14 @@ public class ShowBean {
 
     public void setText(String text) {
         this.text = text;
+    }
+
+    public int getTextLength() {
+        return textLength;
+    }
+
+    public void setTextLength(int textLength) {
+        this.textLength = textLength;
     }
 
     public int getSource_allowclick() {
@@ -262,7 +261,6 @@ public class ShowBean {
         this.user = user;
     }
 
-
     public int getReposts_count() {
         return reposts_count;
     }
@@ -327,19 +325,19 @@ public class ShowBean {
         this.mlevel = mlevel;
     }
 
-    public VisibleBeanX getVisible() {
+    public VisibleBean getVisible() {
         return visible;
     }
 
-    public void setVisible(VisibleBeanX visible) {
+    public void setVisible(VisibleBean visible) {
         this.visible = visible;
     }
 
-    public long getBiz_feature() {
+    public int getBiz_feature() {
         return biz_feature;
     }
 
-    public void setBiz_feature(long biz_feature) {
+    public void setBiz_feature(int biz_feature) {
         this.biz_feature = biz_feature;
     }
 
@@ -391,11 +389,11 @@ public class ShowBean {
         this.content_auth = content_auth;
     }
 
-    public String getGif_ids() {
+    public Object getGif_ids() {
         return gif_ids;
     }
 
-    public void setGif_ids(String gif_ids) {
+    public void setGif_ids(Object gif_ids) {
         this.gif_ids = gif_ids;
     }
 
@@ -407,28 +405,20 @@ public class ShowBean {
         this.is_show_bulletin = is_show_bulletin;
     }
 
-    public CommentManageInfoBeanX getComment_manage_info() {
+    public CommentManageInfoBean getComment_manage_info() {
         return comment_manage_info;
     }
 
-    public void setComment_manage_info(CommentManageInfoBeanX comment_manage_info) {
+    public void setComment_manage_info(CommentManageInfoBean comment_manage_info) {
         this.comment_manage_info = comment_manage_info;
     }
 
-    public List<PicUrlsBean> getPic_urls() {
+    public List<?> getPic_urls() {
         return pic_urls;
     }
 
-    public void setPic_urls(List<PicUrlsBean> pic_urls) {
+    public void setPic_urls(List<?> pic_urls) {
         this.pic_urls = pic_urls;
-    }
-
-    public List<AnnotationsBeanX> getAnnotations() {
-        return annotations;
-    }
-
-    public void setAnnotations(List<AnnotationsBeanX> annotations) {
-        this.annotations = annotations;
     }
 
     public List<?> getDarwin_tags() {
@@ -457,30 +447,29 @@ public class ShowBean {
 
     public static class UserBean {
         /**
-         * id : 5640206909
-         * idstr : 5640206909
+         * id : 3435318784
+         * idstr : 3435318784
          * class : 1
-         * screen_name : daybreak__拂晓
-         * name : daybreak__拂晓
-         * province : 33
-         * city : 3
-         * location : 浙江 温州
+         * screen_name : 张欣怡2191
+         * name : 张欣怡2191
+         * province : 100
+         * city : 1000
+         * location : 其他
          * description :
          * url :
-         * profile_image_url : http://tvax3.sinaimg.cn/crop.0.0.667.667.50/0069HJtbly8fw98nrvyu1j30ij0ijab2.jpg
-         * cover_image_phone : http://ww1.sinaimg.cn/crop.0.0.640.640.640/549d0121tw1egm1kjly3jj20hs0hsq4f.jpg
-         * profile_url : u/5640206909
+         * profile_image_url : http://tvax3.sinaimg.cn/crop.0.0.667.667.50/ccc2ce00ly8fwjbbeqbm0j20ij0ijwfm.jpg
+         * profile_url : u/3435318784
          * domain :
          * weihao :
-         * gender : f
-         * followers_count : 9
-         * friends_count : 40
+         * gender : m
+         * followers_count : 1
+         * friends_count : 1442
          * pagefriends_count : 0
-         * statuses_count : 15
+         * statuses_count : 2
          * video_status_count : 0
-         * favourites_count : 1
-         * created_at : Thu Jun 25 17:31:13 +0800 2015
-         * following : true
+         * favourites_count : 0
+         * created_at : Tue Aug 20 01:50:08 +0800 2013
+         * following : false
          * allow_all_act_msg : false
          * geo_enabled : true
          * verified : false
@@ -489,8 +478,8 @@ public class ShowBean {
          * insecurity : {"sexual_content":false}
          * ptype : 0
          * allow_all_comment : true
-         * avatar_large : http://tvax3.sinaimg.cn/crop.0.0.667.667.180/0069HJtbly8fw98nrvyu1j30ij0ijab2.jpg
-         * avatar_hd : http://tvax3.sinaimg.cn/crop.0.0.667.667.1024/0069HJtbly8fw98nrvyu1j30ij0ijab2.jpg
+         * avatar_large : http://tvax3.sinaimg.cn/crop.0.0.667.667.180/ccc2ce00ly8fwjbbeqbm0j20ij0ijwfm.jpg
+         * avatar_hd : http://tvax3.sinaimg.cn/crop.0.0.667.667.1024/ccc2ce00ly8fwjbbeqbm0j20ij0ijwfm.jpg
          * verified_reason :
          * verified_trade :
          * verified_reason_url :
@@ -500,7 +489,7 @@ public class ShowBean {
          * like : false
          * like_me : false
          * online_status : 0
-         * bi_followers_count : 1
+         * bi_followers_count : 0
          * lang : zh-cn
          * star : 0
          * mbtype : 0
@@ -526,7 +515,6 @@ public class ShowBean {
         private String description;
         private String url;
         private String profile_image_url;
-        private String cover_image_phone;
         private String profile_url;
         private String domain;
         private String weihao;
@@ -657,14 +645,6 @@ public class ShowBean {
 
         public void setProfile_image_url(String profile_image_url) {
             this.profile_image_url = profile_image_url;
-        }
-
-        public String getCover_image_phone() {
-            return cover_image_phone;
-        }
-
-        public void setCover_image_phone(String cover_image_phone) {
-            this.cover_image_phone = cover_image_phone;
         }
 
         public String getProfile_url() {
@@ -1028,9 +1008,7 @@ public class ShowBean {
         }
     }
 
-
-
-    public static class VisibleBeanX {
+    public static class VisibleBean {
         /**
          * type : 0
          * list_id : 0
@@ -1056,14 +1034,24 @@ public class ShowBean {
         }
     }
 
-    public static class CommentManageInfoBeanX {
+    public static class CommentManageInfoBean {
         /**
-         * comment_permission_type : -1
+         * comment_manage_button : 1
+         * comment_permission_type : 0
          * approval_comment_type : 0
          */
 
+        private int comment_manage_button;
         private int comment_permission_type;
         private int approval_comment_type;
+
+        public int getComment_manage_button() {
+            return comment_manage_button;
+        }
+
+        public void setComment_manage_button(int comment_manage_button) {
+            this.comment_manage_button = comment_manage_button;
+        }
 
         public int getComment_permission_type() {
             return comment_permission_type;
@@ -1079,22 +1067,6 @@ public class ShowBean {
 
         public void setApproval_comment_type(int approval_comment_type) {
             this.approval_comment_type = approval_comment_type;
-        }
-    }
-
-    public static class AnnotationsBeanX {
-        /**
-         * mapi_request : true
-         */
-
-        private boolean mapi_request;
-
-        public boolean isMapi_request() {
-            return mapi_request;
-        }
-
-        public void setMapi_request(boolean mapi_request) {
-            this.mapi_request = mapi_request;
         }
     }
 }

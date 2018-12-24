@@ -2,17 +2,11 @@ package org.wxy.weibo.cosmos.ui.activity;
 
 import android.content.Context;
 import android.content.Intent;
-import android.os.Handler;
-import android.os.Message;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.lzy.okgo.OkGo;
-import com.lzy.okgo.callback.StringCallback;
-import com.lzy.okgo.model.Response;
-
-import org.wxy.weibo.cosmos.Bean.ReplyBean;
+import org.wxy.weibo.cosmos.bean.ReplyBean;
 import org.wxy.weibo.cosmos.R;
 import org.wxy.weibo.cosmos.network.RetrofitHelper;
 import org.wxy.weibo.cosmos.network.api.IComments;

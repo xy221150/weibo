@@ -6,7 +6,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
-import org.wxy.weibo.cosmos.Bean.MentionsBean;
+import org.wxy.weibo.cosmos.bean.MentionsBean;
 import org.wxy.weibo.cosmos.R;
 import org.wxy.weibo.cosmos.network.RetrofitHelper;
 import org.wxy.weibo.cosmos.network.api.IComments;

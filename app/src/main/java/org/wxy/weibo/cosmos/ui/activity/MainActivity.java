@@ -1,6 +1,5 @@
 package org.wxy.weibo.cosmos.ui.activity;
 
-import android.content.Context;
 import android.content.DialogInterface;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.FragmentTransaction;
@@ -20,7 +19,7 @@ import android.widget.TextView;
 import com.github.javiersantos.bottomdialogs.BottomDialog;
 
 import org.wxy.weibo.cosmos.Activity;
-import org.wxy.weibo.cosmos.Bean.Userbean;
+import org.wxy.weibo.cosmos.bean.Userbean;
 import org.wxy.weibo.cosmos.R;
 import org.wxy.weibo.cosmos.network.RetrofitHelper;
 import org.wxy.weibo.cosmos.network.api.IUser;

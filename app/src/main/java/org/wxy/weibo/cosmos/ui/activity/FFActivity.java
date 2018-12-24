@@ -7,7 +7,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
 import org.wxy.weibo.cosmos.R;
-import org.wxy.weibo.cosmos.Bean.Friendshipsbean;
+import org.wxy.weibo.cosmos.bean.Friendshipsbean;
 import org.wxy.weibo.cosmos.network.RetrofitHelper;
 import org.wxy.weibo.cosmos.network.api.IFriendships;
 import org.wxy.weibo.cosmos.sharepreferences.User;

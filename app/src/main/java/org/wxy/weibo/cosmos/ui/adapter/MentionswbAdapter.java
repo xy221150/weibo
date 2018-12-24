@@ -10,7 +10,7 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import org.wxy.weibo.cosmos.Bean.MentionswbBean;
+import org.wxy.weibo.cosmos.bean.MentionswbBean;
 import org.wxy.weibo.cosmos.Activity;
 import org.wxy.weibo.cosmos.R;
 import org.wxy.weibo.cosmos.ui.activity.UserShowActivity;

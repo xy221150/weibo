@@ -1,4 +1,4 @@
-package org.wxy.weibo.cosmos.SQLite;
+package org.wxy.weibo.cosmos.sqlite;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;

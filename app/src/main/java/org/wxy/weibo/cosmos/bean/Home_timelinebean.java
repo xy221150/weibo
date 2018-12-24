@@ -1,7 +1,7 @@
-package org.wxy.weibo.cosmos.Bean;
+package org.wxy.weibo.cosmos.bean;
 
-import org.wxy.weibo.cosmos.Bean.basebean.Adbean;
-import org.wxy.weibo.cosmos.Bean.basebean.Statusesbean;
+import org.wxy.weibo.cosmos.bean.basebean.Adbean;
+import org.wxy.weibo.cosmos.bean.basebean.Statusesbean;
 
 import java.util.ArrayList;
 import java.util.List;

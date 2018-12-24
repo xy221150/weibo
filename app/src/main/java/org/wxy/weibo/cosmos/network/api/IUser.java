@@ -1,13 +1,11 @@
 package org.wxy.weibo.cosmos.network.api;
 
-import org.wxy.weibo.cosmos.Bean.Tokenbean;
-import org.wxy.weibo.cosmos.Bean.Userbean;
+import org.wxy.weibo.cosmos.bean.Userbean;
 
 import java.util.Map;
 
 import retrofit2.Call;
 import retrofit2.http.GET;
-import retrofit2.http.POST;
 import retrofit2.http.Query;
 import retrofit2.http.QueryMap;
 

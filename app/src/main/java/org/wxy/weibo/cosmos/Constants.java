@@ -7,9 +7,9 @@ import java.util.regex.Pattern;
 
 public class Constants {
 
-    public static final String APP_KEY      = "4173665367";
+//    public static final String APP_KEY      = "4173665367";
 
-//    public static final String APP_KEY      = "2873264506";
+    public static final String APP_KEY      = "2873264506";
 
 //    public static final String APP_KEY      = "656963923";
 
@@ -38,7 +38,6 @@ public class Constants {
     public static final String REGEX_FULL ="...全文： ";
 
     public static final Pattern PATTERN_TOPIC = Pattern.compile(REGEX_TOPIC);
-    public static final Pattern PATTERN_EMOTION = Pattern.compile(REGEX_EMOTION);
     public static final Pattern PATTERN_URL = Pattern.compile(REGEX_URL);
     public static final Pattern PATTERN_AT = Pattern.compile(REGEX_AT);
     public static final Pattern PATTERN_FULL = Pattern.compile(REGEX_FULL);

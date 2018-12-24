@@ -1,4 +1,4 @@
-package org.wxy.weibo.cosmos.Bean.basebean;
+package org.wxy.weibo.cosmos.bean.basebean;
 
 /**
  * Created by wxy on 2018/7/4.

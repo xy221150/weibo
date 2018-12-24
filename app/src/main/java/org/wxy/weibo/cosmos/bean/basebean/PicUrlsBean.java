@@ -1,4 +1,4 @@
-package org.wxy.weibo.cosmos.Bean.basebean;
+package org.wxy.weibo.cosmos.bean.basebean;
 
 import java.io.Serializable;
 

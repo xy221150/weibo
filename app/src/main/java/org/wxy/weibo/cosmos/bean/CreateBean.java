@@ -1,8 +1,6 @@
-package org.wxy.weibo.cosmos.Bean;
+package org.wxy.weibo.cosmos.bean;
 
-import org.wxy.weibo.cosmos.Bean.basebean.Statusbean;
-
-import java.util.List;
+import org.wxy.weibo.cosmos.bean.basebean.Statusbean;
 
 public class CreateBean {
 

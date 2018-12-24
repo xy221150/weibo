@@ -1,10 +1,14 @@
-package org.wxy.weibo.cosmos.Bean.basebean;
+package org.wxy.weibo.cosmos.bean;
+
+import org.wxy.weibo.cosmos.bean.basebean.Statusbean;
+
+import java.io.Serializable;
 
 /**
  * Created by wxy on 2018/7/3.
  */
 
-public class Userbean1 {
+public class Userbean implements Serializable {
     private long id;
     private String screen_name;
     private String name;
@@ -34,6 +38,15 @@ public class Userbean1 {
     private String bi_followers_count;
     private String followers_count = "0";
     private String friends_count = "0";
+    private Statusbean status;
+
+    public Statusbean getStatus() {
+        return status;
+    }
+
+    public void setStatus(Statusbean status) {
+        this.status = status;
+    }
 
     public long getId() {
         return id;

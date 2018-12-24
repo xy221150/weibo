@@ -1,17 +1,17 @@
-package org.wxy.weibo.cosmos.Bean;
+package org.wxy.weibo.cosmos.bean;
 
 import com.google.gson.annotations.SerializedName;
 
 import java.util.List;
 
-public class ToMeBean {
+public class MentionsBean {
 
     /**
-     * comments : [{"idstr":"4314174660776820","like_count":0,"rootid":4314174660776820,"disable_reply":0,"created_at":"Thu Dec 06 10:20:55 +0800 2018","mid":"4314174660776820","floor_number":2,"source_type":1,"source":"<a href=\"http://app.weibo.com/t/feed/6NndUT\" rel=\"nofollow\">Weibo.intl<\/a>","reply_count":0,"liked":false,"source_allowclick":0,"url_objects":[],"id":4314174660776820,"text":"5551","user":{"allow_all_act_msg":false,"favourites_count":0,"urank":4,"verified_trade":"","weihao":"","verified_source_url":"","type":1,"province":"33","screen_name":"测试微博Q","id":6595944977,"geo_enabled":true,"like_me":false,"like":false,"level":1,"verified_type":-1,"user_limit":0,"extend":{"mbprivilege":"0000000000000000000000000000000000000000000000000000000000000000","privacy":{"mobile":1}},"badge":{"panda":0,"relation_display":0,"yiqijuan_2018":0,"bind_taobao":0,"kpl_2018":0,"asiad_2018":0,"follow_whitelist_video":0,"lol_msi_2017":0,"lol_gm_2017":0,"ali_1688":0,"unread_pool":0,"qixi_2018":0,"super_star_2017":0,"vip_activity2":0,"super_star_2018":0,"vip_activity1":0,"weibo_display_fans":0,"dailv_2018":0,"meilizhongguo_2018":0,"uc_domain":0,"league_badge_2018":0,"unread_pool_ext":0,"memorial_2018":0,"self_media":0,"dailv":0,"uve_icon":0,"cz_wed_2017":0,"double11_2018":0,"wbzy_2018":0,"zongyiji":0,"lol_s8":0,"enterprise":0,"user_name_certificate":1,"national_day_2018":0,"fools_day_2016":0,"suishoupai_2018":0,"taobao":0,"dzwbqlx_2016":0,"discount_2016":0,"wenda":0,"gongyi_level":0,"gongyi":0,"worldcup_2018":0,"league_badge":0,"travel_2017":0,"uefa_euro_2016":0,"video_attention":0,"inspector":0,"v_influence_2018":0,"wenchuan_10th":0,"daiyan":0,"wenda_v2":0,"anniversary":0},"pagefriends_count":0,"domain":"","following":false,"name":"测试微博Q","idstr":"6595944977","follow_me":false,"friends_count":4,"credit_score":80,"gender":"f","city":"1000","profile_url":"u/6595944977","description":"","created_at":"Sun Jul 08 22:22:21 +0800 2018","remark":"","ptype":0,"badge_top":"","verified_reason_url":"","block_word":0,"avatar_hd":"http://tvax2.sinaimg.cn/default/images/default_avatar_female_180.gif","mbtype":0,"bi_followers_count":1,"user_ability":0,"verified_reason":"","story_read_state":-1,"video_status_count":0,"mbrank":0,"lang":"zh-cn","class":1,"has_ability_tag":0,"star":0,"allow_all_comment":true,"online_status":0,"ulevel":0,"verified":false,"profile_image_url":"http://tvax2.sinaimg.cn/default/images/default_avatar_female_50.gif","block_app":0,"url":"","avatar_large":"http://tvax2.sinaimg.cn/default/images/default_avatar_female_180.gif","statuses_count":21,"vclub_member":0,"followers_count":1,"location":"浙江","insecurity":{"sexual_content":false},"verified_source":""},"status":{"idstr":"4312809686791166","isLongText":false,"hot_weibo_tags":[],"text_tag_tips":[],"in_reply_to_status_id":"","pic_ids":[],"created_at":"Sun Dec 02 15:57:00 +0800 2018","mid":"4312809686791166","mblogtype":0,"source":"<a href=\"http://app.weibo.com/t/feed/6JfnwP\" rel=\"nofollow\">未通过审核应用<\/a>","attitudes_count":0,"positive_recom_flag":0,"is_show_bulletin":2,"hide_flag":0,"darwin_tags":[],"pending_approval_count":0,"in_reply_to_screen_name":"","mlevel":0,"in_reply_to_user_id":"","hasActionTypeCard":0,"id":4312809686791166,"text":"http://t.cn/RXfIElf","is_paid":false,"reposts_count":0,"reward_exhibition_type":0,"favorited":false,"mblog_vip_type":0,"content_auth":0,"visible":{"list_id":0,"type":0},"gif_ids":"","can_edit":false,"textLength":19,"truncated":false,"source_type":1,"biz_feature":0,"source_allowclick":0,"comments_count":0,"show_additional_indication":0,"appid":2602570,"url_objects":[{"search_topic_read_count":0,"asso_like_count":0,"like_count":0,"url_ori":"http://t.cn/RXfIElf","isActionType":false,"object_author_video_status_count":0,"follower_count":0,"card_info_un_integrity":false,"super_topic_photo_count":0,"search_topic_count":0,"super_topic_status_count":0,"info":{"result":true,"url_short":"http://t.cn/RXfIElf","ext_status":0,"url_long":"http://www.mob.com/downloads/","transcode":0,"description":"","type":0,"title":"","last_modified":1492412740}}],"comment_manage_info":{"comment_permission_type":-1,"approval_comment_type":0},"userType":0,"user":{"allow_all_act_msg":false,"favourites_count":1,"urank":4,"verified_trade":"","weihao":"","verified_source_url":"","type":1,"province":"33","screen_name":"daybreak__拂晓","id":5640206909,"geo_enabled":true,"like_me":false,"like":false,"level":1,"verified_type":-1,"user_limit":0,"extend":{"mbprivilege":"0000000000000000000000000000000000000000000000000000000000000000","privacy":{"mobile":1}},"badge":{"panda":0,"relation_display":0,"yiqijuan_2018":0,"bind_taobao":0,"kpl_2018":0,"asiad_2018":0,"follow_whitelist_video":0,"lol_msi_2017":0,"lol_gm_2017":0,"ali_1688":0,"unread_pool":1,"qixi_2018":0,"super_star_2017":0,"vip_activity2":0,"super_star_2018":0,"vip_activity1":0,"weibo_display_fans":0,"dailv_2018":0,"meilizhongguo_2018":0,"uc_domain":0,"league_badge_2018":0,"unread_pool_ext":1,"memorial_2018":0,"self_media":0,"dailv":0,"uve_icon":0,"cz_wed_2017":0,"double11_2018":0,"wbzy_2018":0,"zongyiji":0,"lol_s8":0,"enterprise":0,"user_name_certificate":1,"national_day_2018":0,"fools_day_2016":0,"suishoupai_2018":0,"taobao":0,"dzwbqlx_2016":0,"discount_2016":0,"wenda":0,"gongyi_level":0,"gongyi":0,"worldcup_2018":0,"league_badge":0,"travel_2017":0,"uefa_euro_2016":0,"video_attention":0,"inspector":0,"v_influence_2018":0,"wenchuan_10th":0,"daiyan":0,"wenda_v2":0,"anniversary":0},"pagefriends_count":0,"domain":"","following":false,"name":"daybreak__拂晓","cover_image_phone":"http://ww1.sinaimg.cn/crop.0.0.640.640.640/549d0121tw1egm1kjly3jj20hs0hsq4f.jpg","idstr":"5640206909","follow_me":false,"friends_count":39,"credit_score":80,"gender":"f","city":"3","profile_url":"u/5640206909","description":"","created_at":"Thu Jun 25 17:31:13 +0800 2015","remark":"","ptype":0,"badge_top":"","verified_reason_url":"","block_word":0,"avatar_hd":"http://tvax3.sinaimg.cn/crop.0.0.667.667.1024/0069HJtbly8fw98nrvyu1j30ij0ijab2.jpg","mbtype":0,"bi_followers_count":1,"user_ability":0,"verified_reason":"","story_read_state":-1,"video_status_count":0,"mbrank":0,"lang":"zh-cn","class":1,"has_ability_tag":0,"star":0,"allow_all_comment":true,"online_status":0,"ulevel":0,"verified":false,"profile_image_url":"http://tvax3.sinaimg.cn/crop.0.0.667.667.50/0069HJtbly8fw98nrvyu1j30ij0ijab2.jpg","block_app":0,"url":"","avatar_large":"http://tvax3.sinaimg.cn/crop.0.0.667.667.180/0069HJtbly8fw98nrvyu1j30ij0ijab2.jpg","statuses_count":15,"vclub_member":0,"followers_count":8,"location":"浙江 温州","insecurity":{"sexual_content":false},"verified_source":""},"more_info_type":0}}]
+     * comments : [{"idstr":"4315684559695123","like_count":0,"rootid":4315684559695123,"disable_reply":0,"created_at":"Mon Dec 10 14:20:43 +0800 2018","mid":"4315684559695123","floor_number":1,"source_type":1,"source":"<a href=\"http://app.weibo.com/t/feed/6NndUT\" rel=\"nofollow\">Weibo.intl<\/a>","reply_count":0,"liked":false,"source_allowclick":0,"url_objects":[],"id":4315684559695123,"text":"@测试微博Q mmm","user":{"allow_all_act_msg":false,"favourites_count":1,"urank":4,"verified_trade":"","weihao":"","verified_source_url":"","type":1,"province":"33","screen_name":"daybreak__拂晓","id":5640206909,"geo_enabled":true,"like_me":false,"like":false,"level":1,"verified_type":-1,"user_limit":0,"extend":{"mbprivilege":"0000000000000000000000000000000000000000000000000000000000000000","privacy":{"mobile":1}},"badge":{"panda":0,"relation_display":0,"yiqijuan_2018":0,"bind_taobao":0,"kpl_2018":0,"asiad_2018":0,"follow_whitelist_video":0,"lol_msi_2017":0,"lol_gm_2017":0,"ali_1688":0,"unread_pool":1,"qixi_2018":0,"super_star_2017":0,"vip_activity2":0,"super_star_2018":0,"vip_activity1":0,"weibo_display_fans":0,"dailv_2018":0,"meilizhongguo_2018":0,"uc_domain":0,"league_badge_2018":0,"unread_pool_ext":1,"memorial_2018":0,"self_media":0,"dailv":0,"uve_icon":0,"cz_wed_2017":0,"double11_2018":0,"wbzy_2018":0,"zongyiji":0,"lol_s8":0,"enterprise":0,"user_name_certificate":1,"national_day_2018":0,"fools_day_2016":0,"suishoupai_2018":0,"taobao":0,"dzwbqlx_2016":0,"discount_2016":0,"wenda":0,"gongyi_level":0,"gongyi":0,"worldcup_2018":0,"league_badge":0,"travel_2017":0,"uefa_euro_2016":0,"video_attention":0,"inspector":0,"v_influence_2018":0,"wenchuan_10th":0,"daiyan":0,"wenda_v2":0,"anniversary":0},"pagefriends_count":0,"domain":"","following":false,"name":"daybreak__拂晓","cover_image_phone":"http://ww1.sinaimg.cn/crop.0.0.640.640.640/549d0121tw1egm1kjly3jj20hs0hsq4f.jpg","idstr":"5640206909","follow_me":false,"friends_count":39,"credit_score":80,"gender":"f","city":"3","profile_url":"u/5640206909","description":"","created_at":"Thu Jun 25 17:31:13 +0800 2015","remark":"","ptype":0,"badge_top":"","verified_reason_url":"","block_word":0,"avatar_hd":"http://tvax3.sinaimg.cn/crop.0.0.667.667.1024/0069HJtbly8fw98nrvyu1j30ij0ijab2.jpg","mbtype":0,"bi_followers_count":1,"user_ability":0,"verified_reason":"","story_read_state":-1,"video_status_count":0,"mbrank":0,"lang":"zh-cn","class":1,"has_ability_tag":0,"star":0,"allow_all_comment":true,"online_status":0,"ulevel":0,"verified":false,"profile_image_url":"http://tvax3.sinaimg.cn/crop.0.0.667.667.50/0069HJtbly8fw98nrvyu1j30ij0ijab2.jpg","block_app":0,"url":"","avatar_large":"http://tvax3.sinaimg.cn/crop.0.0.667.667.180/0069HJtbly8fw98nrvyu1j30ij0ijab2.jpg","statuses_count":15,"vclub_member":0,"followers_count":8,"location":"浙江 温州","insecurity":{"sexual_content":false},"verified_source":""},"status":{"idstr":"4315620641986518","isLongText":false,"hot_weibo_tags":[],"text_tag_tips":[],"in_reply_to_status_id":"","pic_ids":["0069HJtbly1fy1fant3v4j30u01hcn6y"],"created_at":"Mon Dec 10 10:06:43 +0800 2018","mid":"4315620641986518","mblogtype":0,"source":"<a href=\"http://app.weibo.com/t/feed/6JfnwP\" rel=\"nofollow\">未通过审核应用<\/a>","attitudes_count":0,"bmiddle_pic":"http://wx1.sinaimg.cn/bmiddle/0069HJtbly1fy1fant3v4j30u01hcn6y.jpg","positive_recom_flag":0,"is_show_bulletin":2,"hide_flag":0,"darwin_tags":[],"pending_approval_count":0,"in_reply_to_screen_name":"","mlevel":0,"in_reply_to_user_id":"","hasActionTypeCard":0,"id":4315620641986518,"text":"http://t.cn/RXfIElf","is_paid":false,"reposts_count":0,"reward_exhibition_type":0,"favorited":false,"mblog_vip_type":0,"content_auth":0,"visible":{"list_id":0,"type":0},"gif_ids":"","thumbnail_pic":"http://wx1.sinaimg.cn/thumbnail/0069HJtbly1fy1fant3v4j30u01hcn6y.jpg","original_pic":"http://wx1.sinaimg.cn/large/0069HJtbly1fy1fant3v4j30u01hcn6y.jpg","can_edit":false,"textLength":19,"truncated":false,"source_type":1,"biz_feature":0,"source_allowclick":0,"comments_count":0,"show_additional_indication":0,"appid":2602570,"url_objects":[{"search_topic_read_count":0,"asso_like_count":0,"like_count":0,"url_ori":"http://t.cn/RXfIElf","isActionType":false,"object_author_video_status_count":0,"follower_count":0,"card_info_un_integrity":false,"super_topic_photo_count":0,"search_topic_count":0,"super_topic_status_count":0,"info":{"result":true,"url_short":"http://t.cn/RXfIElf","ext_status":0,"url_long":"http://www.mob.com/downloads/","transcode":0,"description":"","type":0,"title":"","last_modified":1492412740}}],"comment_manage_info":{"comment_permission_type":-1,"approval_comment_type":0},"userType":0,"user":{"allow_all_act_msg":false,"favourites_count":1,"urank":4,"verified_trade":"","weihao":"","verified_source_url":"","type":1,"province":"33","screen_name":"daybreak__拂晓","id":5640206909,"geo_enabled":true,"like_me":false,"like":false,"level":1,"verified_type":-1,"user_limit":0,"extend":{"mbprivilege":"0000000000000000000000000000000000000000000000000000000000000000","privacy":{"mobile":1}},"badge":{"panda":0,"relation_display":0,"yiqijuan_2018":0,"bind_taobao":0,"kpl_2018":0,"asiad_2018":0,"follow_whitelist_video":0,"lol_msi_2017":0,"lol_gm_2017":0,"ali_1688":0,"unread_pool":1,"qixi_2018":0,"super_star_2017":0,"vip_activity2":0,"super_star_2018":0,"vip_activity1":0,"weibo_display_fans":0,"dailv_2018":0,"meilizhongguo_2018":0,"uc_domain":0,"league_badge_2018":0,"unread_pool_ext":1,"memorial_2018":0,"self_media":0,"dailv":0,"uve_icon":0,"cz_wed_2017":0,"double11_2018":0,"wbzy_2018":0,"zongyiji":0,"lol_s8":0,"enterprise":0,"user_name_certificate":1,"national_day_2018":0,"fools_day_2016":0,"suishoupai_2018":0,"taobao":0,"dzwbqlx_2016":0,"discount_2016":0,"wenda":0,"gongyi_level":0,"gongyi":0,"worldcup_2018":0,"league_badge":0,"travel_2017":0,"uefa_euro_2016":0,"video_attention":0,"inspector":0,"v_influence_2018":0,"wenchuan_10th":0,"daiyan":0,"wenda_v2":0,"anniversary":0},"pagefriends_count":0,"domain":"","following":false,"name":"daybreak__拂晓","cover_image_phone":"http://ww1.sinaimg.cn/crop.0.0.640.640.640/549d0121tw1egm1kjly3jj20hs0hsq4f.jpg","idstr":"5640206909","follow_me":false,"friends_count":39,"credit_score":80,"gender":"f","city":"3","profile_url":"u/5640206909","description":"","created_at":"Thu Jun 25 17:31:13 +0800 2015","remark":"","ptype":0,"badge_top":"","verified_reason_url":"","block_word":0,"avatar_hd":"http://tvax3.sinaimg.cn/crop.0.0.667.667.1024/0069HJtbly8fw98nrvyu1j30ij0ijab2.jpg","mbtype":0,"bi_followers_count":1,"user_ability":0,"verified_reason":"","story_read_state":-1,"video_status_count":0,"mbrank":0,"lang":"zh-cn","class":1,"has_ability_tag":0,"star":0,"allow_all_comment":true,"online_status":0,"ulevel":0,"verified":false,"profile_image_url":"http://tvax3.sinaimg.cn/crop.0.0.667.667.50/0069HJtbly8fw98nrvyu1j30ij0ijab2.jpg","block_app":0,"url":"","avatar_large":"http://tvax3.sinaimg.cn/crop.0.0.667.667.180/0069HJtbly8fw98nrvyu1j30ij0ijab2.jpg","statuses_count":15,"vclub_member":0,"followers_count":8,"location":"浙江 温州","insecurity":{"sexual_content":false},"verified_source":""},"more_info_type":0}}]
      * hasvisible : false
      * previous_cursor : 0
      * next_cursor : 0
-     * total_number : 2
+     * total_number : 1
      * interval : 0
      */
 
@@ -72,23 +72,23 @@ public class ToMeBean {
 
     public static class CommentsBean {
         /**
-         * idstr : 4314174660776820
+         * idstr : 4315684559695123
          * like_count : 0
-         * rootid : 4314174660776820
+         * rootid : 4315684559695123
          * disable_reply : 0
-         * created_at : Thu Dec 06 10:20:55 +0800 2018
-         * mid : 4314174660776820
-         * floor_number : 2
+         * created_at : Mon Dec 10 14:20:43 +0800 2018
+         * mid : 4315684559695123
+         * floor_number : 1
          * source_type : 1
          * source : <a href="http://app.weibo.com/t/feed/6NndUT" rel="nofollow">Weibo.intl</a>
          * reply_count : 0
          * liked : false
          * source_allowclick : 0
          * url_objects : []
-         * id : 4314174660776820
-         * text : 5551
-         * user : {"allow_all_act_msg":false,"favourites_count":0,"urank":4,"verified_trade":"","weihao":"","verified_source_url":"","type":1,"province":"33","screen_name":"测试微博Q","id":6595944977,"geo_enabled":true,"like_me":false,"like":false,"level":1,"verified_type":-1,"user_limit":0,"extend":{"mbprivilege":"0000000000000000000000000000000000000000000000000000000000000000","privacy":{"mobile":1}},"badge":{"panda":0,"relation_display":0,"yiqijuan_2018":0,"bind_taobao":0,"kpl_2018":0,"asiad_2018":0,"follow_whitelist_video":0,"lol_msi_2017":0,"lol_gm_2017":0,"ali_1688":0,"unread_pool":0,"qixi_2018":0,"super_star_2017":0,"vip_activity2":0,"super_star_2018":0,"vip_activity1":0,"weibo_display_fans":0,"dailv_2018":0,"meilizhongguo_2018":0,"uc_domain":0,"league_badge_2018":0,"unread_pool_ext":0,"memorial_2018":0,"self_media":0,"dailv":0,"uve_icon":0,"cz_wed_2017":0,"double11_2018":0,"wbzy_2018":0,"zongyiji":0,"lol_s8":0,"enterprise":0,"user_name_certificate":1,"national_day_2018":0,"fools_day_2016":0,"suishoupai_2018":0,"taobao":0,"dzwbqlx_2016":0,"discount_2016":0,"wenda":0,"gongyi_level":0,"gongyi":0,"worldcup_2018":0,"league_badge":0,"travel_2017":0,"uefa_euro_2016":0,"video_attention":0,"inspector":0,"v_influence_2018":0,"wenchuan_10th":0,"daiyan":0,"wenda_v2":0,"anniversary":0},"pagefriends_count":0,"domain":"","following":false,"name":"测试微博Q","idstr":"6595944977","follow_me":false,"friends_count":4,"credit_score":80,"gender":"f","city":"1000","profile_url":"u/6595944977","description":"","created_at":"Sun Jul 08 22:22:21 +0800 2018","remark":"","ptype":0,"badge_top":"","verified_reason_url":"","block_word":0,"avatar_hd":"http://tvax2.sinaimg.cn/default/images/default_avatar_female_180.gif","mbtype":0,"bi_followers_count":1,"user_ability":0,"verified_reason":"","story_read_state":-1,"video_status_count":0,"mbrank":0,"lang":"zh-cn","class":1,"has_ability_tag":0,"star":0,"allow_all_comment":true,"online_status":0,"ulevel":0,"verified":false,"profile_image_url":"http://tvax2.sinaimg.cn/default/images/default_avatar_female_50.gif","block_app":0,"url":"","avatar_large":"http://tvax2.sinaimg.cn/default/images/default_avatar_female_180.gif","statuses_count":21,"vclub_member":0,"followers_count":1,"location":"浙江","insecurity":{"sexual_content":false},"verified_source":""}
-         * status : {"idstr":"4312809686791166","isLongText":false,"hot_weibo_tags":[],"text_tag_tips":[],"in_reply_to_status_id":"","pic_ids":[],"created_at":"Sun Dec 02 15:57:00 +0800 2018","mid":"4312809686791166","mblogtype":0,"source":"<a href=\"http://app.weibo.com/t/feed/6JfnwP\" rel=\"nofollow\">未通过审核应用<\/a>","attitudes_count":0,"positive_recom_flag":0,"is_show_bulletin":2,"hide_flag":0,"darwin_tags":[],"pending_approval_count":0,"in_reply_to_screen_name":"","mlevel":0,"in_reply_to_user_id":"","hasActionTypeCard":0,"id":4312809686791166,"text":"http://t.cn/RXfIElf","is_paid":false,"reposts_count":0,"reward_exhibition_type":0,"favorited":false,"mblog_vip_type":0,"content_auth":0,"visible":{"list_id":0,"type":0},"gif_ids":"","can_edit":false,"textLength":19,"truncated":false,"source_type":1,"biz_feature":0,"source_allowclick":0,"comments_count":0,"show_additional_indication":0,"appid":2602570,"url_objects":[{"search_topic_read_count":0,"asso_like_count":0,"like_count":0,"url_ori":"http://t.cn/RXfIElf","isActionType":false,"object_author_video_status_count":0,"follower_count":0,"card_info_un_integrity":false,"super_topic_photo_count":0,"search_topic_count":0,"super_topic_status_count":0,"info":{"result":true,"url_short":"http://t.cn/RXfIElf","ext_status":0,"url_long":"http://www.mob.com/downloads/","transcode":0,"description":"","type":0,"title":"","last_modified":1492412740}}],"comment_manage_info":{"comment_permission_type":-1,"approval_comment_type":0},"userType":0,"user":{"allow_all_act_msg":false,"favourites_count":1,"urank":4,"verified_trade":"","weihao":"","verified_source_url":"","type":1,"province":"33","screen_name":"daybreak__拂晓","id":5640206909,"geo_enabled":true,"like_me":false,"like":false,"level":1,"verified_type":-1,"user_limit":0,"extend":{"mbprivilege":"0000000000000000000000000000000000000000000000000000000000000000","privacy":{"mobile":1}},"badge":{"panda":0,"relation_display":0,"yiqijuan_2018":0,"bind_taobao":0,"kpl_2018":0,"asiad_2018":0,"follow_whitelist_video":0,"lol_msi_2017":0,"lol_gm_2017":0,"ali_1688":0,"unread_pool":1,"qixi_2018":0,"super_star_2017":0,"vip_activity2":0,"super_star_2018":0,"vip_activity1":0,"weibo_display_fans":0,"dailv_2018":0,"meilizhongguo_2018":0,"uc_domain":0,"league_badge_2018":0,"unread_pool_ext":1,"memorial_2018":0,"self_media":0,"dailv":0,"uve_icon":0,"cz_wed_2017":0,"double11_2018":0,"wbzy_2018":0,"zongyiji":0,"lol_s8":0,"enterprise":0,"user_name_certificate":1,"national_day_2018":0,"fools_day_2016":0,"suishoupai_2018":0,"taobao":0,"dzwbqlx_2016":0,"discount_2016":0,"wenda":0,"gongyi_level":0,"gongyi":0,"worldcup_2018":0,"league_badge":0,"travel_2017":0,"uefa_euro_2016":0,"video_attention":0,"inspector":0,"v_influence_2018":0,"wenchuan_10th":0,"daiyan":0,"wenda_v2":0,"anniversary":0},"pagefriends_count":0,"domain":"","following":false,"name":"daybreak__拂晓","cover_image_phone":"http://ww1.sinaimg.cn/crop.0.0.640.640.640/549d0121tw1egm1kjly3jj20hs0hsq4f.jpg","idstr":"5640206909","follow_me":false,"friends_count":39,"credit_score":80,"gender":"f","city":"3","profile_url":"u/5640206909","description":"","created_at":"Thu Jun 25 17:31:13 +0800 2015","remark":"","ptype":0,"badge_top":"","verified_reason_url":"","block_word":0,"avatar_hd":"http://tvax3.sinaimg.cn/crop.0.0.667.667.1024/0069HJtbly8fw98nrvyu1j30ij0ijab2.jpg","mbtype":0,"bi_followers_count":1,"user_ability":0,"verified_reason":"","story_read_state":-1,"video_status_count":0,"mbrank":0,"lang":"zh-cn","class":1,"has_ability_tag":0,"star":0,"allow_all_comment":true,"online_status":0,"ulevel":0,"verified":false,"profile_image_url":"http://tvax3.sinaimg.cn/crop.0.0.667.667.50/0069HJtbly8fw98nrvyu1j30ij0ijab2.jpg","block_app":0,"url":"","avatar_large":"http://tvax3.sinaimg.cn/crop.0.0.667.667.180/0069HJtbly8fw98nrvyu1j30ij0ijab2.jpg","statuses_count":15,"vclub_member":0,"followers_count":8,"location":"浙江 温州","insecurity":{"sexual_content":false},"verified_source":""},"more_info_type":0}
+         * id : 4315684559695123
+         * text : @测试微博Q mmm
+         * user : {"allow_all_act_msg":false,"favourites_count":1,"urank":4,"verified_trade":"","weihao":"","verified_source_url":"","type":1,"province":"33","screen_name":"daybreak__拂晓","id":5640206909,"geo_enabled":true,"like_me":false,"like":false,"level":1,"verified_type":-1,"user_limit":0,"extend":{"mbprivilege":"0000000000000000000000000000000000000000000000000000000000000000","privacy":{"mobile":1}},"badge":{"panda":0,"relation_display":0,"yiqijuan_2018":0,"bind_taobao":0,"kpl_2018":0,"asiad_2018":0,"follow_whitelist_video":0,"lol_msi_2017":0,"lol_gm_2017":0,"ali_1688":0,"unread_pool":1,"qixi_2018":0,"super_star_2017":0,"vip_activity2":0,"super_star_2018":0,"vip_activity1":0,"weibo_display_fans":0,"dailv_2018":0,"meilizhongguo_2018":0,"uc_domain":0,"league_badge_2018":0,"unread_pool_ext":1,"memorial_2018":0,"self_media":0,"dailv":0,"uve_icon":0,"cz_wed_2017":0,"double11_2018":0,"wbzy_2018":0,"zongyiji":0,"lol_s8":0,"enterprise":0,"user_name_certificate":1,"national_day_2018":0,"fools_day_2016":0,"suishoupai_2018":0,"taobao":0,"dzwbqlx_2016":0,"discount_2016":0,"wenda":0,"gongyi_level":0,"gongyi":0,"worldcup_2018":0,"league_badge":0,"travel_2017":0,"uefa_euro_2016":0,"video_attention":0,"inspector":0,"v_influence_2018":0,"wenchuan_10th":0,"daiyan":0,"wenda_v2":0,"anniversary":0},"pagefriends_count":0,"domain":"","following":false,"name":"daybreak__拂晓","cover_image_phone":"http://ww1.sinaimg.cn/crop.0.0.640.640.640/549d0121tw1egm1kjly3jj20hs0hsq4f.jpg","idstr":"5640206909","follow_me":false,"friends_count":39,"credit_score":80,"gender":"f","city":"3","profile_url":"u/5640206909","description":"","created_at":"Thu Jun 25 17:31:13 +0800 2015","remark":"","ptype":0,"badge_top":"","verified_reason_url":"","block_word":0,"avatar_hd":"http://tvax3.sinaimg.cn/crop.0.0.667.667.1024/0069HJtbly8fw98nrvyu1j30ij0ijab2.jpg","mbtype":0,"bi_followers_count":1,"user_ability":0,"verified_reason":"","story_read_state":-1,"video_status_count":0,"mbrank":0,"lang":"zh-cn","class":1,"has_ability_tag":0,"star":0,"allow_all_comment":true,"online_status":0,"ulevel":0,"verified":false,"profile_image_url":"http://tvax3.sinaimg.cn/crop.0.0.667.667.50/0069HJtbly8fw98nrvyu1j30ij0ijab2.jpg","block_app":0,"url":"","avatar_large":"http://tvax3.sinaimg.cn/crop.0.0.667.667.180/0069HJtbly8fw98nrvyu1j30ij0ijab2.jpg","statuses_count":15,"vclub_member":0,"followers_count":8,"location":"浙江 温州","insecurity":{"sexual_content":false},"verified_source":""}
+         * status : {"idstr":"4315620641986518","isLongText":false,"hot_weibo_tags":[],"text_tag_tips":[],"in_reply_to_status_id":"","pic_ids":["0069HJtbly1fy1fant3v4j30u01hcn6y"],"created_at":"Mon Dec 10 10:06:43 +0800 2018","mid":"4315620641986518","mblogtype":0,"source":"<a href=\"http://app.weibo.com/t/feed/6JfnwP\" rel=\"nofollow\">未通过审核应用<\/a>","attitudes_count":0,"bmiddle_pic":"http://wx1.sinaimg.cn/bmiddle/0069HJtbly1fy1fant3v4j30u01hcn6y.jpg","positive_recom_flag":0,"is_show_bulletin":2,"hide_flag":0,"darwin_tags":[],"pending_approval_count":0,"in_reply_to_screen_name":"","mlevel":0,"in_reply_to_user_id":"","hasActionTypeCard":0,"id":4315620641986518,"text":"http://t.cn/RXfIElf","is_paid":false,"reposts_count":0,"reward_exhibition_type":0,"favorited":false,"mblog_vip_type":0,"content_auth":0,"visible":{"list_id":0,"type":0},"gif_ids":"","thumbnail_pic":"http://wx1.sinaimg.cn/thumbnail/0069HJtbly1fy1fant3v4j30u01hcn6y.jpg","original_pic":"http://wx1.sinaimg.cn/large/0069HJtbly1fy1fant3v4j30u01hcn6y.jpg","can_edit":false,"textLength":19,"truncated":false,"source_type":1,"biz_feature":0,"source_allowclick":0,"comments_count":0,"show_additional_indication":0,"appid":2602570,"url_objects":[{"search_topic_read_count":0,"asso_like_count":0,"like_count":0,"url_ori":"http://t.cn/RXfIElf","isActionType":false,"object_author_video_status_count":0,"follower_count":0,"card_info_un_integrity":false,"super_topic_photo_count":0,"search_topic_count":0,"super_topic_status_count":0,"info":{"result":true,"url_short":"http://t.cn/RXfIElf","ext_status":0,"url_long":"http://www.mob.com/downloads/","transcode":0,"description":"","type":0,"title":"","last_modified":1492412740}}],"comment_manage_info":{"comment_permission_type":-1,"approval_comment_type":0},"userType":0,"user":{"allow_all_act_msg":false,"favourites_count":1,"urank":4,"verified_trade":"","weihao":"","verified_source_url":"","type":1,"province":"33","screen_name":"daybreak__拂晓","id":5640206909,"geo_enabled":true,"like_me":false,"like":false,"level":1,"verified_type":-1,"user_limit":0,"extend":{"mbprivilege":"0000000000000000000000000000000000000000000000000000000000000000","privacy":{"mobile":1}},"badge":{"panda":0,"relation_display":0,"yiqijuan_2018":0,"bind_taobao":0,"kpl_2018":0,"asiad_2018":0,"follow_whitelist_video":0,"lol_msi_2017":0,"lol_gm_2017":0,"ali_1688":0,"unread_pool":1,"qixi_2018":0,"super_star_2017":0,"vip_activity2":0,"super_star_2018":0,"vip_activity1":0,"weibo_display_fans":0,"dailv_2018":0,"meilizhongguo_2018":0,"uc_domain":0,"league_badge_2018":0,"unread_pool_ext":1,"memorial_2018":0,"self_media":0,"dailv":0,"uve_icon":0,"cz_wed_2017":0,"double11_2018":0,"wbzy_2018":0,"zongyiji":0,"lol_s8":0,"enterprise":0,"user_name_certificate":1,"national_day_2018":0,"fools_day_2016":0,"suishoupai_2018":0,"taobao":0,"dzwbqlx_2016":0,"discount_2016":0,"wenda":0,"gongyi_level":0,"gongyi":0,"worldcup_2018":0,"league_badge":0,"travel_2017":0,"uefa_euro_2016":0,"video_attention":0,"inspector":0,"v_influence_2018":0,"wenchuan_10th":0,"daiyan":0,"wenda_v2":0,"anniversary":0},"pagefriends_count":0,"domain":"","following":false,"name":"daybreak__拂晓","cover_image_phone":"http://ww1.sinaimg.cn/crop.0.0.640.640.640/549d0121tw1egm1kjly3jj20hs0hsq4f.jpg","idstr":"5640206909","follow_me":false,"friends_count":39,"credit_score":80,"gender":"f","city":"3","profile_url":"u/5640206909","description":"","created_at":"Thu Jun 25 17:31:13 +0800 2015","remark":"","ptype":0,"badge_top":"","verified_reason_url":"","block_word":0,"avatar_hd":"http://tvax3.sinaimg.cn/crop.0.0.667.667.1024/0069HJtbly8fw98nrvyu1j30ij0ijab2.jpg","mbtype":0,"bi_followers_count":1,"user_ability":0,"verified_reason":"","story_read_state":-1,"video_status_count":0,"mbrank":0,"lang":"zh-cn","class":1,"has_ability_tag":0,"star":0,"allow_all_comment":true,"online_status":0,"ulevel":0,"verified":false,"profile_image_url":"http://tvax3.sinaimg.cn/crop.0.0.667.667.50/0069HJtbly8fw98nrvyu1j30ij0ijab2.jpg","block_app":0,"url":"","avatar_large":"http://tvax3.sinaimg.cn/crop.0.0.667.667.180/0069HJtbly8fw98nrvyu1j30ij0ijab2.jpg","statuses_count":15,"vclub_member":0,"followers_count":8,"location":"浙江 温州","insecurity":{"sexual_content":false},"verified_source":""},"more_info_type":0}
          */
 
         private String idstr;
@@ -248,15 +248,15 @@ public class ToMeBean {
         public static class UserBean {
             /**
              * allow_all_act_msg : false
-             * favourites_count : 0
+             * favourites_count : 1
              * urank : 4
              * verified_trade :
              * weihao :
              * verified_source_url :
              * type : 1
              * province : 33
-             * screen_name : 测试微博Q
-             * id : 6595944977
+             * screen_name : daybreak__拂晓
+             * id : 5640206909
              * geo_enabled : true
              * like_me : false
              * like : false
@@ -264,26 +264,27 @@ public class ToMeBean {
              * verified_type : -1
              * user_limit : 0
              * extend : {"mbprivilege":"0000000000000000000000000000000000000000000000000000000000000000","privacy":{"mobile":1}}
-             * badge : {"panda":0,"relation_display":0,"yiqijuan_2018":0,"bind_taobao":0,"kpl_2018":0,"asiad_2018":0,"follow_whitelist_video":0,"lol_msi_2017":0,"lol_gm_2017":0,"ali_1688":0,"unread_pool":0,"qixi_2018":0,"super_star_2017":0,"vip_activity2":0,"super_star_2018":0,"vip_activity1":0,"weibo_display_fans":0,"dailv_2018":0,"meilizhongguo_2018":0,"uc_domain":0,"league_badge_2018":0,"unread_pool_ext":0,"memorial_2018":0,"self_media":0,"dailv":0,"uve_icon":0,"cz_wed_2017":0,"double11_2018":0,"wbzy_2018":0,"zongyiji":0,"lol_s8":0,"enterprise":0,"user_name_certificate":1,"national_day_2018":0,"fools_day_2016":0,"suishoupai_2018":0,"taobao":0,"dzwbqlx_2016":0,"discount_2016":0,"wenda":0,"gongyi_level":0,"gongyi":0,"worldcup_2018":0,"league_badge":0,"travel_2017":0,"uefa_euro_2016":0,"video_attention":0,"inspector":0,"v_influence_2018":0,"wenchuan_10th":0,"daiyan":0,"wenda_v2":0,"anniversary":0}
+             * badge : {"panda":0,"relation_display":0,"yiqijuan_2018":0,"bind_taobao":0,"kpl_2018":0,"asiad_2018":0,"follow_whitelist_video":0,"lol_msi_2017":0,"lol_gm_2017":0,"ali_1688":0,"unread_pool":1,"qixi_2018":0,"super_star_2017":0,"vip_activity2":0,"super_star_2018":0,"vip_activity1":0,"weibo_display_fans":0,"dailv_2018":0,"meilizhongguo_2018":0,"uc_domain":0,"league_badge_2018":0,"unread_pool_ext":1,"memorial_2018":0,"self_media":0,"dailv":0,"uve_icon":0,"cz_wed_2017":0,"double11_2018":0,"wbzy_2018":0,"zongyiji":0,"lol_s8":0,"enterprise":0,"user_name_certificate":1,"national_day_2018":0,"fools_day_2016":0,"suishoupai_2018":0,"taobao":0,"dzwbqlx_2016":0,"discount_2016":0,"wenda":0,"gongyi_level":0,"gongyi":0,"worldcup_2018":0,"league_badge":0,"travel_2017":0,"uefa_euro_2016":0,"video_attention":0,"inspector":0,"v_influence_2018":0,"wenchuan_10th":0,"daiyan":0,"wenda_v2":0,"anniversary":0}
              * pagefriends_count : 0
              * domain :
              * following : false
-             * name : 测试微博Q
-             * idstr : 6595944977
+             * name : daybreak__拂晓
+             * cover_image_phone : http://ww1.sinaimg.cn/crop.0.0.640.640.640/549d0121tw1egm1kjly3jj20hs0hsq4f.jpg
+             * idstr : 5640206909
              * follow_me : false
-             * friends_count : 4
+             * friends_count : 39
              * credit_score : 80
              * gender : f
-             * city : 1000
-             * profile_url : u/6595944977
+             * city : 3
+             * profile_url : u/5640206909
              * description :
-             * created_at : Sun Jul 08 22:22:21 +0800 2018
+             * created_at : Thu Jun 25 17:31:13 +0800 2015
              * remark :
              * ptype : 0
              * badge_top :
              * verified_reason_url :
              * block_word : 0
-             * avatar_hd : http://tvax2.sinaimg.cn/default/images/default_avatar_female_180.gif
+             * avatar_hd : http://tvax3.sinaimg.cn/crop.0.0.667.667.1024/0069HJtbly8fw98nrvyu1j30ij0ijab2.jpg
              * mbtype : 0
              * bi_followers_count : 1
              * user_ability : 0
@@ -299,14 +300,14 @@ public class ToMeBean {
              * online_status : 0
              * ulevel : 0
              * verified : false
-             * profile_image_url : http://tvax2.sinaimg.cn/default/images/default_avatar_female_50.gif
+             * profile_image_url : http://tvax3.sinaimg.cn/crop.0.0.667.667.50/0069HJtbly8fw98nrvyu1j30ij0ijab2.jpg
              * block_app : 0
              * url :
-             * avatar_large : http://tvax2.sinaimg.cn/default/images/default_avatar_female_180.gif
-             * statuses_count : 21
+             * avatar_large : http://tvax3.sinaimg.cn/crop.0.0.667.667.180/0069HJtbly8fw98nrvyu1j30ij0ijab2.jpg
+             * statuses_count : 15
              * vclub_member : 0
-             * followers_count : 1
-             * location : 浙江
+             * followers_count : 8
+             * location : 浙江 温州
              * insecurity : {"sexual_content":false}
              * verified_source :
              */
@@ -333,6 +334,7 @@ public class ToMeBean {
             private String domain;
             private boolean following;
             private String name;
+            private String cover_image_phone;
             private String idstr;
             private boolean follow_me;
             private int friends_count;
@@ -549,6 +551,14 @@ public class ToMeBean {
 
             public void setName(String name) {
                 this.name = name;
+            }
+
+            public String getCover_image_phone() {
+                return cover_image_phone;
+            }
+
+            public void setCover_image_phone(String cover_image_phone) {
+                this.cover_image_phone = cover_image_phone;
             }
 
             public String getIdstr() {
@@ -925,7 +935,7 @@ public class ToMeBean {
                  * lol_msi_2017 : 0
                  * lol_gm_2017 : 0
                  * ali_1688 : 0
-                 * unread_pool : 0
+                 * unread_pool : 1
                  * qixi_2018 : 0
                  * super_star_2017 : 0
                  * vip_activity2 : 0
@@ -936,7 +946,7 @@ public class ToMeBean {
                  * meilizhongguo_2018 : 0
                  * uc_domain : 0
                  * league_badge_2018 : 0
-                 * unread_pool_ext : 0
+                 * unread_pool_ext : 1
                  * memorial_2018 : 0
                  * self_media : 0
                  * dailv : 0
@@ -1468,17 +1478,18 @@ public class ToMeBean {
 
         public static class StatusBean {
             /**
-             * idstr : 4312809686791166
+             * idstr : 4315620641986518
              * isLongText : false
              * hot_weibo_tags : []
              * text_tag_tips : []
              * in_reply_to_status_id :
-             * pic_ids : []
-             * created_at : Sun Dec 02 15:57:00 +0800 2018
-             * mid : 4312809686791166
+             * pic_ids : ["0069HJtbly1fy1fant3v4j30u01hcn6y"]
+             * created_at : Mon Dec 10 10:06:43 +0800 2018
+             * mid : 4315620641986518
              * mblogtype : 0
              * source : <a href="http://app.weibo.com/t/feed/6JfnwP" rel="nofollow">未通过审核应用</a>
              * attitudes_count : 0
+             * bmiddle_pic : http://wx1.sinaimg.cn/bmiddle/0069HJtbly1fy1fant3v4j30u01hcn6y.jpg
              * positive_recom_flag : 0
              * is_show_bulletin : 2
              * hide_flag : 0
@@ -1488,7 +1499,7 @@ public class ToMeBean {
              * mlevel : 0
              * in_reply_to_user_id :
              * hasActionTypeCard : 0
-             * id : 4312809686791166
+             * id : 4315620641986518
              * text : http://t.cn/RXfIElf
              * is_paid : false
              * reposts_count : 0
@@ -1498,6 +1509,8 @@ public class ToMeBean {
              * content_auth : 0
              * visible : {"list_id":0,"type":0}
              * gif_ids :
+             * thumbnail_pic : http://wx1.sinaimg.cn/thumbnail/0069HJtbly1fy1fant3v4j30u01hcn6y.jpg
+             * original_pic : http://wx1.sinaimg.cn/large/0069HJtbly1fy1fant3v4j30u01hcn6y.jpg
              * can_edit : false
              * textLength : 19
              * truncated : false
@@ -1522,6 +1535,7 @@ public class ToMeBean {
             private int mblogtype;
             private String source;
             private int attitudes_count;
+            private String bmiddle_pic;
             private int positive_recom_flag;
             private int is_show_bulletin;
             private int hide_flag;
@@ -1540,6 +1554,8 @@ public class ToMeBean {
             private int content_auth;
             private VisibleBean visible;
             private String gif_ids;
+            private String thumbnail_pic;
+            private String original_pic;
             private boolean can_edit;
             private int textLength;
             private boolean truncated;
@@ -1555,7 +1571,7 @@ public class ToMeBean {
             private int more_info_type;
             private List<?> hot_weibo_tags;
             private List<?> text_tag_tips;
-            private List<?> pic_ids;
+            private List<String> pic_ids;
             private List<?> darwin_tags;
             private List<UrlObjectsBean> url_objects;
 
@@ -1621,6 +1637,14 @@ public class ToMeBean {
 
             public void setAttitudes_count(int attitudes_count) {
                 this.attitudes_count = attitudes_count;
+            }
+
+            public String getBmiddle_pic() {
+                return bmiddle_pic;
+            }
+
+            public void setBmiddle_pic(String bmiddle_pic) {
+                this.bmiddle_pic = bmiddle_pic;
             }
 
             public int getPositive_recom_flag() {
@@ -1767,6 +1791,22 @@ public class ToMeBean {
                 this.gif_ids = gif_ids;
             }
 
+            public String getThumbnail_pic() {
+                return thumbnail_pic;
+            }
+
+            public void setThumbnail_pic(String thumbnail_pic) {
+                this.thumbnail_pic = thumbnail_pic;
+            }
+
+            public String getOriginal_pic() {
+                return original_pic;
+            }
+
+            public void setOriginal_pic(String original_pic) {
+                this.original_pic = original_pic;
+            }
+
             public boolean isCan_edit() {
                 return can_edit;
             }
@@ -1887,11 +1927,11 @@ public class ToMeBean {
                 this.text_tag_tips = text_tag_tips;
             }
 
-            public List<?> getPic_ids() {
+            public List<String> getPic_ids() {
                 return pic_ids;
             }
 
-            public void setPic_ids(List<?> pic_ids) {
+            public void setPic_ids(List<String> pic_ids) {
                 this.pic_ids = pic_ids;
             }
 

@@ -18,11 +18,11 @@ import com.sina.weibo.sdk.auth.WbAuthListener;
 import com.sina.weibo.sdk.auth.WbConnectErrorMessage;
 import com.sina.weibo.sdk.auth.sso.SsoHandler;
 
-import org.wxy.weibo.cosmos.Bean.AccountnumberBean;
-import org.wxy.weibo.cosmos.Bean.Userbean;
+import org.wxy.weibo.cosmos.bean.AccountnumberBean;
+import org.wxy.weibo.cosmos.bean.Userbean;
 import org.wxy.weibo.cosmos.Activity;
 import org.wxy.weibo.cosmos.R;
-import org.wxy.weibo.cosmos.SQLite.SQLite;
+import org.wxy.weibo.cosmos.sqlite.SQLite;
 import org.wxy.weibo.cosmos.network.RetrofitHelper;
 import org.wxy.weibo.cosmos.network.api.IUser;
 import org.wxy.weibo.cosmos.sharepreferences.User;

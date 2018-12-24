@@ -1,4 +1,4 @@
-package org.wxy.weibo.cosmos.Bean;
+package org.wxy.weibo.cosmos.bean;
 
 public class AccountnumberBean {
     private String name;

@@ -8,7 +8,7 @@ import android.widget.TextView;
 
 import org.wxy.weibo.cosmos.Activity;
 import org.wxy.weibo.cosmos.R;
-import org.wxy.weibo.cosmos.Bean.Friendshipsbean;
+import org.wxy.weibo.cosmos.bean.Friendshipsbean;
 import org.wxy.weibo.cosmos.utils.GlideUtil;
 import org.wxy.weibo.cosmos.view.CircleImageView;
 

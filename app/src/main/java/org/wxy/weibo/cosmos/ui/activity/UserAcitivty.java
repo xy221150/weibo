@@ -6,8 +6,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.widget.TextView;
 
-import org.wxy.weibo.cosmos.Bean.ShowBean;
-import org.wxy.weibo.cosmos.Bean.Userbean;
+import org.wxy.weibo.cosmos.bean.Userbean;
 import org.wxy.weibo.cosmos.R;
 import org.wxy.weibo.cosmos.ui.base.ActionbarActvity;
 import org.wxy.weibo.cosmos.utils.GlideUtil;

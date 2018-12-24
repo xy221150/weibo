@@ -1,13 +1,13 @@
-package org.wxy.weibo.cosmos.Bean.basebean;
+package org.wxy.weibo.cosmos.bean.basebean;
 
-
-import java.util.List;
+import java.io.Serializable;
+import java.util.ArrayList;
 
 /**
  * Created by wxy on 2018/7/4.
  */
 
-public class Statusesbean {
+public class Statusbean implements Serializable {
     private String created_at;
     private String idstr;
     private String text;
@@ -26,18 +26,33 @@ public class Statusesbean {
     private int mlevel;
     private boolean favorited;
     private boolean truncated;
+    private Statusbean retweeted_status;
     private Geobean geo;
-    private List<PicUrlsBean> pic_urls;
+    private ArrayList<String> pic_ids = new ArrayList<>();
     private Visiblebean visible;
-    private Userbean1 user;
-    private Statusesbean retweeted_status;
 
-    public Statusesbean getRetweeted_status() {
-        return retweeted_status;
+    public ArrayList<String> getPic_ids() {
+        return pic_ids;
     }
 
-    public void setRetweeted_status(Statusesbean retweeted_status) {
-        this.retweeted_status = retweeted_status;
+    public void setPic_ids(ArrayList<String> pic_ids) {
+        this.pic_ids = pic_ids;
+    }
+
+    public Visiblebean getVisible() {
+        return visible;
+    }
+
+    public void setVisible(Visiblebean visible) {
+        this.visible = visible;
+    }
+
+    public Geobean getGeo() {
+        return geo;
+    }
+
+    public void setGeo(Geobean geo) {
+        this.geo = geo;
     }
 
     public String getCreated_at() {
@@ -184,36 +199,11 @@ public class Statusesbean {
         this.truncated = truncated;
     }
 
-    public Geobean getGeo() {
-        return geo;
+    public Statusbean getRetweeted_status() {
+        return retweeted_status;
     }
 
-    public void setGeo(Geobean geo) {
-        this.geo = geo;
+    public void setRetweeted_status(Statusbean retweeted_status) {
+        this.retweeted_status = retweeted_status;
     }
-
-    public Visiblebean getVisible() {
-        return visible;
-    }
-
-    public void setVisible(Visiblebean visible) {
-        this.visible = visible;
-    }
-
-    public Userbean1 getUser() {
-        return user;
-    }
-
-    public void setUser(Userbean1 user) {
-        this.user = user;
-    }
-
-    public List<PicUrlsBean> getPic_urls() {
-        return pic_urls;
-    }
-
-    public void setPic_urls(List<PicUrlsBean> pic_urls) {
-        this.pic_urls = pic_urls;
-    }
-
 }

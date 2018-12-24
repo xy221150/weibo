@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import org.wxy.weibo.cosmos.Bean.AccountnumberBean;
+import org.wxy.weibo.cosmos.bean.AccountnumberBean;
 import org.wxy.weibo.cosmos.Activity;
 import org.wxy.weibo.cosmos.R;
 import org.wxy.weibo.cosmos.utils.GlideUtil;
