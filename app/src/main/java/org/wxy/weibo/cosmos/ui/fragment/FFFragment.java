@@ -100,7 +100,7 @@ public class FFFragment extends BaseFragment {
                     @Override
                     public void onResponse(Call<Friendshipsbean> call, Response<Friendshipsbean> response) {
                         bean=response.body();
-                        if (bean.getUsers()!=null)
+                        if (bean!=null&&bean.getUsers()!=null)
                         {
                             adapter=new FriendshipsAdapter(bean);
                             initRecycler(recycler,new LinearLayoutManager(getActivity()));
@@ -128,7 +128,7 @@ public class FFFragment extends BaseFragment {
                     @Override
                     public void onResponse(Call<Friendshipsbean> call, Response<Friendshipsbean> response) {
                         bean=response.body();
-                        if (bean!=null||bean.getUsers()!=null)
+                        if (bean!=null&&bean.getUsers()!=null)
                         {
                             adapter=new FriendshipsAdapter(bean);
                             initRecycler(recycler,new LinearLayoutManager(getActivity()));

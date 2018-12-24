@@ -52,12 +52,21 @@ public class MentionswbAdapter extends RecyclerView.Adapter<MentionswbAdapter.My
         GlideUtil.load(Activity.mainActivity(), holder.weibo_list_user_profile, bean.getStatuses().get(i).getUser().getAvatar_large());
         holder.weibo_list_text.setText(WeiboContentUtil.Weibocontent(bean.getStatuses().get(i).getText(), holder.weibo_list_text));
         if (null!=bean.getStatuses().get(i).getRetweeted_status()) {
-            holder.weibo_list_retweeted_status_user_name.setText(WeiboContentUtil.Weibocontent(
-                    "@"+bean.getStatuses().get(i).getRetweeted_status().getUser().getName()
-                            +":"
-                            +bean.getStatuses().get(i).getRetweeted_status().getText(),
-                    holder.weibo_list_retweeted_status_user_name));
-            if (bean.getStatuses().get(i).getRetweeted_status().getPic_ids().size()==0)
+            if (bean.getStatuses().get(i).getRetweeted_status().getUser()==null)
+            {
+                holder.weibo_list_retweeted_status_user_name.setText(WeiboContentUtil.Weibocontent(
+                        bean.getStatuses().get(i).getRetweeted_status().getText(),
+                        holder.weibo_list_retweeted_status_user_name));
+            }
+            else
+            {
+                holder.weibo_list_retweeted_status_user_name.setText(WeiboContentUtil.Weibocontent(
+                        "@"+bean.getStatuses().get(i).getRetweeted_status().getUser().getName()
+                                +":"
+                                +bean.getStatuses().get(i).getRetweeted_status().getText(),
+                        holder.weibo_list_retweeted_status_user_name));
+            }
+            if (bean.getStatuses().get(i).getRetweeted_status().getPic_ids()==null||bean.getStatuses().get(i).getRetweeted_status().getPic_ids().size()==0)
             {
                 holder.weibo_list_retweeted_status_pic.setVisibility(View.GONE);
             }

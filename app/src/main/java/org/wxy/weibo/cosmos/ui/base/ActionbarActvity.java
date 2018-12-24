@@ -50,6 +50,7 @@ public abstract class ActionbarActvity extends WidgetActivity {
                 finish();
             }
         });
+
     }
 
     protected  void setContTitle(String msg)
