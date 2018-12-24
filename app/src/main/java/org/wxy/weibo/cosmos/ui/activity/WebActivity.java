@@ -2,10 +2,13 @@ package org.wxy.weibo.cosmos.ui.activity;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.PixelFormat;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.View;
 
+import com.tencent.smtt.export.external.TbsCoreSettings;
+import com.tencent.smtt.sdk.QbSdk;
 import com.tencent.smtt.sdk.WebChromeClient;
 import com.tencent.smtt.sdk.WebView;
 
@@ -13,13 +16,15 @@ import org.wxy.weibo.cosmos.R;
 import org.wxy.weibo.cosmos.ui.base.ActionbarActvity;
 import org.wxy.weibo.cosmos.view.X5WebView;
 
+import java.util.HashMap;
+
 public class WebActivity extends ActionbarActvity {
     private X5WebView web;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        getWindow().setFormat(PixelFormat.TRANSLUCENT);
     }
 
     @Override
@@ -38,7 +43,6 @@ public class WebActivity extends ActionbarActvity {
         super.init();
         Intent intent=getIntent();
         String url=intent.getStringExtra("url");
-        web.setLayerType(View.LAYER_TYPE_HARDWARE,null);//开启硬件加速
         web.loadUrl(url);
         web.setWebChromeClient(new WebChromeClient(){
             @Override
@@ -58,11 +62,11 @@ public class WebActivity extends ActionbarActvity {
 
     @Override
     public void onDestroy() {
+        super.onDestroy();
         if (web!=null)
         {
             web.destroy();
             web=null;
         }
-        super.onDestroy();
     }
 }

@@ -4,7 +4,10 @@ import android.util.Log;
 
 import com.sina.weibo.sdk.WbSdk;
 import com.sina.weibo.sdk.auth.AuthInfo;
+import com.tencent.smtt.export.external.TbsCoreSettings;
 import com.tencent.smtt.sdk.QbSdk;
+
+import java.util.HashMap;
 
 
 public class Activity extends StackApplication{
@@ -31,7 +34,6 @@ public class Activity extends StackApplication{
         };
         //x5内核初始化接口
         QbSdk.initX5Environment(getApplicationContext(),  cb);
-
     }
 
     public static Activity mainActivity(){

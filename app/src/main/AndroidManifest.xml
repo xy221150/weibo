@@ -42,11 +42,13 @@
             android:label=""
             android:theme="@style/AppThemeNoActionBar"></activity>
         <activity android:name=".ui.activity.WebActivity"
+            android:alwaysRetainTaskState="true"
             android:configChanges="orientation|screenSize|keyboardHidden"
             android:exported="false"
             android:launchMode="singleTask"
-            android:alwaysRetainTaskState="true"
             android:label=""
+            android:hardwareAccelerated="true"
+            android:screenOrientation="portrait"
             android:theme="@style/AppThemeNoActionBar">
             <intent-filter>
                 <action android:name="com.tencent.smtt.tbs.video.PLAY" />
