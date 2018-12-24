@@ -17,7 +17,7 @@
         android:padding="10dp"
         >
         <org.wxy.weibo.cosmos.view.CircleImageView
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="50dp"
             android:id="@+id/imageView"
             android:layout_width="60dp"
             android:layout_height="60dp"
@@ -33,7 +33,6 @@
             android:layout_height="30dp"
             android:text="暂无授权,点击上方图片授权"
             android:gravity="center_vertical"
-
             android:textSize="@dimen/text_size_small"
             android:textColor="@color/white"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
