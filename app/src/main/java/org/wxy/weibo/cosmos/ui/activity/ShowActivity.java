@@ -143,7 +143,7 @@ public class ShowActivity extends ActionbarActvity {
                               } else {
                                   for (int j = 0; j < bean.getPic_urls().size(); j++) {
                                       final ImageView pic = new ImageView(ShowActivity.this);
-
+                                      pic.setPadding(5,5,5,5);
                                       pic.setLayoutParams(params);
                                       pic.setScaleType(ImageView.ScaleType.CENTER_CROP);//使图片充满控件大小
                                       GlideUtil.loadUrl(ShowActivity.this, pic, bean.getPic_urls().get(j).getThumbnail_pic());
@@ -184,6 +184,7 @@ public class ShowActivity extends ActionbarActvity {
                                           final ImageView pic1 = new ImageView(ShowActivity.this);
                                           pic1.setLayoutParams(params);
                                           pic1.setScaleType(ImageView.ScaleType.CENTER_CROP);//使图片充满控件大小
+                                          pic1.setPadding(5,5,5,5);
                                           GlideUtil.loadUrl(ShowActivity.this, pic1,
                                                   bean.getRetweeted_status().getPic_urls().get(j).getThumbnail_pic());
                                           weibo_list_retweeted_status_pic.addView(pic1);
