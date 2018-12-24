@@ -15,16 +15,16 @@ import android.text.style.ClickableSpan;
 import android.text.style.ImageSpan;
 import android.text.style.URLSpan;
 import android.text.util.Linkify;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
 import org.wxy.weibo.cosmos.Constants;
 import org.wxy.weibo.cosmos.Activity;
 import org.wxy.weibo.cosmos.R;
+import org.wxy.weibo.cosmos.ui.activity.ShowActivity;
 import org.wxy.weibo.cosmos.ui.activity.UserShowActivity;
 import org.wxy.weibo.cosmos.ui.activity.WebActivity;
-
-import java.util.regex.Matcher;
 
 /**
  * Created by wxy on 2018/7/5.
@@ -46,8 +46,13 @@ public class WeiboContentUtil {
             clickableSpan = new WeiboClickableSpan() {
                 @Override
                 public void onClick(View view) {
-                    if (urlSpan.getURL().indexOf(Constants.SCHEME_URL)!=-1)
-                    new WebActivity().getUrl(Activity.mainActivity(),urlSpan.getURL().replace("url:",""));
+                    if (urlSpan.getURL().indexOf(Constants.SCHEME_URL)!=-1) {
+                        String url = urlSpan.getURL().replace("url:","");
+                        if (url.indexOf("http://m.weibo.cn/")!=-1)
+                            new ShowActivity().Intent(Activity.mainActivity(),Long.valueOf(url.substring(29)));
+                        else
+                            new WebActivity().getUrl(Activity.mainActivity(),url);
+                    }
                     if (urlSpan.getURL().indexOf(Constants.SCHEME_AT)!=-1)
                         new UserShowActivity().getName(Activity.mainActivity(),urlSpan.getURL().replace("at:@",""));
                 }
@@ -89,13 +94,18 @@ public class WeiboContentUtil {
     }
 
     public static SpannableStringBuilder getUrlTextSpannableString(Context context,String source,int size){
+        Log.d("TAG", "getUrlTextSpannableString: "+source);
         SpannableStringBuilder builder=new SpannableStringBuilder(source);
         String prefix=" ";
         builder.replace(0,prefix.length(),prefix);
         Drawable drawable = context.getResources().getDrawable(R.mipmap.ic_send_blue);
         drawable.setBounds(0,0,size,size);
         builder.setSpan(new VerticalImageSpan(drawable),prefix.length(),source.length(),Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
-        builder.append("网页链接");
+        if (source.replace("url:","").indexOf("http://m.weibo.cn/")!=-1)
+            builder.append("微博正文");
+        else
+            builder.append("网页链接");
+
         return builder;
     }
     public static SpannableStringBuilder getFullTextSpannableString(Context context,String source,int size){
