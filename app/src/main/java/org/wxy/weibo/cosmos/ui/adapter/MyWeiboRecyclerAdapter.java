@@ -64,7 +64,7 @@ public class MyWeiboRecyclerAdapter extends RecyclerView.Adapter<MyWeiboRecycler
            {
                final ImageView pic=new ImageView(Activity.mainActivity());
                pic.setLayoutParams(params);
-               pic.setScaleType(ImageView.ScaleType.FIT_XY);//使图片充满控件大小
+               pic.setScaleType(ImageView.ScaleType.CENTER_CROP);//使图片充满控件大小
                GlideUtil.loadUrl(Activity.mainActivity(),pic,bean.getStatuses().get(i).getPic_urls().get(j).getThumbnail_pic());
                holder.weibo_list_pic.addView(pic);
                final int finalJ = j;
@@ -92,7 +92,7 @@ public class MyWeiboRecyclerAdapter extends RecyclerView.Adapter<MyWeiboRecycler
                 {
                     final ImageView pic1=new ImageView(Activity.mainActivity());
                     pic1.setLayoutParams(params);
-                    pic1.setScaleType(ImageView.ScaleType.FIT_XY);//使图片充满控件大小
+                    pic1.setScaleType(ImageView.ScaleType.CENTER_CROP);//使图片充满控件大小
                     GlideUtil.loadUrl(Activity.mainActivity(),pic1,bean.getStatuses().get(i).getRetweeted_status().getPic_urls().get(j).getThumbnail_pic());
                     holder.weibo_list_retweeted_status_pic.addView(pic1);
                     final int finalJ = j;
