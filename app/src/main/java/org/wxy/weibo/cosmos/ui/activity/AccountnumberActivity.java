@@ -14,6 +14,7 @@ import android.widget.TextView;
 
 import com.sina.weibo.sdk.auth.AccessTokenKeeper;
 import com.sina.weibo.sdk.auth.Oauth2AccessToken;
+import com.sina.weibo.sdk.auth.WbAuthListener;
 import com.sina.weibo.sdk.auth.WbConnectErrorMessage;
 import com.sina.weibo.sdk.auth.sso.SsoHandler;
 
@@ -79,7 +80,7 @@ public class AccountnumberActivity extends ActionbarActvity {
         add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               mSsoHandler.authorizeWeb(new SelfWbAuthListener());
+               mSsoHandler.authorize(new SelfWbAuthListener());
             }
         });
         Query();
@@ -103,7 +104,7 @@ public class AccountnumberActivity extends ActionbarActvity {
     }
 
     //获取账号
-    private class SelfWbAuthListener implements com.sina.weibo.sdk.auth.WbAuthListener {
+    private class SelfWbAuthListener implements WbAuthListener {
         @Override
         public void onSuccess(final Oauth2AccessToken token) {
             AccountnumberActivity.this.runOnUiThread(new Runnable() {

@@ -24,7 +24,7 @@
           android:text="111"
           android:textColor="@color/blue"
           android:id="@+id/name"
-          android:layout_marginLeft="20dp"
+          android:layout_marginLeft="15dp"
           android:textSize="@dimen/text_size_medium"
           />
   </LinearLayout>
