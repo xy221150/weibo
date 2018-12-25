@@ -216,7 +216,7 @@ public class MainActivity extends WidgetActivity
         if (basefragment != null) {
 
             FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-            if (to.isAdded()) {
+            if (to.isAdded()) {//如果to==true隐藏当前的fragment，显示下一个,否则隐藏当前的fragment，添加下一个到Activity中;
                 transaction.hide(basefragment).show(to).commit();
             } else {
                 transaction.hide(basefragment).add(R.id.fl_main, to).commit();
