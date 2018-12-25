@@ -78,7 +78,7 @@ public class MentionswbAdapter extends RecyclerView.Adapter<MentionswbAdapter.My
                     pic1.setPadding(5,5,5,5);
                     pic1.setLayoutParams(params);
                     pic1.setScaleType(ImageView.ScaleType.CENTER_CROP);//使图片充满控件大小
-                    GlideUtil.loadUrl(Activity.mainActivity(),pic1,"http://wx3.sinaimg.cn/bmiddle/"+bean.getStatuses().get(i).getRetweeted_status().getPic_ids().get(j));
+                    GlideUtil.loadUrl(Activity.mainActivity(),pic1,"http://wx3.sinaimg.cn/large/"+bean.getStatuses().get(i).getRetweeted_status().getPic_ids().get(j));
                     holder.weibo_list_retweeted_status_pic.addView(pic1);
                     final int finalJ = j;
                     pic1.setOnClickListener(new View.OnClickListener() {

@@ -66,7 +66,8 @@ public class MyWeiboRecyclerAdapter extends RecyclerView.Adapter<MyWeiboRecycler
                pic.setPadding(5,5,5,5);
                pic.setLayoutParams(params);
                pic.setScaleType(ImageView.ScaleType.CENTER_CROP);//使图片充满控件大小
-               GlideUtil.loadUrl(Activity.mainActivity(),pic,bean.getStatuses().get(i).getPic_urls().get(j).getThumbnail_pic());
+               String url= "http://wx1.sinaimg.cn/large/"+bean.getStatuses().get(i).getPic_urls().get(j).getThumbnail_pic().substring(32);
+               GlideUtil.loadUrl(Activity.mainActivity(),pic,url);
                holder.weibo_list_pic.addView(pic);
                final int finalJ = j;
                pic.setOnClickListener(new View.OnClickListener() {
@@ -95,7 +96,8 @@ public class MyWeiboRecyclerAdapter extends RecyclerView.Adapter<MyWeiboRecycler
                     pic1.setPadding(5,5,5,5);
                     pic1.setLayoutParams(params);
                     pic1.setScaleType(ImageView.ScaleType.CENTER_CROP);//使图片充满控件大小
-                    GlideUtil.loadUrl(Activity.mainActivity(),pic1,bean.getStatuses().get(i).getRetweeted_status().getPic_urls().get(j).getThumbnail_pic());
+                    String url= "http://wx1.sinaimg.cn/large/"+bean.getStatuses().get(i).getRetweeted_status().getPic_urls().get(j).getThumbnail_pic().substring(32);
+                    GlideUtil.loadUrl(Activity.mainActivity(),pic1,url);
                     holder.weibo_list_retweeted_status_pic.addView(pic1);
                     final int finalJ = j;
                     pic1.setOnClickListener(new View.OnClickListener() {
