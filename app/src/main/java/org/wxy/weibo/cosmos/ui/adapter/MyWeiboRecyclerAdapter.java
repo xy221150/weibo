@@ -92,8 +92,8 @@ public class MyWeiboRecyclerAdapter extends RecyclerView.Adapter<MyWeiboRecycler
                 for (int j=0;j<bean.getStatuses().get(i).getRetweeted_status().getPic_urls().size();j++)
                 {
                     final ImageView pic1=new ImageView(Activity.mainActivity());
-                    pic1.setLayoutParams(params);
                     pic1.setPadding(5,5,5,5);
+                    pic1.setLayoutParams(params);
                     pic1.setScaleType(ImageView.ScaleType.CENTER_CROP);//使图片充满控件大小
                     GlideUtil.loadUrl(Activity.mainActivity(),pic1,bean.getStatuses().get(i).getRetweeted_status().getPic_urls().get(j).getThumbnail_pic());
                     holder.weibo_list_retweeted_status_pic.addView(pic1);
