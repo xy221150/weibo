@@ -19,7 +19,7 @@
         android:layout_gravity="center"
         android:textSize="17sp"
         android:textColor="?attr/colorPrimary"
-        android:text=" @我的"/>
+        android:text=" At我的"/>
   </LinearLayout>
 
 

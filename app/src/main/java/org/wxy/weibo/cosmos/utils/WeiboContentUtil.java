@@ -52,13 +52,8 @@ public class WeiboContentUtil {
             clickableSpan = new WeiboClickableSpan() {
                 @Override
                 public void onClick(View view) {
-                    if (urlSpan.getURL().indexOf(Constants.SCHEME_URL)!=-1) {
-                        String url = urlSpan.getURL().replace("url:","");
-                        if (url.indexOf("http://m.weibo.cn/")!=-1)
-                            new ShowActivity().Intent(Activity.mainActivity(),Long.valueOf(url.substring(29)));
-                        else
-                            new WebActivity().getUrl(Activity.mainActivity(),url);
-                    }
+                    if (urlSpan.getURL().indexOf(Constants.SCHEME_URL)!=-1)
+                        new WebActivity().getUrl(Activity.mainActivity(),urlSpan.getURL().replace("url:",""));
                     if (urlSpan.getURL().indexOf(Constants.SCHEME_AT)!=-1)
                         new UserShowActivity().getName(Activity.mainActivity(),urlSpan.getURL().replace("at:@",""));
                 }
@@ -104,13 +99,10 @@ public class WeiboContentUtil {
         SpannableStringBuilder builder=new SpannableStringBuilder(source);
         String prefix=" ";
         builder.replace(0,prefix.length(),prefix);
-        Drawable drawable = context.getResources().getDrawable(R.mipmap.ic_send_blue);
+        Drawable drawable = context.getResources().getDrawable(R.mipmap.ic_right);
         drawable.setBounds(0,0,size,size);
         builder.setSpan(new VerticalImageSpan(drawable),prefix.length(),source.length(),Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
-        if (source.replace("url:","").indexOf("http://m.weibo.cn/")!=-1)
-            builder.append("微博正文");
-        else
-            builder.append("网页链接");
+        builder.append("网页链接");
 
         return builder;
     }
@@ -118,7 +110,7 @@ public class WeiboContentUtil {
         SpannableStringBuilder builder=new SpannableStringBuilder(source);
         String prefix=" ";
         builder.replace(0,prefix.length(),prefix);
-        Drawable drawable = context.getResources().getDrawable(R.mipmap.ic_send_blue);
+        Drawable drawable = context.getResources().getDrawable(R.mipmap.ic_right);
         drawable.setBounds(0,0,size,size);
         builder.setSpan(new VerticalImageSpan(drawable),prefix.length(),source.length(),Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
         builder.append("全文");
