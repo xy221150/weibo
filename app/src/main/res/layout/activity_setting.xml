@@ -21,11 +21,13 @@
             android:layout_height="wrap_content"
             android:text="清除缓存"
             android:textSize="17sp"
+            android:textColor="?attr/colorPrimary"
             android:layout_centerVertical="true"
             />
 
 
         <TextView
+            android:textColor="?attr/colorPrimary"
             android:id="@+id/cache_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -45,6 +47,7 @@
         android:background="@color/white">
 
         <TextView
+            android:textColor="?attr/colorPrimary"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="版本号"
@@ -54,6 +57,7 @@
 
 
         <TextView
+            android:textColor="?attr/colorPrimary"
             android:id="@+id/version_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -76,6 +80,7 @@
         android:background="@color/white">
 
         <TextView
+            android:textColor="?attr/colorPrimary"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="检查更新"
@@ -95,6 +100,7 @@
         android:background="@color/white">
 
         <TextView
+            android:textColor="?attr/colorPrimary"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="关于作者"
@@ -103,10 +109,11 @@
             />
 
         <TextView
+            android:textColor="?attr/colorPrimary"
             android:layout_alignParentRight="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text=""
+            android:text="wxy"
             android:textSize="17sp"
             android:layout_centerVertical="true"
             />
