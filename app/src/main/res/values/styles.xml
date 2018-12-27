@@ -64,10 +64,10 @@
         <!--修改AlertDialog按钮的颜色-->
         <item name="colorAccent">@color/lemonOrange</item>
     </style>
-    <style name="Theme.AppCompat.Light.Dialog.Alert.Self.Gray"
+    <style name="Theme.AppCompat.Light.Dialog.Alert.Self.Night"
         parent="@style/Theme.AppCompat.Light.Dialog.Alert">
         <!--修改AlertDialog按钮的颜色-->
-        <item name="colorAccent">@color/startSkyGray</item>
+        <item name="colorAccent">@color/nightActionbar</item>
     </style>
     <style name="BiLiPinkTheme" parent="AppThemeNoActionBar">
         <item name="colorPrimary">@color/biliPink</item>
@@ -124,10 +124,10 @@
         <item name="alertDialogTheme">@style/Theme.AppCompat.Light.Dialog.Alert.Self.Orange</item>
     </style>
 
-    <style name="StartSkyGrayTheme" parent="AppThemeNoActionBar">
-        <item name="colorPrimary">@color/startSkyGray</item>
-        <item name="colorPrimaryDark">@color/startSkyGray</item>
-        <item name="alertDialogTheme">@style/Theme.AppCompat.Light.Dialog.Alert.Self.Gray</item>
+    <style name="NightActionbarTheme" parent="AppThemeNoActionBar">
+        <item name="colorPrimary">@color/nightActionbar</item>
+        <item name="colorPrimaryDark">@color/nightActionbar</item>
+        <item name="alertDialogTheme">@style/Theme.AppCompat.Light.Dialog.Alert.Self.Night</item>
     </style>
 
 </resources>

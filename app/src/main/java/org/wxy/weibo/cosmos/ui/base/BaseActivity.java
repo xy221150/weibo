@@ -82,8 +82,8 @@ public abstract class BaseActivity extends AppCompatActivity {
                 getWindow().setStatusBarColor(this.getColor(R.color.Grey));
                 break;
             case 9:
-                setTheme(R.style.StartSkyGrayTheme);
-                getWindow().setStatusBarColor(this.getColor(R.color.startSkyGray));
+                setTheme(R.style.NightActionbarTheme);
+                getWindow().setStatusBarColor(this.getColor(R.color.nightActionbar));
                 break;
         }
     }

@@ -90,9 +90,6 @@
     <!--柠檬橙-->
     <color name="lemonOrange">#D88100</color>
     <color name="lemonOrange50">#D88100</color>
-    <!--星空灰-->
-    <color name="startSkyGray">#374f59</color>
-    <color name="startSkyGray50">#374f59</color>
     <!--夜间模式-->
     <color name="nightActionbar">#3b3b3b</color>
     <color name="nightBg">#3b3b3b</color>
