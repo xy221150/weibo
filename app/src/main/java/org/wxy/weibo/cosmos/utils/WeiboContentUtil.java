@@ -1,5 +1,6 @@
 package org.wxy.weibo.cosmos.utils;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;
@@ -31,7 +32,7 @@ import org.wxy.weibo.cosmos.ui.activity.WebActivity;
 /**
  * Created by wxy on 2018/7/5.
  */
-
+@SuppressLint("ResourceAsColor")
 public class WeiboContentUtil {
 
     public static SpannableStringBuilder Weibocontent(String source, TextView textView){
@@ -168,7 +169,6 @@ public class WeiboContentUtil {
         public void onClick(View view) {
 
         }
-
         @Override
         public void updateDrawState(TextPaint ds) {//高亮
             TypedValue typedValue = new TypedValue();//获取主题色
