@@ -238,7 +238,6 @@ public class MainActivity extends WidgetActivity
                 .setContent("授权后显示内容")
                 .setPositiveText("授权")
                 .setNegativeText("取消")
-                .setNegativeTextColor(R.color.white)
                 .setNegativeTextColorResource(typedValue.resourceId)
                 .setPositiveBackgroundColorResource(typedValue.resourceId)
                 .setPositiveTextColorResource(android.R.color.white)
@@ -246,12 +245,6 @@ public class MainActivity extends WidgetActivity
                     @Override
                     public void onClick(BottomDialog bottomDialog) {
                         starActivity(AccountnumberActivity.class);
-                    }
-                })
-                .onNegative(new BottomDialog.ButtonCallback() {
-                    @Override
-                    public void onClick( BottomDialog bottomDialog) {
-                        bottomDialog.dismiss();
                     }
                 })
                 .show();
