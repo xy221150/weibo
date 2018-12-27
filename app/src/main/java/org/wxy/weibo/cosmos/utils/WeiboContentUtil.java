@@ -37,14 +37,14 @@ public class WeiboContentUtil {
         WeiboClickableSpan clickableSpan;
         textView.setMovementMethod(LinkMovementMethod.getInstance());
         SpannableStringBuilder builder=new SpannableStringBuilder(source);
-        URLSpan[] urlSpans =builder.getSpans(0,builder.length(),URLSpan.class);
+
         //超链接
         Linkify.addLinks(builder, Constants.PATTERN_TOPIC,Constants.SCHEME_TOPIC);
         Linkify.addLinks(builder, Constants.PATTERN_URL,Constants.SCHEME_URL);
         Linkify.addLinks(builder, Constants.PATTERN_AT,Constants.SCHEME_AT);
         Linkify.addLinks(builder, Constants.PATTERN_FULL,Constants.SCHEME_FULL);
 
-
+        URLSpan[] urlSpans =builder.getSpans(0,builder.length(),URLSpan.class);
         for (final URLSpan urlSpan:urlSpans) {
             clickableSpan = new WeiboClickableSpan() {
                 @Override

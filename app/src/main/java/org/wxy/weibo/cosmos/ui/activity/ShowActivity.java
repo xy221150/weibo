@@ -33,6 +33,7 @@ import org.wxy.weibo.cosmos.utils.SourceUtlis;
 import org.wxy.weibo.cosmos.utils.TimeUtils;
 import org.wxy.weibo.cosmos.utils.WeiboContentUtil;
 import org.wxy.weibo.cosmos.view.CircleImageView;
+import org.wxy.weibo.cosmos.view.ObservableScrollView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -43,7 +44,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class ShowActivity extends ActionbarActvity {
+public class ShowActivity extends ActionbarActvity implements ObservableScrollView.OnObservableScrollViewScrollChanged {
     private RelativeLayout weibo_list_Post;
     private TextView weibo_list_screen_name;
     private TextView weibo_list_created_at;
@@ -60,10 +61,16 @@ public class ShowActivity extends ActionbarActvity {
     private long id;
     private ImageView send;
     private EditText text;
+    private ObservableScrollView obscroll;
+    private LinearLayout top_liner;
+    private TextView t1;
+    private LinearLayout ll_fixedView;
     private CommentsAdapter adapter;
     private LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(300,
             300);
     private int page=1;
+    //用来记录内层固定布局到屏幕顶部的距离
+    private int mHeight;
     private MsgThread msgThread;
     private Handler handler=new Handler(){
         @Override
@@ -102,11 +109,17 @@ public class ShowActivity extends ActionbarActvity {
         Recyclerlist=findViewById(R.id.list);
         text=findViewById(R.id.text);
         send=findViewById(R.id.send);
+        obscroll=findViewById(R.id.obscroll);
+        top_liner=findViewById(R.id.top_liner);
+        t1=findViewById(R.id.t1);
+        ll_fixedView=findViewById(R.id.ll_fixedView);
     }
 
     @Override
     protected void init() {
         super.init();
+        obscroll.setOnObservableScrollViewScrollChanged(this);
+        Recyclerlist.setNestedScrollingEnabled(false);
         initRecycler(Recyclerlist,new LinearLayoutManager(this));
         Intent intent=getIntent();
         id=intent.getLongExtra("id",0);
@@ -282,6 +295,32 @@ public class ShowActivity extends ActionbarActvity {
         intent.putExtra("id",id);
         context.startActivity(intent);
     }
+
+    @Override
+    public void onWindowFocusChanged(boolean hasFocus) {
+        super.onWindowFocusChanged(hasFocus);
+        if (hasFocus)
+            mHeight=top_liner.getTop();
+    }
+
+    @Override
+    public void onObservableScrollViewScrollChanged(int l, int t, int oldl, int oldt) {
+           if (t>mHeight)
+           {
+               if (t1.getParent()!=ll_fixedView)
+               {
+                   top_liner.removeView(t1);
+                   ll_fixedView.addView(t1);
+               }
+           } else
+           {
+               if(t1.getParent()!=top_liner){
+                   ll_fixedView.removeView(t1);
+                   top_liner.addView(t1);
+               }
+           }
+    }
+
     class MsgThread extends Thread{
         private int method;
         private Message message;
