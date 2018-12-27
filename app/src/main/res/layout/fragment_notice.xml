@@ -13,12 +13,6 @@
       android:padding="15dp"
       android:orientation="horizontal"
       >
-    <ImageView
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:src="@mipmap/ic_msg"
-        android:layout_gravity="center_vertical"
-        android:layout_marginRight="13dp"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -38,12 +32,6 @@
       android:padding="15dp"
       android:orientation="horizontal"
       >
-    <ImageView
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:src="@mipmap/ic_msg"
-        android:layout_gravity="center_vertical"
-        android:layout_marginRight="13dp"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

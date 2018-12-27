@@ -200,6 +200,8 @@ public class MyFragment extends BaseFragment implements View.OnClickListener{
                                 }
                             });
                         }
+                        else
+                            fabOpen.setVisibility(View.GONE);
                     }
 
                     @Override

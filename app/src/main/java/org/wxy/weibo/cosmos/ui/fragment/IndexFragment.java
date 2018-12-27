@@ -238,6 +238,8 @@ public class IndexFragment extends BaseFragment implements View.OnClickListener{
                             mWeiboRecycler.setNestedScrollingEnabled(false);//禁止自身滚动
                             initRecycler(mWeiboRecycler,new LinearLayoutManager(getActivity()));
                         }
+                        else
+                            fabOpen.setVisibility(View.GONE);
 
                         adapter.onItemCilck(new MyWeiboRecyclerAdapter.onItemCilck() {
                             @Override
