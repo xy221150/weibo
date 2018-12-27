@@ -58,8 +58,8 @@ public abstract class BaseActivity extends AppCompatActivity {
                 getWindow().setStatusBarColor(this.getColor(R.color.cloudRed));
                 break;
             case 3:
-                setTheme(R.style.TengLuoPurpleTheme);
-                getWindow().setStatusBarColor(this.getColor(R.color.tengluoPurple));
+                setTheme(R.style.GayPurpleTheme);
+                getWindow().setStatusBarColor(this.getColor(R.color.gayPurple));
                 break;
             case 4:
                 setTheme(R.style.SeaBlueTheme);

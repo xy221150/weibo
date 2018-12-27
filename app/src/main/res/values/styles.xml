@@ -94,9 +94,9 @@
         <item name="alertDialogTheme">@style/Theme.AppCompat.Light.Dialog.Alert.Self.Red</item>
     </style>
 
-    <style name="TengLuoPurpleTheme" parent="AppThemeNoActionBar">
-        <item name="colorPrimary">@color/tengluoPurple</item>
-        <item name="colorPrimaryDark">@color/tengluoPurple</item>
+    <style name="GayPurpleTheme" parent="AppThemeNoActionBar">
+        <item name="colorPrimary">@color/gayPurple</item>
+        <item name="colorPrimaryDark">@color/gayPurple</item>
         <item name="alertDialogTheme">@style/Theme.AppCompat.Light.Dialog.Alert.Self.Purple</item>
     </style>
 
