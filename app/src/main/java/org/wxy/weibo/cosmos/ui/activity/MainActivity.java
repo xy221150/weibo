@@ -14,6 +14,7 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
+import android.util.TypedValue;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -230,14 +231,16 @@ public class MainActivity extends WidgetActivity
 
     public void Login()//登录提示
     {
+        TypedValue typedValue = new TypedValue();
+        MainActivity.this.getTheme().resolveAttribute(R.attr.colorPrimaryDark, typedValue, true);
         final BottomDialog.Builder dialog=new BottomDialog.Builder(this);
         dialog.setTitle("欢迎")
                 .setContent("授权后显示内容")
                 .setPositiveText("授权")
                 .setNegativeText("取消")
                 .setNegativeTextColor(R.color.white)
-                .setNegativeTextColorResource(R.color.colorPrimary)
-                .setPositiveBackgroundColorResource(R.color.colorPrimary)
+                .setNegativeTextColorResource(typedValue.resourceId)
+                .setPositiveBackgroundColorResource(typedValue.resourceId)
                 .setPositiveTextColorResource(android.R.color.white)
                 .onPositive(new BottomDialog.ButtonCallback() {
                     @Override

@@ -23,7 +23,6 @@ public class ThemeActivity extends ActionbarActvity {
     private List<ThemeBean> themes;
     private RecyclerView list;
     private ThemeAdapter adapter;
-    private int ThemeNumber;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,7 +43,6 @@ public class ThemeActivity extends ActionbarActvity {
     @Override
     protected void init() {
         super.init();
-        ThemeNumber=ThemeUtil.getTheme(this);
         themes=new ArrayList<>();
         ThemeBean bean=new ThemeBean("默认", Color.parseColor("#03a9f4"));
         themes.add(bean);
@@ -73,7 +71,6 @@ public class ThemeActivity extends ActionbarActvity {
 
             @Override
             public void OnClickListener(int i) {
-                ThemeNumber=i;
                 ThemeUtil.setTheme(Activity.mainActivity(),i);
                 setColor(themes.get(i).getColor());
                 ThemeActivity.this.getWindow().setStatusBarColor(themes.get(i).getColor());
@@ -87,13 +84,8 @@ public class ThemeActivity extends ActionbarActvity {
         setNavigationOnClick(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (ThemeNumber==ThemeUtil.getTheme(ThemeActivity.this))
-                    finish();
-                else
-                {
                     finish();
                     starActivity(MainActivity.class);
-                }
             }
         });
     }
@@ -101,12 +93,8 @@ public class ThemeActivity extends ActionbarActvity {
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-        if (ThemeNumber==ThemeUtil.getTheme(this))
-            finish();
-        else
-        {
             finish();
             starActivity(MainActivity.class);
-        }
+
     }
 }
