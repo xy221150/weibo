@@ -1,5 +1,6 @@
 package org.wxy.weibo.cosmos.ui.adapter;
 
+import android.content.Context;
 import android.support.v7.widget.GridLayout;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -37,12 +38,15 @@ public class MyWeiboRecyclerAdapter extends RecyclerView.Adapter<MyWeiboRecycler
     private onItemStatusCilck onItemStatusCilck;//Item转发内容点击
     private onItemPicCilck onItemPicCilck;//微博图片点击
     private onItemRetweetedPicCilck onItemRetweetedPicCilck;//原微博图片点击
-    public MyWeiboRecyclerAdapter(Home_timelinebean bean){
+    private Context context;
+    public MyWeiboRecyclerAdapter(Home_timelinebean bean,Context context)
+    {
         this.bean=bean;
+        this.context=context;
     }
     @Override
     public MyWeiboHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        view= LayoutInflater.from(Activity.mainActivity()).inflate(R.layout.item_weibo,parent,false);
+        view= LayoutInflater.from(context).inflate(R.layout.item_weibo,parent,false);
         holder=new MyWeiboHolder(view);
         return holder;
     }

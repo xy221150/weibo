@@ -187,6 +187,6 @@
     <View
         android:layout_width="match_parent"
         android:layout_height="4dp"
-        android:background="@color/white_20"
+        android:background="?attr/colorPrimary"
         ></View>
 </LinearLayout>

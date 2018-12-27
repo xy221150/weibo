@@ -132,7 +132,7 @@ public class UserShowActivity extends WidgetActivity implements VerticalScrollVi
     @Override
     protected void init() {
         super.init();
-        adapter=new MyWeiboRecyclerAdapter(bean);
+        adapter=new MyWeiboRecyclerAdapter(bean,UserShowActivity.this);
         myWeibolist.setAdapter(adapter);
         Intent intent=getIntent();
         id=intent.getStringExtra("id");
@@ -162,7 +162,7 @@ public class UserShowActivity extends WidgetActivity implements VerticalScrollVi
                             if (bean!=null) {
                                 myWeibolist.setVisibility(View.VISIBLE);
                                 if (page == 1) {
-                                    adapter = new MyWeiboRecyclerAdapter(bean);
+                                    adapter = new MyWeiboRecyclerAdapter(bean,UserShowActivity.this);
                                 }
                                 else {
                                     adapter.add(bean);
@@ -232,7 +232,7 @@ public class UserShowActivity extends WidgetActivity implements VerticalScrollVi
                             if (bean!=null) {
                                 myWeibolist.setVisibility(View.VISIBLE);
                                 if (page == 1) {
-                                    adapter = new MyWeiboRecyclerAdapter(bean);
+                                    adapter = new MyWeiboRecyclerAdapter(bean,UserShowActivity.this);
                                 }
                                 else {
                                     adapter.add(bean);

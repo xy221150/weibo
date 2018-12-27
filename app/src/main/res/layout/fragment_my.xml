@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@color/white70">
+    android:background="?attr/colorPrimary">
     <in.srain.cube.views.ptr.PtrClassicFrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"

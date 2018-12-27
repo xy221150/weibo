@@ -141,7 +141,7 @@ public class MyFragment extends BaseFragment implements View.OnClickListener{
                             myWeibolist.setVisibility(View.VISIBLE);
                             //页码为1时适配器实例化,
                             if (page == 1) {
-                                adapter = new MyWeiboRecyclerAdapter(bean);
+                                adapter = new MyWeiboRecyclerAdapter(bean,getActivity());
                                 adapter.setHasStableIds(true);//解决数据错乱
                             }
                             else if (page > 1){ // 页码大于1添加到适配器

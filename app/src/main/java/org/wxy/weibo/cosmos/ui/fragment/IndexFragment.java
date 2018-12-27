@@ -131,7 +131,7 @@ public class IndexFragment extends BaseFragment implements View.OnClickListener{
     protected void initdata() {
         super.initdata();
         Fab();
-        adapter=new MyWeiboRecyclerAdapter(bean);
+        adapter=new MyWeiboRecyclerAdapter(bean,getActivity());
         mWeiboRecycler.setAdapter(adapter);
         setPtrFrameAttribute();
     }
@@ -222,7 +222,7 @@ public class IndexFragment extends BaseFragment implements View.OnClickListener{
                         {
                             //页码为1时适配器实例化,
                             if (page == 1) {
-                                adapter = new MyWeiboRecyclerAdapter(bean);
+                                adapter = new MyWeiboRecyclerAdapter(bean,getActivity());
                                 adapter.setHasStableIds(true);//解决数据错乱
                             }
                             else if (page > 1){ // 页码大于1添加到适配器

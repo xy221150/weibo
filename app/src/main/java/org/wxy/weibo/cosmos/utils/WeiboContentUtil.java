@@ -171,10 +171,8 @@ public class WeiboContentUtil {
         }
         @Override
         public void updateDrawState(TextPaint ds) {//高亮
-            TypedValue typedValue = new TypedValue();//获取主题色
-            Activity.mainActivity().getTheme().resolveAttribute(R.attr.colorPrimary, typedValue, true);
             super.updateDrawState(ds);
-            ds.setColor(typedValue.resourceId);
+            ds.setColor(R.color.colorPrimary);
             ds.setUnderlineText(false);
         }
     }
