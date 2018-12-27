@@ -201,6 +201,9 @@ public class MainActivity extends WidgetActivity
             basefragment=ffFragment;
         } else if (id == R.id.nav_setting) {
               starActivity(SettingActivity.class);
+        }else if (id==R.id.nav_settheme)
+        {
+            starActivity(ThemeActivity.class);
         } else if (id == R.id.nav_user) {
              if (userbean!=null)
                  new UserAcitivty().IntentUser(this,userbean);

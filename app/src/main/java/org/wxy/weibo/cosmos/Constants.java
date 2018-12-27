@@ -26,6 +26,8 @@ public class Constants {
             + "follow_app_official_microblog," + "invitation_write";
    // public static final String SCOPE = null;
 
+    public static final String THEME = "theme";
+
     // #话题#
     public static final String REGEX_TOPIC = "#[\\p{Print}\\p{InCJKUnifiedIdeographs}&&[^#]]+#";
     // [表情]

@@ -311,11 +311,13 @@ public class ShowActivity extends ActionbarActvity implements ObservableScrollVi
                {
                    top_liner.removeView(t1);
                    ll_fixedView.addView(t1);
+                   ll_fixedView.setVisibility(View.VISIBLE);
                }
            } else
            {
                if(t1.getParent()!=top_liner){
                    ll_fixedView.removeView(t1);
+                   ll_fixedView.setVisibility(View.GONE);
                    top_liner.addView(t1);
                }
            }

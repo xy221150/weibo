@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="colorPrimary">#03a9f4</color>
-    <color name="colorPrimaryDark">#039be5</color>
+    <color name="colorPrimaryDark">#03a9f4</color>
     <color name="colorAccent">#FFA344</color>
 
 
@@ -62,5 +62,38 @@
 
     <color name="tag_edit_hint_right">#dddddd</color>
 
-
+    <!--主题颜色-->
+    <!--酷安绿-->
+    <color name="kuanGreen">#4BAF4F</color>
+    <color name="kuanGreen50">#B04BAF4F</color>
+    <!--灰-->
+    <color name="Grey">#9e9e9e</color>
+    <color name="GreyDark">#9e9e9e</color>
+    <!--哔哩粉-->
+    <color name="biliPink">#ec5387</color>
+    <color name="biliPink50">#ec5387</color>
+    <!--网易红-->
+    <color name="cloudRed">#D33B30</color>
+    <color name="cloudRed50">#D33B30</color>
+    <!--藤萝紫-->
+    <color name="tengluoPurple">#8e24aa</color>
+    <color name="tengluoPurple50">#8e24aa</color>
+    <!--碧海蓝-->
+    <color name="seaBlue">#59b7c3</color>
+    <color name="seaBlue50">#59b7c3</color>
+    <!--樱草绿-->
+    <color name="grassGreen">#89c348</color>
+    <color name="grassGreen50">#89c348</color>
+    <!--咖啡棕-->
+    <color name="coffeeBrown">#75655a</color>
+    <color name="coffeeBrown50">#75655a</color>
+    <!--柠檬橙-->
+    <color name="lemonOrange">#D88100</color>
+    <color name="lemonOrange50">#D88100</color>
+    <!--星空灰-->
+    <color name="startSkyGray">#374f59</color>
+    <color name="startSkyGray50">#374f59</color>
+    <!--夜间模式-->
+    <color name="nightActionbar">#3b3b3b</color>
+    <color name="nightBg">#3b3b3b</color>
 </resources>

@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Build;
+import android.support.design.widget.NavigationView;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
@@ -56,5 +57,12 @@ public abstract class ActionbarActvity extends WidgetActivity {
     protected  void setContTitle(String msg)
     {
         getSupportActionBar().setTitle(msg+"");
+    }
+
+    protected void setColor(int color){
+        mContToolbar.setBackgroundColor(color);
+    }
+    protected void setNavigationOnClick(View.OnClickListener onClick){
+        mContToolbar.setNavigationOnClickListener(onClick);
     }
 }

@@ -1,5 +1,6 @@
 package org.wxy.weibo.cosmos.ui.adapter;
 
+import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -18,14 +19,16 @@ import java.util.List;
 
 public class AccountnumberAdapter extends RecyclerView.Adapter<AccountnumberAdapter.AccountnumberHolder> implements View.OnClickListener {
     private List<AccountnumberBean> bean;
-    public AccountnumberAdapter(List<AccountnumberBean> bean){
+    private Context context;
+    public AccountnumberAdapter(Context context,List<AccountnumberBean> bean){
        this.bean=bean;
+       this.context=context;
     }
     private OnClickListener onClickListener;
     @NonNull
     @Override
     public AccountnumberHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view=LayoutInflater.from(Activity.mainActivity()).inflate(R.layout.item_accoutnumber,parent,false);
+        View view=LayoutInflater.from(context).inflate(R.layout.item_accoutnumber,parent,false);
         return new AccountnumberHolder(view);
     }
 

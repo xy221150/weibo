@@ -186,7 +186,7 @@ public class AccountnumberActivity extends ActionbarActvity {
             //游标移到下一行
             cursor.moveToNext();
         }
-            adapter=new AccountnumberAdapter(activities);
+            adapter=new AccountnumberAdapter(AccountnumberActivity.this,activities);
     }
 
     //提示框

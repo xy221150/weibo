@@ -5,6 +5,7 @@
         <!-- Customize your theme here. -->
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
+
     </style>
     <style name="AppTheme" parent="Base.Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->
@@ -18,9 +19,115 @@
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
+    <style name="Theme.AppCompat.Light.Dialog.Alert.Self.Purple"
+        parent="@style/Theme.AppCompat.Light.Dialog.Alert">
+        <!--修改AlertDialog按钮的颜色-->
+        <item name="colorAccent">@color/tengluoPurple</item>
+    </style>
+    <style name="Theme.AppCompat.Light.Dialog.Alert.Self.Red"
+        parent="@style/Theme.AppCompat.Light.Dialog.Alert">
+        <!--修改AlertDialog按钮的颜色-->
+        <item name="colorAccent">@color/cloudRed</item>
+    </style>
+    <style name="Theme.AppCompat.Light.Dialog.Alert.Self.Grey"
+        parent="@style/Theme.AppCompat.Light.Dialog.Alert">
+        <!--修改AlertDialog按钮的颜色-->
+        <item name="colorAccent">@color/Grey</item>
+    </style>
     <style name="Theme.AppCompat.Light.Dialog.Alert.Self"
         parent="@style/Theme.AppCompat.Light.Dialog.Alert">
         <!--修改AlertDialog按钮的颜色-->
         <item name="colorAccent">@color/colorPrimary</item>
     </style>
+    <style name="Theme.AppCompat.Light.Dialog.Alert.Self.Pink"
+        parent="@style/Theme.AppCompat.Light.Dialog.Alert">
+        <!--修改AlertDialog按钮的颜色-->
+        <item name="colorAccent">@color/biliPink</item>
+    </style>
+    <style name="Theme.AppCompat.Light.Dialog.Alert.Self.Green"
+        parent="@style/Theme.AppCompat.Light.Dialog.Alert">
+        <!--修改AlertDialog按钮的颜色-->
+        <item name="colorAccent">@color/grassGreen</item>
+    </style>
+    <style name="Theme.AppCompat.Light.Dialog.Alert.Self.seaBlue"
+        parent="@style/Theme.AppCompat.Light.Dialog.Alert">
+        <!--修改AlertDialog按钮的颜色-->
+        <item name="colorAccent">@color/seaBlue</item>
+    </style>
+    <style name="Theme.AppCompat.Light.Dialog.Alert.Self.Brown"
+        parent="@style/Theme.AppCompat.Light.Dialog.Alert">
+        <!--修改AlertDialog按钮的颜色-->
+        <item name="colorAccent">@color/coffeeBrown</item>
+    </style>
+    <style name="Theme.AppCompat.Light.Dialog.Alert.Self.Orange"
+        parent="@style/Theme.AppCompat.Light.Dialog.Alert">
+        <!--修改AlertDialog按钮的颜色-->
+        <item name="colorAccent">@color/lemonOrange</item>
+    </style>
+    <style name="Theme.AppCompat.Light.Dialog.Alert.Self.Gray"
+        parent="@style/Theme.AppCompat.Light.Dialog.Alert">
+        <!--修改AlertDialog按钮的颜色-->
+        <item name="colorAccent">@color/startSkyGray</item>
+    </style>
+    <style name="BiLiPinkTheme" parent="AppThemeNoActionBar">
+        <item name="colorPrimary">@color/biliPink</item>
+        <item name="colorPrimaryDark">@color/biliPink50</item>
+        <item name="alertDialogTheme">@style/Theme.AppCompat.Light.Dialog.Alert.Self.Pink</item>
+
+    </style>
+
+    <style name="KuAnGreenTheme" parent="AppThemeNoActionBar">
+        <item name="colorPrimary">@color/kuanGreen</item>
+        <item name="colorPrimaryDark">@color/kuanGreen</item>
+        <item name="alertDialogTheme">@style/Theme.AppCompat.Light.Dialog.Alert.Self.Green</item>
+    </style>
+
+    <style name="GreyTheme" parent="AppThemeNoActionBar">
+        <item name="colorPrimary">@color/Grey</item>
+        <item name="colorPrimaryDark">@color/GreyDark</item>
+        <item name="alertDialogTheme">@style/Theme.AppCompat.Light.Dialog.Alert.Self.Grey</item>
+    </style>
+
+    <style name="CloudRedTheme" parent="AppThemeNoActionBar">
+        <item name="colorPrimary">@color/cloudRed</item>
+        <item name="colorPrimaryDark">@color/cloudRed</item>
+        <item name="alertDialogTheme">@style/Theme.AppCompat.Light.Dialog.Alert.Self.Red</item>
+    </style>
+
+    <style name="TengLuoPurpleTheme" parent="AppThemeNoActionBar">
+        <item name="colorPrimary">@color/tengluoPurple</item>
+        <item name="colorPrimaryDark">@color/tengluoPurple</item>
+        <item name="alertDialogTheme">@style/Theme.AppCompat.Light.Dialog.Alert.Self.Purple</item>
+    </style>
+
+    <style name="SeaBlueTheme" parent="AppThemeNoActionBar">
+        <item name="colorPrimary">@color/seaBlue</item>
+        <item name="colorPrimaryDark">@color/seaBlue</item>
+        <item name="alertDialogTheme">@style/Theme.AppCompat.Light.Dialog.Alert.Self.seaBlue</item>
+    </style>
+
+    <style name="GrassGreenTheme" parent="AppThemeNoActionBar">
+        <item name="colorPrimary">@color/grassGreen</item>
+        <item name="colorPrimaryDark">@color/grassGreen</item>
+        <item name="alertDialogTheme">@style/Theme.AppCompat.Light.Dialog.Alert.Self.Green</item>
+    </style>
+
+    <style name="CoffeeBrownTheme" parent="AppThemeNoActionBar">
+        <item name="colorPrimary">@color/coffeeBrown</item>
+        <item name="colorPrimaryDark">@color/coffeeBrown</item>
+        <item name="alertDialogTheme">@style/Theme.AppCompat.Light.Dialog.Alert.Self.Brown</item>
+    </style>
+
+    <style name="LemonOrangeTheme" parent="AppThemeNoActionBar">
+        <item name="colorPrimary">@color/lemonOrange</item>
+        <item name="colorPrimaryDark">@color/lemonOrange</item>
+        <item name="alertDialogTheme">@style/Theme.AppCompat.Light.Dialog.Alert.Self.Orange</item>
+    </style>
+
+    <style name="StartSkyGrayTheme" parent="AppThemeNoActionBar">
+        <item name="colorPrimary">@color/startSkyGray</item>
+        <item name="colorPrimaryDark">@color/startSkyGray</item>
+        <item name="alertDialogTheme">@style/Theme.AppCompat.Light.Dialog.Alert.Self.Gray</item>
+    </style>
+
 </resources>

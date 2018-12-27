@@ -170,7 +170,7 @@ public class WeiboContentUtil {
         @Override
         public void updateDrawState(TextPaint ds) {//高亮
             super.updateDrawState(ds);
-            ds.setColor(Color.parseColor("#42A8E4"));
+            ds.setColor(R.attr.colorPrimary);
             ds.setUnderlineText(false);
         }
     }

@@ -1,9 +1,11 @@
 package org.wxy.weibo.cosmos.ui.base;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
+import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -14,7 +16,9 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.Toast;
 
+import org.wxy.weibo.cosmos.R;
 import org.wxy.weibo.cosmos.ui.activity.UserShowActivity;
+import org.wxy.weibo.cosmos.utils.ThemeUtil;
 
 import in.srain.cube.views.ptr.PtrClassicFrameLayout;
 import in.srain.cube.views.ptr.PtrFrameLayout;
@@ -24,17 +28,66 @@ import in.srain.cube.views.ptr.util.PtrLocalDisplay;
 /**
  * Created by Administrator on 2018/4/11.
  */
-
+@SuppressLint("NewApi")
 public abstract class BaseActivity extends AppCompatActivity {
     ProgressDialog progressDialog;
     private boolean isDestroyed=false;
+
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_VISIBLE);//恢复状态栏白色字体
+        Theme(ThemeUtil.getTheme(this));
     }
+
+    public void Theme(int i){
+        switch (i)
+        {
+            case 0:
+                setTheme(R.style.AppThemeNoActionBar);
+                getWindow().setStatusBarColor(this.getColor(R.color.colorPrimaryDark));
+                break;
+            case 1:
+                setTheme(R.style.BiLiPinkTheme);
+                getWindow().setStatusBarColor(this.getColor(R.color.biliPink));
+                break;
+            case 2:
+                setTheme(R.style.CloudRedTheme);
+                getWindow().setStatusBarColor(this.getColor(R.color.cloudRed));
+                break;
+            case 3:
+                setTheme(R.style.TengLuoPurpleTheme);
+                getWindow().setStatusBarColor(this.getColor(R.color.tengluoPurple));
+                break;
+            case 4:
+                setTheme(R.style.SeaBlueTheme);
+                getWindow().setStatusBarColor(this.getColor(R.color.seaBlue));
+                break;
+            case 5:
+                setTheme(R.style.GrassGreenTheme);
+                getWindow().setStatusBarColor(this.getColor(R.color.grassGreen));
+                break;
+            case 6:
+                setTheme(R.style.CoffeeBrownTheme);
+                getWindow().setStatusBarColor(this.getColor(R.color.coffeeBrown));
+                break;
+            case 7:
+                setTheme(R.style.LemonOrangeTheme);
+                getWindow().setStatusBarColor(this.getColor(R.color.lemonOrange));
+                break;
+            case 8:
+                setTheme(R.style.GreyTheme);
+                getWindow().setStatusBarColor(this.getColor(R.color.Grey));
+                break;
+            case 9:
+                setTheme(R.style.StartSkyGrayTheme);
+                getWindow().setStatusBarColor(this.getColor(R.color.startSkyGray));
+                break;
+        }
+    }
+
     public void showToast(String msg){
         Toast.makeText(this, msg, Toast.LENGTH_SHORT).show();
     }

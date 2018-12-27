@@ -7,14 +7,14 @@
     >
 <org.wxy.weibo.cosmos.view.ObservableScrollView
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:fillViewport="true"
     android:id="@+id/obscroll"
     android:scrollbars="none"
     >
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:background="@color/gray00"
         android:orientation="vertical"
         >
@@ -163,32 +163,31 @@
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 ></android.support.v7.widget.RecyclerView>
-            <LinearLayout
-                android:padding="5dp"
+        <LinearLayout
+            android:padding="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:background="?attr/colorPrimary"
+            android:orientation="horizontal"
+            >
+            <EditText
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:layout_weight="1"
                 android:layout_width="match_parent"
-                android:layout_height="45dp"
-                android:layout_below="@+id/list"
-                android:background="?attr/colorPrimary"
-                android:orientation="horizontal"
-                >
-                <EditText
-                    android:paddingLeft="5dp"
-                    android:paddingRight="5dp"
-                    android:layout_weight="1"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@color/white"
-                    android:id="@+id/text"
-                    android:hint="写评论..."
-                    />
-                <ImageView
-                    android:id="@+id/send"
-                    android:layout_toRightOf="@id/text"
-                    android:layout_width="30dp"
-                    android:layout_height="match_parent"
-                    android:src="@mipmap/ic_send"
-                    />
-            </LinearLayout>
+                android:layout_height="match_parent"
+                android:background="@color/white"
+                android:id="@+id/text"
+                android:hint="写评论..."
+                />
+            <ImageView
+                android:id="@+id/send"
+                android:layout_toRightOf="@id/text"
+                android:layout_width="30dp"
+                android:layout_height="match_parent"
+                android:src="@mipmap/ic_send"
+                />
+        </LinearLayout>
     </LinearLayout>
 </org.wxy.weibo.cosmos.view.ObservableScrollView>
     <LinearLayout
@@ -196,5 +195,4 @@
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:orientation="vertical"/>
-    >
 </RelativeLayout>
