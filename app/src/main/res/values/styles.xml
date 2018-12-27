@@ -22,7 +22,7 @@
     <style name="Theme.AppCompat.Light.Dialog.Alert.Self.Purple"
         parent="@style/Theme.AppCompat.Light.Dialog.Alert">
         <!--修改AlertDialog按钮的颜色-->
-        <item name="colorAccent">@color/tengluoPurple</item>
+        <item name="colorAccent">@color/gayPurple</item>
     </style>
     <style name="Theme.AppCompat.Light.Dialog.Alert.Self.Red"
         parent="@style/Theme.AppCompat.Light.Dialog.Alert">
