@@ -231,8 +231,8 @@ public class MainActivity extends WidgetActivity
 
     public void Login()//登录提示
     {
-        TypedValue typedValue = new TypedValue();
-        MainActivity.this.getTheme().resolveAttribute(R.attr.colorPrimaryDark, typedValue, true);
+        TypedValue typedValue = new TypedValue();//获取主题色
+        MainActivity.this.getTheme().resolveAttribute(R.attr.colorPrimary, typedValue, true);
         final BottomDialog.Builder dialog=new BottomDialog.Builder(this);
         dialog.setTitle("欢迎")
                 .setContent("授权后显示内容")

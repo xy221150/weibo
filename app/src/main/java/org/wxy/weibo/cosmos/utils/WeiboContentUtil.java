@@ -16,12 +16,14 @@ import android.text.style.ImageSpan;
 import android.text.style.URLSpan;
 import android.text.util.Linkify;
 import android.util.Log;
+import android.util.TypedValue;
 import android.view.View;
 import android.widget.TextView;
 
 import org.wxy.weibo.cosmos.Constants;
 import org.wxy.weibo.cosmos.Activity;
 import org.wxy.weibo.cosmos.R;
+import org.wxy.weibo.cosmos.ui.activity.MainActivity;
 import org.wxy.weibo.cosmos.ui.activity.ShowActivity;
 import org.wxy.weibo.cosmos.ui.activity.UserShowActivity;
 import org.wxy.weibo.cosmos.ui.activity.WebActivity;
@@ -169,8 +171,10 @@ public class WeiboContentUtil {
 
         @Override
         public void updateDrawState(TextPaint ds) {//高亮
+            TypedValue typedValue = new TypedValue();//获取主题色
+            Activity.mainActivity().getTheme().resolveAttribute(R.attr.colorPrimary, typedValue, true);
             super.updateDrawState(ds);
-            ds.setColor(R.attr.colorPrimary);
+            ds.setColor(typedValue.resourceId);
             ds.setUnderlineText(false);
         }
     }
