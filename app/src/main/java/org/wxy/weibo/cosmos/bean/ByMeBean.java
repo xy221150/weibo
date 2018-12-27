@@ -8,7 +8,7 @@ public class ByMeBean {
 
     private boolean hasvisible;
     private int previous_cursor;
-    private int next_cursor;
+    private long next_cursor;
     private int total_number;
     private int interval;
     private List<CommentsBean> comments;
@@ -29,11 +29,11 @@ public class ByMeBean {
         this.previous_cursor = previous_cursor;
     }
 
-    public int getNext_cursor() {
+    public long getNext_cursor() {
         return next_cursor;
     }
 
-    public void setNext_cursor(int next_cursor) {
+    public void setNext_cursor(long next_cursor) {
         this.next_cursor = next_cursor;
     }
 

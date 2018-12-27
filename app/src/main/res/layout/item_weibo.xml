@@ -3,6 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@color/gray00"
+    android:layout_marginTop="5dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
       <RelativeLayout
@@ -184,9 +185,4 @@
               </LinearLayout>
           </LinearLayout>
       </RelativeLayout>
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="4dp"
-        android:background="?attr/colorPrimary"
-        ></View>
 </LinearLayout>
