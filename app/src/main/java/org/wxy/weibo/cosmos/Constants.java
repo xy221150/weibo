@@ -7,9 +7,9 @@ import java.util.regex.Pattern;
 
 public class Constants {
 
-    public static final String APP_KEY      = "4173665367";
+//    public static final String APP_KEY      = "4173665367";
 
-//    public static final String APP_KEY      = "2873264506";
+    public static final String APP_KEY      = "2873264506";
 
 //    public static final String APP_KEY      = "656963923";
 
@@ -30,8 +30,6 @@ public class Constants {
 
     // #话题#
     public static final String REGEX_TOPIC = "#[\\p{Print}\\p{InCJKUnifiedIdeographs}&&[^#]]+#";
-    // [表情]
-    public static final String REGEX_EMOTION = "\\[(\\S+?)\\]";
     // url
     public static final String REGEX_URL = "http://[a-zA-Z0-9+&@#/%?=~_\\\\-|!:,\\\\.;]*[a-zA-Z0-9+&@#/%=~_|]";
     // @人
